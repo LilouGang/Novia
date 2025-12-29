@@ -89,7 +89,7 @@ export const useAIMode = () => {
     const getPlayerName = (idx: number) => ['Sud', 'Ouest', 'Nord', 'Est'][idx];
 
     // DÉFINITION DE L'URL API (Vercel ou Localhost)
-    const API_URL = ((import.meta as any).env?.VITE_API_URL) || 'http://localhost:8000';
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
     const resetGameStates = () => {
         setAllCards([]); setMissions([]); setLogs([]); setProbabilities({});

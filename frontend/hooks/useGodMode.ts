@@ -35,7 +35,7 @@ export const useGodMode = () => {
     const abortCtrl = useRef<AbortController | null>(null);
 
     // DÉFINITION DE L'URL API (Vercel ou Localhost)
-    const API_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:8000';
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
     const addLog = (m: string) => setLogs(p => [`> ${m}`, ...p]);
 
