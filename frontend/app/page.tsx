@@ -9,7 +9,7 @@ import GodGameBoard from '../components/god/GameBoard';
 import CardPicker from '../components/god/CardPicker';
 
 // --- IMPORTS MODE AI ---
-import { useAIMode } from '../hooks/useAIMode';
+import { useAiMode } from '../hooks/useAIMode';
 import AISidebar from '../components/ai/Sidebar';
 import AIGameBoard from '../components/ai/GameBoard';
 
@@ -20,7 +20,7 @@ export default function Home() {
   const [gameMode, setGameMode] = useState<'GOD' | 'AI' | null>(null);
 
   const godGame = useGodMode();
-  const aiGame = useAIMode();
+  const aiGame = useAiMode();
 
   // --- SÉLECTEUR DE MODE ---
   if (!gameMode) {
@@ -30,6 +30,7 @@ export default function Home() {
       }} />;
   }
 
+  // --- RENDU MODE DIEU ---
   if (gameMode === 'GOD') {
       return (
         <div className="h-screen w-screen flex overflow-hidden bg-[#2c3e50] font-sans relative">
@@ -63,38 +64,54 @@ export default function Home() {
       );
   }
 
+  // --- RENDU MODE IA (C'est ici qu'on corrige) ---
   if (gameMode === 'AI') {
         return (
             <div className="h-screen w-screen flex overflow-hidden bg-[#111827] font-sans relative">
                 <AISidebar 
+                    // --- ÉTATS ---
                     currentStepText={aiGame.currentStepText}
                     logs={aiGame.logs}
                     isThinking={aiGame.isThinking}
+                    activePlayer={aiGame.activePlayer}
+                    
+                    // --- MODES ---
+                    isDevMode={aiGame.isDevMode}
                     isTraining={aiGame.isTraining}
+                    isAutoPlaying={aiGame.isAutoPlaying}
+                    isReplayMode={aiGame.isReplayMode}
+                    
+                    // --- DATA ---
                     trainingStats={aiGame.trainingStats}
                     replayData={aiGame.replayData}
-                    isReplayMode={aiGame.isReplayMode}
+                    milestones={aiGame.milestones}
+                    currentMilestoneId={aiGame.currentMilestoneId}
+                    
+                    // --- ACTIONS REPLAY & TRAINING ---
                     onLoadReplay={aiGame.loadReplay}
                     onNextReplayStep={aiGame.nextReplayStep}
                     onExitReplay={aiGame.exitReplay}
-                    milestones={aiGame.milestones}
-                    currentMilestoneId={aiGame.currentMilestoneId}
-                    onNextStep={aiGame.askAI}
-                    onLoadMission={aiGame.initializeMission} 
-                    onReset={aiGame.onReset} 
                     onStartTraining={aiGame.startTraining}
+                    
+                    // --- ACTIONS JEU ---
+                    initializeMission={aiGame.initializeMission}
+                    playOneMove={aiGame.playOneMove}             // Remplace onNextStep
+                    toggleAutoPlay={aiGame.toggleAutoPlay}
+                    onReset={aiGame.onReset}
+                    
+                    // --- NAVIGATION ---
                     onBackToMenu={() => setGameMode(null)}
                 />
                 
                 <AIGameBoard 
                     allCards={aiGame.allCards}
                     missions={aiGame.missions}
-                    probabilities={aiGame.probabilities}
-                    suggestedCardId={aiGame.suggestedCardId}
                     activePlayer={aiGame.activePlayer}
                     isTraining={aiGame.isTraining}
                     isReplayMode={aiGame.isReplayMode}
+                    isAutoPlaying={aiGame.isAutoPlaying} // Nouveau prop
                     communications={aiGame.communications}
+                    // probabilities & suggestedCardId ne sont plus prioritaires dans cette version
                 />
             </div>
         );

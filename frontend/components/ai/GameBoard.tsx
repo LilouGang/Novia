@@ -105,19 +105,25 @@ const CommunicationToken: React.FC<{ type: string, playerIndex: number }> = ({ t
     );
 };
 
+// =================================================================================
+// 🎨 COMPOSANT PRINCIPAL (Mise à jour Props)
+// =================================================================================
+
 type AIGameBoardProps = {
     allCards?: CardData[];
     missions?: MissionUI[];
     probabilities?: Record<string, number>;
     suggestedCardId?: string | null;
     activePlayer?: number;
-    isTraining?: boolean;
+    isTraining?: boolean;     // (Garde pour compatibilité, mais moins utilisé)
+    isAutoPlaying?: boolean;  // Nouveau : Indique si l'IA joue toute seule
     isReplayMode?: boolean;
     communications?: Record<number, { cardId: string, type: string }>;
 };
 
 export default function AIGameBoard({ 
-    allCards = [], missions = [], probabilities = {}, suggestedCardId, activePlayer = 0, isTraining = false, isReplayMode = false, communications = {}
+    allCards = [], missions = [], probabilities = {}, suggestedCardId, activePlayer = 0, 
+    isTraining = false, isAutoPlaying = false, isReplayMode = false, communications = {}
 }: AIGameBoardProps) {
 
   const HAND_RADIUS = 600; 
@@ -151,24 +157,15 @@ export default function AIGameBoard({
       if (card.status === 'COMMUNICATED') {
           const infoPos = INFO_POSITIONS[card.owner as keyof typeof INFO_POSITIONS];
           const offset = COMM_CARD_OFFSETS[card.owner as keyof typeof COMM_CARD_OFFSETS] || { x: 0, y: 0 };
-          
-          // CALCUL TRIGONOMÉTRIQUE POUR APLATIR LA TRANSFORMATION
-          // On calcule la position absolue X,Y exacte qui résulte de "Rotation puis Décalage relatif"
           const rad = (infoPos.rotation * Math.PI) / 180;
           const cos = Math.cos(rad);
           const sin = Math.sin(rad);
-
-          // On fait tourner le vecteur offset
           const rotOffsetX = offset.x * cos - offset.y * sin;
           const rotOffsetY = offset.x * sin + offset.y * cos;
-
-          // On l'ajoute à la position de base
           const finalX = infoPos.x + rotOffsetX;
           const finalY = infoPos.y + rotOffsetY;
 
           return {
-              // MAINTENANT : La structure est "Translate(Pos) Rotate(Angle)" comme pour la TABLE.
-              // Le navigateur peut donc interpoler linéairement vers le centre.
               transform: `translate(-50%, -50%) translate(${finalX}px, ${finalY}px) rotate(${infoPos.rotation}deg) scale(0.6)`,
               opacity: 1,
               zIndex: 50,
@@ -201,8 +198,9 @@ export default function AIGameBoard({
       };
   };
 
-  const showTrainingText = isTraining;
+  // Logique d'affichage des textes d'ambiance
   const showIdleText = !isTraining && !isReplayMode && allCards.length === 0;
+  const showProcessingText = isTraining || isAutoPlaying;
 
   return (
     <div className="w-full h-screen relative bg-[#1e293b] overflow-hidden shadow-inner flex items-center justify-center select-none font-sans">
@@ -211,15 +209,18 @@ export default function AIGameBoard({
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1000]">
             {showIdleText && (
                 <div className="animate-fade-in text-center">
-                    <h2 className="text-3xl font-bold text-blue-400 mb-2 drop-shadow-md">Simulation The Crew</h2>
-                    <p className="text-gray-400 font-medium drop-shadow">Choisissez une mission pour visualiser le résultat</p>
+                    <h2 className="text-3xl font-bold text-blue-400 mb-2 drop-shadow-md">Novia - Mode Démo</h2>
+                    <p className="text-gray-400 font-medium drop-shadow">Choisissez une mission pour voir l'IA jouer</p>
                 </div>
             )}
-            {showTrainingText && (
-                <div className="text-center animate-pulse">
-                    <div className="text-5xl mb-4">🧠</div>
-                    <h2 className="text-2xl font-bold text-purple-400 mb-2 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">L'IA est en cours de réflexion...</h2>
-                    <p className="text-gray-400 text-sm font-bold">Cliquez sur une partie enregistrée pour la visualiser</p>
+            
+            {showProcessingText && (
+                <div className="text-center animate-pulse bg-black/40 p-4 rounded-xl backdrop-blur-sm border border-purple-500/20">
+                    <div className="text-5xl mb-2">⚡</div>
+                    <h2 className="text-xl font-bold text-purple-400 mb-1 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
+                        Partie en cours...
+                    </h2>
+                    <p className="text-gray-300 text-sm">Le réseau de neurones calcule le meilleur coup</p>
                 </div>
             )}
         </div>
