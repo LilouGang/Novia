@@ -38,7 +38,7 @@ export default function AISidebar({
             {/* --- HEADER & NAVIGATION --- */}
             <div className="p-4 border-b border-gray-800 bg-[#1e293b] flex justify-between items-center shadow-md z-30">
                 <div>
-                    <h1 className="text-sm font-black text-white tracking-wider flex items-center gap-2">
+                    <h1 className="text-xl font-black text-white tracking-wider flex items-center gap-2">
                         <span>Novia <span className="text-purple-400">Agent</span></span>
                     </h1>
                     <div className="text-[9px] text-gray-500 font-bold tracking-widest mt-0.5">
