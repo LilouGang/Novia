@@ -1,0 +1,25 @@
+services:
+  # --- BACKEND (Ton IA) ---
+  backend:
+    build: ./backend
+    container_name: crew-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app       # Synchronisation du code & Sauvegarde IA
+    restart: always
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  # --- FRONTEND (Ton Site Web) ---
+  frontend:
+    build: ./frontend
+    container_name: crew-frontend
+    ports:
+      - "3000:3000"          # Accessible sur localhost:3000
+    volumes:
+      - ./frontend:/app      # Synchronisation pour voir tes modifs en direct
+      - /app/node_modules    # Astuce pour éviter les conflits de dépendances
+    environment:
+      # L'URL de ton backend vu par le navigateur
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    restart: always
