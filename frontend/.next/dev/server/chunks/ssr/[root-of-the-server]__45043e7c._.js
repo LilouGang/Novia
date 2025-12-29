@@ -1,0 +1,5564 @@
+module.exports = [
+"[externals]/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-page-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[project]/data/real_missions.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "REAL_MISSION_LOGBOOK",
+    ()=>REAL_MISSION_LOGBOOK
+]);
+const REAL_MISSION_LOGBOOK = [
+    {
+        id: 1,
+        description: "Accomplissez 1 tâche.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 1
+                }
+            }
+        ]
+    },
+    {
+        id: 2,
+        description: "Accomplissez 2 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 2
+                }
+            }
+        ]
+    },
+    {
+        id: 3,
+        description: "Accomplissez 2 tâches dans l'ordre strict (1 puis 2).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 2
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 2
+                }
+            }
+        ]
+    },
+    {
+        id: 4,
+        description: "Accomplissez 3 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 5,
+        description: "Accomplissez 3 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 6,
+        description: "3 tâches, ordre relatif (> et >>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 3
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 2
+                }
+            }
+        ]
+    },
+    {
+        id: 7,
+        description: "3 tâches, dont une doit être faite en dernier (Omega).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 3
+                }
+            },
+            {
+                type: 'ORDER_OMEGA',
+                args: {
+                    count: 1
+                }
+            }
+        ]
+    },
+    {
+        id: 8,
+        description: "3 tâches dans l'ordre strict (1, 2, 3).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 3
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 9,
+        description: "Accomplissez 3 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 10,
+        description: "Accomplissez 4 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 4
+                }
+            }
+        ]
+    },
+    {
+        id: 11,
+        description: "4 tâches, dont la tâche 1 doit être faite en premier.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 4
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 1
+                }
+            }
+        ]
+    },
+    {
+        id: 12,
+        description: "4 tâches, dont une doit être faite en dernier (Omega).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 4
+                }
+            },
+            {
+                type: 'ORDER_OMEGA',
+                args: {
+                    count: 1
+                }
+            }
+        ]
+    },
+    {
+        id: 13,
+        description: "Accomplissez 4 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 4
+                }
+            }
+        ]
+    },
+    {
+        id: 14,
+        description: "4 tâches, ordre relatif (>, >>, >>>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 4
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 15,
+        description: "4 tâches dans l'ordre strict (1, 2, 3, 4).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 4
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 4
+                }
+            }
+        ]
+    },
+    {
+        id: 16,
+        description: "Accomplissez 4 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 4
+                }
+            }
+        ]
+    },
+    {
+        id: 17,
+        description: "Accomplissez 5 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 5
+                }
+            }
+        ]
+    },
+    {
+        id: 18,
+        description: "Accomplissez 5 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 5
+                }
+            }
+        ]
+    },
+    {
+        id: 19,
+        description: "5 tâches, dont la tâche 1 doit être faite en premier.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 5
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 1
+                }
+            }
+        ]
+    },
+    {
+        id: 20,
+        description: "Accomplissez 5 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 5
+                }
+            }
+        ]
+    },
+    {
+        id: 21,
+        description: "5 tâches, dont les tâches 1 et 2 dans l'ordre strict.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 5
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 2
+                }
+            }
+        ]
+    },
+    {
+        id: 22,
+        description: "5 tâches, ordre relatif (>, >>, >>>, >>>>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 5
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 4
+                }
+            }
+        ]
+    },
+    {
+        id: 23,
+        description: "5 tâches dans l'ordre strict (1, 2, 3, 4, 5).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 5
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 5
+                }
+            }
+        ]
+    },
+    {
+        id: 24,
+        description: "Accomplissez 6 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 6
+                }
+            }
+        ]
+    },
+    {
+        id: 25,
+        description: "6 tâches, ordre relatif (> et >>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 6
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 2
+                }
+            }
+        ]
+    },
+    {
+        id: 26,
+        description: "Accomplissez 6 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 6
+                }
+            }
+        ]
+    },
+    {
+        id: 27,
+        description: "Accomplissez 6 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 6
+                }
+            }
+        ]
+    },
+    {
+        id: 28,
+        description: "6 tâches, dont la tâche 1 en premier et Omega en dernier.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 6
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 1
+                }
+            },
+            {
+                type: 'ORDER_OMEGA',
+                args: {
+                    count: 1
+                }
+            }
+        ]
+    },
+    {
+        id: 29,
+        description: "Accomplissez 6 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 6
+                }
+            }
+        ]
+    },
+    {
+        id: 30,
+        description: "6 tâches, ordre relatif (>, >>, >>>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 6
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 31,
+        description: "6 tâches, dont les tâches 1, 2 et 3 dans l'ordre strict.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 6
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 32,
+        description: "Accomplissez 7 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 7
+                }
+            }
+        ]
+    },
+    {
+        id: 33,
+        description: "Accomplissez 7 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 7
+                }
+            }
+        ]
+    },
+    {
+        id: 34,
+        description: "Accomplissez 7 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 7
+                }
+            }
+        ]
+    },
+    {
+        id: 35,
+        description: "7 tâches, ordre relatif (>, >>, >>>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 7
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 36,
+        description: "7 tâches, dont les tâches 1 et 2 dans l'ordre strict.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 7
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 2
+                }
+            }
+        ]
+    },
+    {
+        id: 37,
+        description: "Accomplissez 8 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 8
+                }
+            }
+        ]
+    },
+    {
+        id: 38,
+        description: "Accomplissez 8 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 8
+                }
+            }
+        ]
+    },
+    {
+        id: 39,
+        description: "8 tâches, ordre relatif (>, >>, >>>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 8
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 40,
+        description: "8 tâches, dont les tâches 1, 2 et 3 dans l'ordre strict.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 8
+                }
+            },
+            {
+                type: 'ORDER_ABSOLUTE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 41,
+        description: "Accomplissez 8 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 8
+                }
+            }
+        ]
+    },
+    {
+        id: 42,
+        description: "Accomplissez 9 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 9
+                }
+            }
+        ]
+    },
+    {
+        id: 43,
+        description: "Accomplissez 9 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 9
+                }
+            }
+        ]
+    },
+    {
+        id: 44,
+        description: "Accomplissez 9 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 9
+                }
+            }
+        ]
+    },
+    {
+        id: 45,
+        description: "9 tâches, ordre relatif (>, >>, >>>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 9
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 46,
+        description: "Accomplissez 9 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 9
+                }
+            }
+        ]
+    },
+    {
+        id: 47,
+        description: "Accomplissez 10 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 10
+                }
+            }
+        ]
+    },
+    {
+        id: 48,
+        description: "9 tâches, dont une doit être faite en dernier (Omega).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 9
+                }
+            },
+            {
+                type: 'ORDER_OMEGA',
+                args: {
+                    count: 1
+                }
+            }
+        ]
+    },
+    {
+        id: 49,
+        description: "10 tâches, ordre relatif (>, >>, >>>).",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 10
+                }
+            },
+            {
+                type: 'ORDER_RELATIVE',
+                args: {
+                    count: 3
+                }
+            }
+        ]
+    },
+    {
+        id: 50,
+        description: "Accomplissez 10 tâches.",
+        constraints: [
+            {
+                type: 'TARGET_CARD',
+                args: {
+                    count: 10
+                }
+            }
+        ]
+    }
+];
+}),
+"[project]/hooks/useGodMode.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useGodMode",
+    ()=>useGodMode
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/data/real_missions.ts [app-ssr] (ecmascript)");
+const __TURBOPACK__import$2e$meta__ = {
+    get url () {
+        return `file://${__turbopack_context__.P("hooks/useGodMode.ts")}`;
+    }
+};
+;
+;
+const ANIMATION_SPEED = 600;
+const TRICK_WAIT = 1000;
+const convertBackendToFrontend = (d)=>{
+    if (d.players && Array.isArray(d.players)) {
+        return d.players.flatMap((hand, pIdx)=>hand.map((c)=>({
+                    id: `${c.color}-${c.value}`,
+                    color: c.color,
+                    value: c.value,
+                    owner: pIdx,
+                    status: 'HAND',
+                    zIndex: 0,
+                    tableRotation: (c.value * 100 + pIdx * 50 + c.color.length) % 40 - 20,
+                    winnerIndex: undefined
+                })));
+    }
+    return [];
+};
+const useGodMode = ()=>{
+    const [allCards, setAllCards] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [stats, setStats] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [currentMoveIndex, setCMI] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [isPlaying, setIsPlaying] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isThinking, setIsThinking] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [logs, setLogs] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [missions, setMissions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [bookMissionId, setBookMissionId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [isAutoFinding, setIsAutoFinding] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [editingPlayer, setEditingPlayer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [globalConstraints, setGlobalConstraints] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [communications, setCommunications] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const timerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const abortCtrl = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    // DÉFINITION DE L'URL API (Vercel ou Localhost)
+    const API_URL = __TURBOPACK__import$2e$meta__.env?.VITE_API_URL || 'http://localhost:8000';
+    const addLog = (m)=>setLogs((p)=>[
+                `> ${m}`,
+                ...p
+            ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!isPlaying || !stats || !stats.solution_steps) return;
+        const playNext = ()=>{
+            if (currentMoveIndex >= stats.solution_steps.length) return setIsPlaying(false);
+            const isTrickEnd = (currentMoveIndex + 1) % 4 === 0;
+            const next = currentMoveIndex % 1 !== 0 ? Math.floor(currentMoveIndex) + 1 : isTrickEnd ? currentMoveIndex + 0.5 : currentMoveIndex + 1;
+            goToStep(next);
+            timerRef.current = setTimeout(playNext, isTrickEnd && currentMoveIndex % 1 === 0 ? TRICK_WAIT : ANIMATION_SPEED);
+        };
+        timerRef.current = setTimeout(playNext, ANIMATION_SPEED);
+        return ()=>{
+            if (timerRef.current) clearTimeout(timerRef.current);
+        };
+    }, [
+        isPlaying,
+        currentMoveIndex,
+        stats
+    ]);
+    const getTrickWinner = (moves)=>{
+        if (!moves || moves.length === 0) return 0;
+        let best = moves[0];
+        const lead = best.card.color;
+        for(let i = 1; i < moves.length; i++){
+            const curr = moves[i], isR = curr.card.color === 'Rocket', bestR = best.card.color === 'Rocket';
+            if (isR && (!bestR || curr.card.value > best.card.value) || !isR && curr.card.color === lead && !bestR && curr.card.value > best.card.value) best = curr;
+        }
+        return best.player;
+    };
+    const checkMissionStatus = (currentCards)=>{
+        setMissions((prevMissions)=>{
+            let hasChanged = false;
+            const newMissions = prevMissions.map((m)=>{
+                if (m.cardValue === 0 || m.cardColor === 'Special') return m;
+                const targetCard = currentCards.find((c)=>c.color === m.cardColor && c.value === m.cardValue);
+                if (!targetCard || targetCard.status !== 'WON') {
+                    if (m.status !== 'PENDING') {
+                        hasChanged = true;
+                        return {
+                            ...m,
+                            status: 'PENDING'
+                        };
+                    }
+                    return m;
+                }
+                const isWin = targetCard.winnerIndex === m.ownerIndex;
+                const newStatus = isWin ? 'SUCCESS' : 'FAILED';
+                if (m.status !== newStatus) {
+                    hasChanged = true;
+                    return {
+                        ...m,
+                        status: newStatus
+                    };
+                }
+                return m;
+            });
+            return hasChanged ? newMissions : prevMissions;
+        });
+    };
+    const goToStep = (target)=>{
+        if (!stats || !stats.solution_steps) return;
+        target = Math.max(0, Math.min(target, stats.solution_steps.length));
+        const floor = Math.floor(target);
+        const nc = allCards.map((c)=>({
+                ...c,
+                status: 'HAND',
+                zIndex: 0,
+                winnerIndex: undefined
+            }));
+        for(let i = 0; i <= floor; i++){
+            if (i >= stats.solution_steps.length) break;
+            const m = stats.solution_steps[i];
+            const idx = nc.findIndex((c)=>c.id === `${m.card.color}-${m.card.value}`);
+            if (idx !== -1) {
+                nc[idx].status = 'TABLE';
+                nc[idx].zIndex = 100 + i % 4;
+            }
+            if ((i + 1) % 4 === 0) {
+                if (i !== floor || i === floor && target % 1 !== 0) {
+                    const tMoves = stats.solution_steps.slice(i - 3, i + 1);
+                    const win = getTrickWinner(tMoves);
+                    tMoves.forEach((tm)=>{
+                        const cIdx = nc.findIndex((c)=>c.id === `${tm.card.color}-${tm.card.value}`);
+                        if (cIdx !== -1) {
+                            nc[cIdx].status = 'WON';
+                            nc[cIdx].winnerIndex = win;
+                        }
+                    });
+                }
+            }
+        }
+        setAllCards(nc);
+        setCMI(target);
+        checkMissionStatus(nc);
+    };
+    const startNewGame = async ()=>{
+        abortCtrl.current?.abort();
+        abortCtrl.current = null;
+        if (timerRef.current) clearTimeout(timerRef.current);
+        setIsPlaying(false);
+        setStats(null);
+        setMissions([]);
+        setGlobalConstraints([]);
+        setCommunications([]);
+        setBookMissionId(0);
+        setCMI(-1);
+        setIsThinking(false);
+        try {
+            // UTILISATION API_URL
+            const res = await fetch(`${API_URL}/start-game`);
+            if (!res.ok) throw new Error("Erreur Backend");
+            const data = await res.json();
+            const cards = convertBackendToFrontend(data);
+            if (cards.length === 0) throw new Error("Aucune carte");
+            setAllCards(cards);
+            addLog("Nouvelle donne prête.");
+        } catch (e) {
+            addLog(`Erreur: ${e.message}`);
+        }
+    };
+    const generateMissionSetup = (mid, cards)=>{
+        const mDef = __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["REAL_MISSION_LOGBOOK"].find((m)=>m.id === mid);
+        if (!mDef) return null;
+        const cmdIdx = cards.find((c)=>c.color === 'Rocket' && c.value === 4)?.owner ?? 0;
+        const p9Idx = cards.find((c)=>c.color === 'Pink' && c.value === 9)?.owner ?? -1;
+        const resolve = (w)=>{
+            if (w === 'COMMANDER' || w === 'PLAYER_A') return cmdIdx;
+            if ([
+                'NOT_COMMANDER',
+                'COMMANDER_LEFT',
+                'RANDOM_NOT_COMMANDER',
+                'VOLUNTEER_NOT_COMMANDER',
+                'PLAYER_B'
+            ].includes(w)) return (cmdIdx + 1) % 4;
+            if (w === 'COMMANDER_RIGHT') return (cmdIdx + 3) % 4;
+            if (w === 'COMMANDER_OPPOSITE') return (cmdIdx + 2) % 4;
+            if (w === 'LEFT_OF_PINK_9' && p9Idx !== -1) return (p9Idx + 1) % 4;
+            if (w === 'SAME_PLAYER') return (cmdIdx + 1) % 4;
+            return 0;
+        };
+        const nMissions = [];
+        const nConstrs = [];
+        const valid = cards.filter((c)=>c.color !== 'Rocket').sort(()=>Math.random() - 0.5);
+        let tIdx = 0;
+        let tDistrib = [];
+        let dMode = 'DEFAULT', dTarget = -1;
+        mDef.constraints.forEach((c)=>{
+            if (c.type === 'DISTRIBUTION') {
+                dMode = c.args.mode || 'DEFAULT';
+                if ([
+                    'ALL_TO_ONE_NOT_COMMANDER',
+                    'ALL_TO_ONE_RANDOM'
+                ].includes(dMode)) dTarget = (cmdIdx + 1) % 4;
+            }
+            if (c.type === 'TARGET_CARD') for(let i = 0; i < (c.args.count || 1); i++)tDistrib.push({
+                token: 'None'
+            });
+        });
+        let absCount = 0;
+        mDef.constraints.forEach((c)=>{
+            if (c.type === 'ORDER_ABSOLUTE') {
+                for(let i = 0; i < c.args.count; i++)if (tDistrib[i]) tDistrib[i].token = (i + 1).toString();
+                absCount = c.args.count;
+            }
+            if (c.type === 'ORDER_RELATIVE') {
+                const toks = [
+                    '>',
+                    '>>',
+                    '>>>',
+                    '>>>>',
+                    '>>>>>'
+                ];
+                const start = c.args.startIndex ?? absCount;
+                for(let i = 0; i < c.args.count; i++)if (tDistrib[start + i]) tDistrib[start + i].token = toks[i];
+            }
+            if (c.type === 'ORDER_OMEGA' && tDistrib.length) tDistrib[tDistrib.length - 1].token = 'Omega';
+        });
+        tDistrib.forEach((t, i)=>{
+            if (tIdx >= valid.length) return;
+            let own = dMode === 'DEFAULT' || dMode === 'COMMANDER_DECIDES' ? (cmdIdx + i) % 4 : dTarget !== -1 ? dTarget : 0;
+            if (t.token === '1' && mDef.constraints.some((c)=>c.type === 'DISTRIBUTION' && c.args.taskOneTo === 'NOT_COMMANDER')) {
+                if (own === cmdIdx) own = (cmdIdx + 1) % 4;
+            }
+            nMissions.push({
+                cardColor: valid[tIdx].color,
+                cardValue: valid[tIdx].value,
+                ownerIndex: own,
+                token: t.token
+            });
+            tIdx++;
+        });
+        mDef.constraints.forEach((c)=>{
+            const p = c.args.who ? resolve(c.args.who) : undefined;
+            if (c.type === 'NO_TRICKS') nConstrs.push({
+                type: 'NO_TRICKS',
+                player: p
+            });
+            else if (c.type === 'TRICK_COUNT') {
+                if (c.args.tricks && c.args.who !== 'OTHERS') c.args.tricks.forEach((t)=>nConstrs.push({
+                        type: 'TRICK_COUNT',
+                        player: p,
+                        args: {
+                            trick: t,
+                            who_idx: p
+                        }
+                    }));
+                else if (!c.args.tricks) nConstrs.push({
+                    type: 'TRICK_COUNT',
+                    player: p,
+                    count: c.args.count
+                });
+            } else if ([
+                'FORBIDDEN_WIN_CARD',
+                'BALANCE',
+                'TRICK_SEQUENCE'
+            ].includes(c.type)) nConstrs.push({
+                type: c.type,
+                args: c.args
+            });
+            else if (c.type === 'SPECIFIC_WIN') nConstrs.push(c.args.trick ? {
+                type: 'TRICK_COUNT',
+                player: p,
+                args: {
+                    trick: c.args.trick,
+                    who_idx: p
+                }
+            } : {
+                type: 'SPECIFIC_WIN',
+                args: c.args
+            });
+            let specialToken = null;
+            let specialOwner = p ?? cmdIdx;
+            if (c.type === 'NO_TRICKS') specialToken = c.args.who === 'RANDOM_NOT_COMMANDER' ? 'NO_TRICKS_PLAYER' : 'NO_TRICKS';
+            else if (c.type === 'FORBIDDEN_WIN_CARD' && c.args.value === 9) specialToken = 'NO_9_WIN';
+            else if (c.type === 'SPECIFIC_WIN' && c.args.withColor === 'Rocket' && c.args.mustWinAll) specialToken = 'ALL_ROCKETS';
+            else if (c.type === 'SPECIFIC_WIN' && c.args.withCardValue === 1) specialToken = 'SPECIFIC_WIN_1';
+            if (specialToken) {
+                nMissions.push({
+                    cardColor: 'Special',
+                    cardValue: 0,
+                    ownerIndex: specialOwner,
+                    token: specialToken,
+                    status: 'PENDING'
+                });
+            }
+        });
+        return {
+            missions: nMissions,
+            constraints: nConstrs
+        };
+    };
+    const loadMissionFromBook = (id)=>{
+        setBookMissionId(id);
+        const setup = allCards.length ? generateMissionSetup(id, allCards) : null;
+        if (setup) {
+            setMissions(setup.missions);
+            setGlobalConstraints(setup.constraints);
+            addLog(`Mission ${id} chargée.`);
+        } else {
+            addLog("⚠️ Distribuez les cartes d'abord !");
+        }
+    };
+    const autoFindSolution = async ()=>{
+        if (missions.length === 0) return addLog("⚠️ Ajoutez des missions avant de chercher.");
+        const fixedMissions = [
+            ...missions
+        ];
+        const fixedConstraints = [
+            ...globalConstraints
+        ];
+        abortCtrl.current?.abort();
+        const ctrl = new AbortController();
+        abortCtrl.current = ctrl;
+        setIsAutoFinding(true);
+        addLog("🎰 Recherche d'une main compatible...");
+        let attempts = 0;
+        let found = false;
+        try {
+            while(!found && attempts < 1000){
+                if (ctrl.signal.aborted) break;
+                attempts++;
+                // UTILISATION API_URL
+                const rD = await fetch(`${API_URL}/start-game`, {
+                    signal: ctrl.signal
+                });
+                if (!rD.ok) continue;
+                const gD = await rD.json();
+                const vC = convertBackendToFrontend(gD);
+                // UTILISATION API_URL
+                const rS = await fetch(`${API_URL}/solve-game`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        player_1: gD.players[0],
+                        player_2: gD.players[1],
+                        player_3: gD.players[2],
+                        player_4: gD.players[3],
+                        missions: fixedMissions.map((m)=>({
+                                card: {
+                                    color: m.cardColor,
+                                    value: m.cardValue
+                                },
+                                owner: m.ownerIndex,
+                                token: m.token
+                            })),
+                        constraints: fixedConstraints,
+                        mode: 'GOD'
+                    }),
+                    signal: ctrl.signal
+                });
+                if (!rS.ok) continue;
+                const sD = await rS.json();
+                if (sD.stats && sD.stats.solutionFound) {
+                    found = true;
+                    setAllCards(vC);
+                    setGlobalConstraints(fixedConstraints);
+                    setStats(sD.stats);
+                    setCMI(-1);
+                    addLog(`✅ Trouvé au tirage n°${attempts}`);
+                }
+            }
+            if (!found) addLog(`❌ Echec après ${attempts} essais. Impossible avec ces contraintes.`);
+        } catch (e) {
+            if (e.name !== 'AbortError') console.error(e);
+        } finally{
+            setIsAutoFinding(false);
+            abortCtrl.current = null;
+        }
+    };
+    const shuffleOwners = ()=>setMissions((p)=>p.map((m)=>({
+                    ...m,
+                    ownerIndex: Math.floor(Math.random() * 4)
+                })));
+    const shuffleCards = ()=>{
+        const s = allCards.filter((c)=>c.color !== 'Rocket').sort(()=>Math.random() - 0.5);
+        setMissions((p)=>p.map((m, i)=>s[i] ? {
+                    ...m,
+                    cardColor: s[i].color,
+                    cardValue: s[i].value
+                } : m));
+    };
+    const toggleCard = (col, val)=>{
+        if (editingPlayer === null) return;
+        setAllCards((p)=>{
+            const id = `${col}-${val}`, idx = p.findIndex((c)=>c.id === id);
+            if (idx !== -1 && p[idx].owner === editingPlayer) return p.filter((c)=>c.id !== id);
+            const nc = [
+                ...p
+            ], c = {
+                id,
+                color: col,
+                value: val,
+                owner: editingPlayer,
+                status: 'HAND',
+                zIndex: 0,
+                tableRotation: Math.random() * 40 - 20,
+                winnerIndex: undefined
+            };
+            if (idx !== -1) nc[idx] = c;
+            else nc.push(c);
+            return nc;
+        });
+    };
+    const launchSolver = async (mode, agentIdx)=>{
+        if (allCards.length !== 40) {
+            addLog("⚠️ Distribution incomplète");
+            return;
+        }
+        abortCtrl.current?.abort();
+        const ctrl = new AbortController();
+        abortCtrl.current = ctrl;
+        setIsThinking(true);
+        setStats(null);
+        goToStep(-1);
+        const hands = {
+            player_1: [],
+            player_2: [],
+            player_3: [],
+            player_4: []
+        };
+        allCards.forEach((c)=>hands[`player_${c.owner + 1}`].push({
+                color: c.color,
+                value: c.value
+            }));
+        try {
+            // UTILISATION API_URL
+            const res = await fetch(`${API_URL}/solve-game`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...hands,
+                    missions: missions.map((m)=>({
+                            card: {
+                                color: m.cardColor,
+                                value: m.cardValue
+                            },
+                            owner: m.ownerIndex,
+                            token: m.token
+                        })),
+                    constraints: globalConstraints,
+                    mode: mode,
+                    agent_player_idx: agentIdx
+                }),
+                signal: ctrl.signal
+            });
+            const data = await res.json();
+            if (data.error) addLog(`Erreur: ${data.error}`);
+            else if (data.stats) {
+                setStats(data.stats);
+                addLog(data.stats.solutionFound ? "✅ Solution !" : "❌ Pas de solution.");
+                if (data.stats.solutionFound) setCMI(-1);
+            } else if (data.bestMove) addLog(`🤖 Agent: ${data.bestMove}`);
+        } catch (e) {
+            if (e.name !== 'AbortError') addLog(`Erreur: ${e.message}`);
+        } finally{
+            setIsThinking(false);
+            abortCtrl.current = null;
+        }
+    };
+    const addCommunication = (c)=>setCommunications((prev)=>[
+                ...prev,
+                c
+            ]);
+    return {
+        allCards,
+        stats,
+        currentMoveIndex,
+        isPlaying,
+        isThinking,
+        logs,
+        missions,
+        setMissions,
+        bookMissionId,
+        isAutoFinding,
+        startNewGame,
+        launchSolver,
+        autoFindSolution,
+        shuffleOwners,
+        shuffleCards,
+        loadMissionFromBook,
+        handleNext: ()=>{
+            if (!stats || !stats.solution_steps) return;
+            const isTrickEnd = (currentMoveIndex + 1) % 4 === 0;
+            let next = currentMoveIndex + 1;
+            if (isTrickEnd && Number.isInteger(currentMoveIndex)) next = currentMoveIndex + 0.5;
+            else if (currentMoveIndex % 1 !== 0) next = Math.floor(currentMoveIndex) + 1;
+            setIsPlaying(false);
+            goToStep(next);
+        },
+        handlePrev: ()=>{
+            setIsPlaying(false);
+            const prev = currentMoveIndex % 1 !== 0 ? Math.floor(currentMoveIndex) : currentMoveIndex - 1;
+            goToStep(prev);
+        },
+        togglePlay: ()=>setIsPlaying((p)=>!p),
+        editingPlayer,
+        openEditor: (i)=>{
+            setIsPlaying(false);
+            setEditingPlayer(i);
+        },
+        closeEditor: ()=>setEditingPlayer(null),
+        toggleCard,
+        globalConstraints,
+        clearAllHands: ()=>setAllCards([]),
+        communications,
+        addCommunication,
+        setGlobalConstraints,
+        clearStats: ()=>setStats(null)
+    };
+};
+}),
+"[project]/components/god/TrickHistory.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>TrickHistory
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+;
+function TrickHistory({ steps }) {
+    // On découpe les coups (40 cartes) en plis (10 paquets de 4)
+    const tricks = [];
+    for(let i = 0; i < steps.length; i += 4){
+        tricks.push(steps.slice(i, i + 4));
+    }
+    // Helpers d'affichage
+    const getPlayerName = (idx)=>[
+            'Sud',
+            'Ouest',
+            'Nord',
+            'Est'
+        ][idx];
+    const getColorClass = (color)=>{
+        switch(color){
+            case 'Blue':
+                return 'bg-blue-900 text-blue-200 border-blue-700';
+            case 'Green':
+                return 'bg-green-900 text-green-200 border-green-700';
+            case 'Pink':
+                return 'bg-pink-900 text-pink-200 border-pink-700';
+            case 'Yellow':
+                return 'bg-yellow-900 text-yellow-200 border-yellow-700';
+            case 'Rocket':
+                return 'bg-gray-700 text-white border-gray-500 shadow-inner';
+            default:
+                return 'bg-gray-800';
+        }
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "space-y-2 mt-4",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                className: "text-xs font-bold text-gray-400 uppercase border-b border-gray-700 pb-1 flex justify-between items-center",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "📝 Détail de la solution"
+                    }, void 0, false, {
+                        fileName: "[project]/components/god/TrickHistory.tsx",
+                        lineNumber: 33,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "text-[9px] bg-gray-800 px-1 rounded text-gray-500",
+                        children: [
+                            tricks.length,
+                            " Plis"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/god/TrickHistory.tsx",
+                        lineNumber: 34,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/god/TrickHistory.tsx",
+                lineNumber: 32,
+                columnNumber: 13
+            }, this),
+            tricks.map((trick, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "bg-black/30 p-2 rounded border border-white/5 text-[10px] hover:bg-black/40 transition-colors",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex justify-between mb-1 text-gray-400 font-mono border-b border-white/5 pb-1",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "font-bold text-gray-300",
+                                    children: [
+                                        "Pli #",
+                                        i + 1
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/god/TrickHistory.tsx",
+                                    lineNumber: 40,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: [
+                                        "Entame: ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-gray-200",
+                                            children: getPlayerName(trick[0].player)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/god/TrickHistory.tsx",
+                                            lineNumber: 41,
+                                            columnNumber: 39
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/god/TrickHistory.tsx",
+                                    lineNumber: 41,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/god/TrickHistory.tsx",
+                            lineNumber: 39,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid grid-cols-4 gap-1",
+                            children: trick.map((move, j)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex flex-col items-center group",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-[8px] text-gray-500 mb-0.5 group-hover:text-gray-300 transition-colors",
+                                            children: getPlayerName(move.player).substring(0, 1)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/god/TrickHistory.tsx",
+                                            lineNumber: 47,
+                                            columnNumber: 33
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: `w-full text-center py-0.5 rounded border ${getColorClass(move.card.color)} font-bold text-[9px]`,
+                                            children: move.card.value
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/god/TrickHistory.tsx",
+                                            lineNumber: 50,
+                                            columnNumber: 33
+                                        }, this)
+                                    ]
+                                }, j, true, {
+                                    fileName: "[project]/components/god/TrickHistory.tsx",
+                                    lineNumber: 46,
+                                    columnNumber: 29
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/components/god/TrickHistory.tsx",
+                            lineNumber: 44,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, i, true, {
+                    fileName: "[project]/components/god/TrickHistory.tsx",
+                    lineNumber: 38,
+                    columnNumber: 17
+                }, this)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center pt-2",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-[9px] text-gray-600 italic",
+                    children: "Fin de la partie"
+                }, void 0, false, {
+                    fileName: "[project]/components/god/TrickHistory.tsx",
+                    lineNumber: 61,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/god/TrickHistory.tsx",
+                lineNumber: 60,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/god/TrickHistory.tsx",
+        lineNumber: 31,
+        columnNumber: 9
+    }, this);
+}
+}),
+"[project]/components/god/Sidebar.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Sidebar
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/data/real_missions.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$god$2f$TrickHistory$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/god/TrickHistory.tsx [app-ssr] (ecmascript)");
+;
+;
+;
+;
+// --- COMPOSANTS UTILITAIRES ---
+const TokenBadge = ({ token })=>{
+    if (token === 'None') return null;
+    let styleClass = "";
+    let content = token;
+    if ([
+        '1',
+        '2',
+        '3',
+        '4',
+        '5'
+    ].includes(token)) styleClass = "bg-green-600 text-white rounded-full w-6 h-6";
+    else if (token.includes('>')) styleClass = "bg-blue-600 text-white rounded w-6 h-6";
+    else if (token === 'Omega') {
+        styleClass = "bg-pink-600 text-white rounded-full w-6 h-6";
+        content = "Ω";
+    } else styleClass = "bg-gray-600 text-white px-2 py-0.5 rounded";
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: `${styleClass} flex items-center justify-center text-[10px] font-bold shadow-md border border-white/20 shrink-0`,
+        children: content
+    }, void 0, false, {
+        fileName: "[project]/components/god/Sidebar.tsx",
+        lineNumber: 46,
+        columnNumber: 12
+    }, ("TURBOPACK compile-time value", void 0));
+};
+const getBorderColor = (color)=>{
+    switch(color){
+        case 'Blue':
+            return 'border-blue-500/50 bg-blue-900/10';
+        case 'Green':
+            return 'border-green-500/50 bg-green-900/10';
+        case 'Pink':
+            return 'border-pink-500/50 bg-pink-900/10';
+        case 'Yellow':
+            return 'border-yellow-500/50 bg-yellow-900/10';
+        case 'Rocket':
+            return 'border-gray-500/50 bg-gray-800/50';
+        default:
+            return 'border-gray-600';
+    }
+};
+function Sidebar(props) {
+    const { startNewGame, bookMissionId, loadMissionFromBook, missions, setMissions, shuffleOwners, shuffleCards, autoFindSolution, isAutoFinding, launchSolver, isThinking, stats, currentMoveIndex, isPlaying, togglePlay, handlePrev, handleNext, logs, allCards, globalConstraints, clearAllHands, communications, addCommunication, gameMode, clearStats, onBackToMenu// On récupère la prop
+     } = props;
+    const handleResetStats = ()=>{
+        if (clearStats) clearStats();
+    };
+    const removeMission = (index)=>{
+        setMissions((prev)=>prev.filter((_, i)=>i !== index));
+        handleResetStats();
+    };
+    const [agentPlayer, setAgentPlayer] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useState(0);
+    const handleLaunch = ()=>{
+        launchSolver(gameMode, agentPlayer);
+    };
+    const totalSteps = stats?.solution_steps?.length || 0;
+    const progressWidth = totalSteps > 0 ? (currentMoveIndex + 1) / totalSteps * 100 : 0;
+    // Correction Typage : on force le boolean avec !!
+    const hasFailed = !!stats && !stats.solutionFound && !isThinking;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "w-[30%] min-w-[300px] bg-gray-900 border-r border-gray-700 flex flex-col z-50 shadow-2xl h-full font-sans",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "p-4 border-b border-gray-800 shrink-0 bg-gray-900 flex justify-between items-center",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                className: "text-xl font-black text-white tracking-tight leading-none",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: [
+                                        "Novia ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-purple-400",
+                                            children: "Solver"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/god/Sidebar.tsx",
+                                            lineNumber: 97,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/god/Sidebar.tsx",
+                                    lineNumber: 97,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 96,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-[9px] font-bold text-gray-500 tracking-widest mt-1",
+                                children: "Deterministic Algorithm"
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 99,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 95,
+                        columnNumber: 17
+                    }, this),
+                    onBackToMenu && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: onBackToMenu,
+                        className: "text-[10px] bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white px-2 py-1 rounded border border-gray-700 transition-colors uppercase font-bold",
+                        children: "Menu ↩"
+                    }, void 0, false, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 105,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/god/Sidebar.tsx",
+                lineNumber: 94,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent space-y-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "grid grid-cols-2 gap-2",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>{
+                                    startNewGame();
+                                    handleResetStats();
+                                },
+                                className: "bg-gray-800 hover:bg-gray-700 text-gray-200 py-2 rounded text-xs font-bold border border-gray-600 transition-colors",
+                                children: "🔄 Nouvelle Donne"
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 118,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>{
+                                    clearAllHands();
+                                    handleResetStats();
+                                },
+                                className: "bg-red-900/20 hover:bg-red-900/40 text-red-300 py-2 rounded text-xs font-bold border border-red-900/30 transition-colors",
+                                children: "🧹 Vider table"
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 121,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 117,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-gray-800/50 p-3 rounded-lg border border-gray-700",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-between items-center mb-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2",
+                                        children: "📖 Livre de Bord"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 129,
+                                        columnNumber: 25
+                                    }, this),
+                                    bookMissionId > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "bg-purple-900/50 text-purple-300 text-[10px] px-2 py-0.5 rounded border border-purple-500/30",
+                                        children: [
+                                            "Mission #",
+                                            bookMissionId
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 132,
+                                        columnNumber: 47
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 128,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                className: "w-full bg-gray-900 text-white text-xs p-2 rounded border border-gray-600 outline-none focus:border-purple-500 mb-2",
+                                value: bookMissionId,
+                                onChange: (e)=>{
+                                    loadMissionFromBook(Number(e.target.value));
+                                    handleResetStats();
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                        value: "0",
+                                        children: "-- Sélectionner une mission --"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 140,
+                                        columnNumber: 25
+                                    }, this),
+                                    __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["REAL_MISSION_LOGBOOK"].map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            value: m.id,
+                                            children: [
+                                                m.id,
+                                                ". ",
+                                                m.description.substring(0, 40),
+                                                "..."
+                                            ]
+                                        }, m.id, true, {
+                                            fileName: "[project]/components/god/Sidebar.tsx",
+                                            lineNumber: 141,
+                                            columnNumber: 56
+                                        }, this))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 135,
+                                columnNumber: 21
+                            }, this),
+                            bookMissionId > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "animate-fade-in",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-[10px] text-gray-400 italic leading-relaxed px-1 mb-3 border-l-2 border-purple-500/30 pl-2",
+                                        children: [
+                                            '"',
+                                            __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["REAL_MISSION_LOGBOOK"].find((m)=>m.id === bookMissionId)?.description,
+                                            '"'
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 146,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex gap-1",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>{
+                                                    shuffleOwners();
+                                                    handleResetStats();
+                                                },
+                                                className: "flex-1 bg-gray-700 hover:bg-gray-600 text-[10px] text-white py-1.5 rounded border border-gray-600 transition",
+                                                children: "👤 Mix Joueurs"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 150,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>{
+                                                    shuffleCards();
+                                                    handleResetStats();
+                                                },
+                                                className: "flex-1 bg-gray-700 hover:bg-gray-600 text-[10px] text-white py-1.5 rounded border border-gray-600 transition",
+                                                children: "🃏 Mix Tâches"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 151,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 149,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>{
+                                            autoFindSolution();
+                                            handleResetStats();
+                                        },
+                                        disabled: isAutoFinding,
+                                        className: `w-full mt-2 py-2 rounded text-xs font-bold border transition flex items-center justify-center gap-2 shadow-lg ${isAutoFinding ? 'bg-purple-900/80 border-purple-500 text-purple-200 animate-pulse cursor-wait' : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white border-transparent'}`,
+                                        children: isAutoFinding ? '🎲 Recherche en cours...' : '🎰 Trouver une donne GAGNANTE'
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 153,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 145,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 127,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "space-y-3",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-xs font-bold text-gray-400 uppercase tracking-wider border-b border-gray-700 pb-1",
+                                children: "Objectifs"
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 162,
+                                columnNumber: 21
+                            }, this),
+                            globalConstraints.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-2",
+                                children: globalConstraints.map((c, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center gap-3 bg-gray-800/80 p-2 rounded border-l-4 border-l-yellow-500 border border-gray-700 shadow-sm",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-xl",
+                                                children: c.type === 'NO_TRICKS' ? '🚫' : '🔢'
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 168,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex-1",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "text-[10px] font-bold text-gray-400 uppercase",
+                                                        children: c.type === 'NO_TRICKS' ? 'Interdiction' : 'Protocole'
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                        lineNumber: 170,
+                                                        columnNumber: 41
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "text-xs text-gray-200",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "font-bold text-white",
+                                                                children: [
+                                                                    'Sud',
+                                                                    'Ouest',
+                                                                    'Nord',
+                                                                    'Est'
+                                                                ][c.player || 0]
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                                lineNumber: 172,
+                                                                columnNumber: 45
+                                                            }, this),
+                                                            c.type === 'NO_TRICKS' ? ' ne doit faire aucun pli.' : ` doit faire exactement ${c.count} pli(s).`
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                        lineNumber: 171,
+                                                        columnNumber: 41
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 169,
+                                                columnNumber: 37
+                                            }, this)
+                                        ]
+                                    }, i, true, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 167,
+                                        columnNumber: 33
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 165,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-2",
+                                children: missions.map((m, i)=>{
+                                    const targetId = `${m.cardColor}-${m.cardValue}`;
+                                    const targetCard = allCards.find((c)=>c.id === targetId);
+                                    const isAccomplished = targetCard?.status === 'WON' && targetCard?.winnerIndex === m.ownerIndex;
+                                    const isFailed = targetCard?.status === 'WON' && targetCard?.winnerIndex !== undefined && targetCard?.winnerIndex !== m.ownerIndex;
+                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `relative flex items-center gap-2 p-2 rounded border transition-all ${getBorderColor(m.cardColor)} ${isAccomplished ? 'opacity-50 grayscale-[0.5]' : ''}`,
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "absolute top-0 right-0 p-1",
+                                                children: [
+                                                    isAccomplished && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-green-400 text-xs",
+                                                        children: "✅"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                        lineNumber: 191,
+                                                        columnNumber: 60
+                                                    }, this),
+                                                    isFailed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-red-400 text-xs",
+                                                        children: "❌"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                        lineNumber: 192,
+                                                        columnNumber: 54
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 190,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(TokenBadge, {
+                                                token: m.token
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 194,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex-1 flex flex-col gap-1",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center justify-between",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-[10px] text-gray-400 uppercase font-bold",
+                                                                children: "Joueur"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                                lineNumber: 197,
+                                                                columnNumber: 45
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                                className: "bg-gray-900 text-white text-[10px] py-0.5 px-1 rounded border border-gray-600 outline-none focus:border-purple-500",
+                                                                value: m.ownerIndex,
+                                                                onChange: (e)=>{
+                                                                    const newMissions = [
+                                                                        ...missions
+                                                                    ];
+                                                                    newMissions[i].ownerIndex = Number(e.target.value);
+                                                                    setMissions(newMissions);
+                                                                    handleResetStats();
+                                                                },
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: 0,
+                                                                        children: "Sud"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 206,
+                                                                        columnNumber: 49
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: 1,
+                                                                        children: "Ouest"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 206,
+                                                                        columnNumber: 79
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: 2,
+                                                                        children: "Nord"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 206,
+                                                                        columnNumber: 111
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: 3,
+                                                                        children: "Est"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 206,
+                                                                        columnNumber: 142
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                                lineNumber: 198,
+                                                                columnNumber: 45
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                        lineNumber: 196,
+                                                        columnNumber: 41
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex gap-1",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                                className: "bg-gray-900 text-white text-xs font-bold py-1 px-1 rounded border border-gray-600 outline-none w-12 text-center",
+                                                                value: m.cardValue,
+                                                                onChange: (e)=>{
+                                                                    const newMissions = [
+                                                                        ...missions
+                                                                    ];
+                                                                    newMissions[i].cardValue = Number(e.target.value);
+                                                                    setMissions(newMissions);
+                                                                    handleResetStats();
+                                                                },
+                                                                children: [
+                                                                    1,
+                                                                    2,
+                                                                    3,
+                                                                    4,
+                                                                    5,
+                                                                    6,
+                                                                    7,
+                                                                    8,
+                                                                    9
+                                                                ].map((n)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: n,
+                                                                        children: n
+                                                                    }, n, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 218,
+                                                                        columnNumber: 79
+                                                                    }, this))
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                                lineNumber: 210,
+                                                                columnNumber: 45
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                                className: `flex-1 text-xs font-bold py-1 px-2 rounded outline-none border border-black/20 appearance-none ${m.cardColor === 'Rocket' ? 'bg-gray-700 text-white' : `bg-${m.cardColor.toLowerCase()}-500 text-white`}`,
+                                                                style: {
+                                                                    backgroundColor: m.cardColor === 'Rocket' ? '#374151' : undefined
+                                                                },
+                                                                value: m.cardColor,
+                                                                onChange: (e)=>{
+                                                                    const newMissions = [
+                                                                        ...missions
+                                                                    ];
+                                                                    newMissions[i].cardColor = e.target.value;
+                                                                    setMissions(newMissions);
+                                                                    handleResetStats();
+                                                                },
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: "Blue",
+                                                                        className: "bg-blue-600",
+                                                                        children: "Bleu"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 229,
+                                                                        columnNumber: 49
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: "Green",
+                                                                        className: "bg-green-600",
+                                                                        children: "Vert"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 230,
+                                                                        columnNumber: 49
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: "Pink",
+                                                                        className: "bg-pink-600",
+                                                                        children: "Rose"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 231,
+                                                                        columnNumber: 49
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: "Yellow",
+                                                                        className: "bg-yellow-500",
+                                                                        children: "Jaune"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 232,
+                                                                        columnNumber: 49
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: "Rocket",
+                                                                        className: "bg-gray-700",
+                                                                        children: "Fusée"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                                        lineNumber: 233,
+                                                                        columnNumber: 49
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                                lineNumber: 220,
+                                                                columnNumber: 45
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                                        lineNumber: 209,
+                                                        columnNumber: 41
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 195,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>removeMission(i),
+                                                className: "self-start text-gray-500 hover:text-red-400 text-xs px-1",
+                                                children: "✕"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 237,
+                                                columnNumber: 37
+                                            }, this)
+                                        ]
+                                    }, i, true, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 189,
+                                        columnNumber: 33
+                                    }, this);
+                                })
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 181,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>{
+                                    setMissions((prev)=>[
+                                            ...prev,
+                                            {
+                                                cardColor: 'Blue',
+                                                cardValue: 1,
+                                                ownerIndex: 0,
+                                                token: 'None'
+                                            }
+                                        ]);
+                                    handleResetStats();
+                                },
+                                className: "w-full py-2 border border-dashed border-gray-600 text-gray-400 hover:text-white hover:border-gray-400 text-xs rounded transition-colors flex items-center justify-center gap-1",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "+"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 242,
+                                        columnNumber: 355
+                                    }, this),
+                                    " Ajouter une tâche"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 242,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 161,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "h-[1px] bg-gray-800 my-4"
+                    }, void 0, false, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 245,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-4",
+                        children: [
+                            gameMode === 'MCTS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-between items-center mb-1 px-1",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-[10px] text-gray-400 uppercase font-bold",
+                                        children: "Qui réfléchit ?"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 251,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                        className: "bg-gray-800 text-blue-300 text-xs font-bold p-1 rounded border border-blue-500/30 outline-none",
+                                        value: agentPlayer,
+                                        onChange: (e)=>setAgentPlayer(Number(e.target.value)),
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: 0,
+                                                children: "🤖 Agent Sud"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 253,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: 1,
+                                                children: "🤖 Agent Ouest"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 253,
+                                                columnNumber: 72
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: 2,
+                                                children: "🤖 Agent Nord"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 253,
+                                                columnNumber: 113
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: 3,
+                                                children: "🤖 Agent Est"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 253,
+                                                columnNumber: 153
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 252,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 250,
+                                columnNumber: 26
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: handleLaunch,
+                                disabled: isThinking || hasFailed,
+                                className: `
+                            w-full py-4 rounded-lg font-bold text-sm shadow-xl transition-all
+                            ${isThinking ? 'bg-gray-800 text-gray-400 cursor-wait' : hasFailed ? 'bg-red-900/80 text-red-200 border border-red-500 cursor-not-allowed opacity-100' : gameMode === 'MCTS' ? 'bg-blue-600 hover:bg-blue-500 text-white ring-1 ring-blue-400 active:scale-95' : 'bg-purple-600 hover:bg-purple-500 text-white ring-1 ring-purple-400 active:scale-95'}
+                        `,
+                                children: isThinking ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "flex items-center justify-center gap-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "animate-spin text-lg",
+                                            children: "⚙️"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/god/Sidebar.tsx",
+                                            lineNumber: 275,
+                                            columnNumber: 33
+                                        }, this),
+                                        gameMode === 'MCTS' ? 'L\'agent réfléchit...' : 'Calcul en cours...'
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/god/Sidebar.tsx",
+                                    lineNumber: 274,
+                                    columnNumber: 29
+                                }, this) : hasFailed ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "flex items-center justify-center gap-2",
+                                    children: "🚫 AUCUNE SOLUTION POSSIBLE"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/god/Sidebar.tsx",
+                                    lineNumber: 279,
+                                    columnNumber: 29
+                                }, this) : gameMode === 'MCTS' ? '🧠 DEMANDER À L\'AGENT' : '⚡️ LANCER LE SOLVER'
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 258,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 248,
+                        columnNumber: 17
+                    }, this),
+                    stats && stats.solutionFound && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-6 bg-gray-800 rounded-lg border border-gray-700 overflow-hidden animate-slide-up",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-gray-900 px-3 py-2 border-b border-gray-700 flex justify-between items-center",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-xs font-bold text-gray-400 uppercase",
+                                        children: "Lecteur de Solution"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 292,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-[10px] bg-purple-900 text-purple-200 px-1.5 rounded",
+                                        children: [
+                                            currentMoveIndex >= 0 ? Math.ceil(currentMoveIndex + 1) : 0,
+                                            " / ",
+                                            totalSteps
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 293,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 291,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "p-3",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-full h-1.5 bg-gray-700 rounded-full mb-4 overflow-hidden",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-linear",
+                                            style: {
+                                                width: `${progressWidth}%`
+                                            }
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/god/Sidebar.tsx",
+                                            lineNumber: 300,
+                                            columnNumber: 33
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 299,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: handlePrev,
+                                                className: "flex-1 bg-gray-700 hover:bg-gray-600 text-white py-2 rounded active:scale-95 transition",
+                                                children: "⏮"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 307,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: togglePlay,
+                                                className: `flex-1 py-2 rounded font-bold text-white active:scale-95 transition ${isPlaying ? 'bg-yellow-600 hover:bg-yellow-500' : 'bg-green-600 hover:bg-green-500'}`,
+                                                children: isPlaying ? '⏸' : '▶'
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 308,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: handleNext,
+                                                className: "flex-1 bg-gray-700 hover:bg-gray-600 text-white py-2 rounded active:scale-95 transition",
+                                                children: "⏭"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/god/Sidebar.tsx",
+                                                lineNumber: 311,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/god/Sidebar.tsx",
+                                        lineNumber: 306,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 298,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "border-t border-gray-700 max-h-[200px] overflow-y-auto bg-black/20 p-2",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$god$2f$TrickHistory$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    steps: stats.solution_steps
+                                }, void 0, false, {
+                                    fileName: "[project]/components/god/Sidebar.tsx",
+                                    lineNumber: 316,
+                                    columnNumber: 29
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 315,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 290,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-4 bg-black/40 rounded p-2 font-mono text-[10px] text-gray-500 border border-white/5 h-[120px] overflow-y-auto",
+                        children: logs.map((l, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-0.5 border-l-2 border-transparent hover:border-purple-500 pl-1",
+                                children: l
+                            }, i, false, {
+                                fileName: "[project]/components/god/Sidebar.tsx",
+                                lineNumber: 322,
+                                columnNumber: 41
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/components/god/Sidebar.tsx",
+                        lineNumber: 321,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/god/Sidebar.tsx",
+                lineNumber: 114,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/god/Sidebar.tsx",
+        lineNumber: 91,
+        columnNumber: 9
+    }, this);
+}
+}),
+"[project]/components/Card.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Card
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+;
+function Card({ color, value, className = '' }) {
+    // Définition des couleurs exactes du jeu (approximatives pour le style néon)
+    const getColors = (c)=>{
+        switch(c){
+            case 'Blue':
+                return {
+                    bg: 'bg-blue-900',
+                    border: 'border-blue-400',
+                    text: 'text-blue-300',
+                    icon: '#60a5fa'
+                };
+            case 'Green':
+                return {
+                    bg: 'bg-green-900',
+                    border: 'border-green-400',
+                    text: 'text-green-300',
+                    icon: '#4ade80'
+                };
+            case 'Pink':
+                return {
+                    bg: 'bg-pink-900',
+                    border: 'border-pink-400',
+                    text: 'text-pink-300',
+                    icon: '#f472b6'
+                };
+            case 'Yellow':
+                return {
+                    bg: 'bg-yellow-900',
+                    border: 'border-yellow-400',
+                    text: 'text-yellow-300',
+                    icon: '#facc15'
+                };
+            case 'Rocket':
+                return {
+                    bg: 'bg-gray-800',
+                    border: 'border-gray-400',
+                    text: 'text-white',
+                    icon: '#ffffff'
+                };
+            default:
+                return {
+                    bg: 'bg-gray-800',
+                    border: 'border-gray-500',
+                    text: 'text-gray-400',
+                    icon: '#9ca3af'
+                };
+        }
+    };
+    const theme = getColors(color);
+    const isRocket = color === 'Rocket';
+    // --- SYMBOLES SVG ---
+    const renderIcon = ()=>{
+        switch(color){
+            case 'Blue':
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    className: "w-full h-full opacity-30",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "12",
+                            cy: "12",
+                            r: "6",
+                            stroke: theme.icon,
+                            strokeWidth: "2",
+                            fill: theme.icon,
+                            fillOpacity: "0.2"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 32,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M7 16C7 16 9 18 12 18C15 18 17 16 17 16",
+                            stroke: theme.icon,
+                            strokeWidth: "2",
+                            strokeLinecap: "round"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 33,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ellipse", {
+                            cx: "12",
+                            cy: "12",
+                            rx: "9",
+                            ry: "3",
+                            stroke: theme.icon,
+                            strokeWidth: "1.5",
+                            transform: "rotate(-15 12 12)"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 34,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/Card.tsx",
+                    lineNumber: 31,
+                    columnNumber: 11
+                }, this);
+            case 'Green':
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    className: "w-full h-full opacity-30",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z",
+                            stroke: theme.icon,
+                            strokeWidth: "1.5"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 40,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z",
+                            stroke: theme.icon,
+                            strokeWidth: "1.5"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 41,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "12",
+                            cy: "12",
+                            r: "2",
+                            fill: theme.icon
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 42,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M12 12L16 8",
+                            stroke: theme.icon,
+                            strokeWidth: "1.5"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 43,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/Card.tsx",
+                    lineNumber: 39,
+                    columnNumber: 11
+                }, this);
+            case 'Pink':
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    className: "w-full h-full opacity-30",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "5",
+                            y: "5",
+                            width: "14",
+                            height: "14",
+                            rx: "4",
+                            stroke: theme.icon,
+                            strokeWidth: "2",
+                            fill: theme.icon,
+                            fillOpacity: "0.1"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 49,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M9 12H15",
+                            stroke: theme.icon,
+                            strokeWidth: "2",
+                            strokeLinecap: "round"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 50,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M12 9V15",
+                            stroke: theme.icon,
+                            strokeWidth: "2",
+                            strokeLinecap: "round"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 51,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/Card.tsx",
+                    lineNumber: 48,
+                    columnNumber: 13
+                }, this);
+            case 'Yellow':
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    className: "w-full h-full opacity-30",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z",
+                        stroke: theme.icon,
+                        strokeWidth: "2",
+                        fill: theme.icon,
+                        fillOpacity: "0.2"
+                    }, void 0, false, {
+                        fileName: "[project]/components/Card.tsx",
+                        lineNumber: 57,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/Card.tsx",
+                    lineNumber: 56,
+                    columnNumber: 11
+                }, this);
+            case 'Rocket':
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    className: "w-full h-full opacity-40",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M12 2.5C12 2.5 15.5 8 15.5 13C15.5 16.5 14.5 18 12 21.5C9.5 18 8.5 16.5 8.5 13C8.5 8 12 2.5 12 2.5Z",
+                            fill: "white"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 64,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M12 14.5C12.8284 14.5 13.5 13.8284 13.5 13C13.5 12.1716 12.8284 11.5 12 11.5C11.1716 11.5 10.5 12.1716 10.5 13C10.5 13.8284 11.1716 14.5 12 14.5Z",
+                            fill: "black"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 65,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M15.5 16.5L18 20.5",
+                            stroke: "white",
+                            strokeWidth: "2",
+                            strokeLinecap: "round"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 66,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M8.5 16.5L6 20.5",
+                            stroke: "white",
+                            strokeWidth: "2",
+                            strokeLinecap: "round"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Card.tsx",
+                            lineNumber: 67,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/Card.tsx",
+                    lineNumber: 63,
+                    columnNumber: 11
+                }, this);
+            default:
+                return null;
+        }
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: `relative rounded-lg shadow-xl overflow-hidden select-none transition-transform ${theme.bg} ${theme.border} border-2 ${className}`,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 flex items-center justify-center p-2",
+                children: renderIcon()
+            }, void 0, false, {
+                fileName: "[project]/components/Card.tsx",
+                lineNumber: 78,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `absolute inset-0 flex items-center justify-center font-black text-4xl drop-shadow-md ${theme.text}`,
+                children: value
+            }, void 0, false, {
+                fileName: "[project]/components/Card.tsx",
+                lineNumber: 83,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `absolute top-1 left-1.5 text-xs font-bold ${theme.text}`,
+                children: value
+            }, void 0, false, {
+                fileName: "[project]/components/Card.tsx",
+                lineNumber: 88,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `absolute bottom-1 right-1.5 text-xs font-bold ${theme.text} rotate-180`,
+                children: value
+            }, void 0, false, {
+                fileName: "[project]/components/Card.tsx",
+                lineNumber: 93,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/Card.tsx",
+        lineNumber: 75,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/components/god/GameBoard.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>GodGameBoard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/Card.tsx [app-ssr] (ecmascript)");
+;
+;
+// =================================================================================
+// 🛠️ CONFIGURATION 1 : ZONES D'INFO (Missions uniquement)
+// =================================================================================
+const INFO_POSITIONS = {
+    0: {
+        x: 150,
+        y: 200,
+        rotation: 0
+    },
+    1: {
+        x: -140,
+        y: 40,
+        rotation: 90
+    },
+    2: {
+        x: 150,
+        y: -120,
+        rotation: 180
+    },
+    3: {
+        x: 440,
+        y: 40,
+        rotation: -90
+    }
+};
+// =================================================================================
+// 🛠️ CONFIGURATION 2 : CENTRE DES MAINS
+// =================================================================================
+const HAND_POSITIONS = {
+    0: {
+        x: 0,
+        y: 260,
+        rotation: 0
+    },
+    1: {
+        x: -400,
+        y: 0,
+        rotation: 90
+    },
+    2: {
+        x: 0,
+        y: -260,
+        rotation: 180
+    },
+    3: {
+        x: 400,
+        y: 0,
+        rotation: -90
+    }
+};
+// --- COMPOSANT MISSION (Affichage des jetons et status) ---
+const MissionToken = ({ mission })=>{
+    const statusClass = mission.status === 'SUCCESS' ? 'border-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)] bg-green-900/80' : mission.status === 'FAILED' ? 'border-red-500 opacity-60 bg-red-900/50' : 'border-gray-500 bg-gray-900';
+    const token = mission.token;
+    const isSpecial = mission.cardColor === 'Special' || mission.cardValue === 0;
+    const specialLabels = {
+        'NO_TRICKS': '0 PLI',
+        'NO_TRICKS_PLAYER': '0 PLI (J)',
+        'ALL_ROCKETS': '🚀 ALL',
+        'SPECIFIC_WIN_1': 'WIN 1',
+        'NO_9_WIN': 'NO 9'
+    };
+    const label = token && specialLabels[token] || token;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: `relative w-10 h-14 rounded border-2 ${statusClass} flex flex-col items-center justify-center transform transition-all z-20 shrink-0 select-none`,
+        children: [
+            !isSpecial && token !== 'None' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute -top-3 -right-3 bg-purple-600 rounded-full w-5 h-5 flex items-center justify-center text-[10px] text-white font-bold shadow border border-white/20 z-30",
+                children: token === 'Omega' ? 'Ω' : token
+            }, void 0, false, {
+                fileName: "[project]/components/god/GameBoard.tsx",
+                lineNumber: 49,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            !isSpecial ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: `w-full h-1.5 mb-1 ${mission.cardColor === 'Pink' ? 'bg-pink-500' : mission.cardColor === 'Green' ? 'bg-green-500' : mission.cardColor === 'Blue' ? 'bg-blue-600' : mission.cardColor === 'Yellow' ? 'bg-yellow-400' : mission.cardColor === 'Rocket' ? 'bg-gray-700' : 'bg-gray-600'}`
+                    }, void 0, false, {
+                        fileName: "[project]/components/god/GameBoard.tsx",
+                        lineNumber: 57,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-white font-bold text-lg leading-none",
+                        children: mission.cardValue
+                    }, void 0, false, {
+                        fileName: "[project]/components/god/GameBoard.tsx",
+                        lineNumber: 64,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-col items-center justify-center h-full w-full p-0.5 text-center",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-[8px] font-black text-gray-300 leading-tight uppercase",
+                    children: label
+                }, void 0, false, {
+                    fileName: "[project]/components/god/GameBoard.tsx",
+                    lineNumber: 68,
+                    columnNumber: 21
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/components/god/GameBoard.tsx",
+                lineNumber: 67,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            mission.status === 'SUCCESS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute -bottom-2 -left-2 bg-white border border-green-500 rounded-full w-5 h-5 flex items-center justify-center shadow-md z-40",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-green-600 font-bold text-xs",
+                    children: "✔"
+                }, void 0, false, {
+                    fileName: "[project]/components/god/GameBoard.tsx",
+                    lineNumber: 77,
+                    columnNumber: 21
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/components/god/GameBoard.tsx",
+                lineNumber: 76,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            mission.status === 'FAILED' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute -bottom-2 -right-2 bg-white border border-red-500 rounded-full w-5 h-5 flex items-center justify-center shadow-md z-40",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-red-500 font-bold text-xs",
+                    children: "✕"
+                }, void 0, false, {
+                    fileName: "[project]/components/god/GameBoard.tsx",
+                    lineNumber: 82,
+                    columnNumber: 21
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/components/god/GameBoard.tsx",
+                lineNumber: 81,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/god/GameBoard.tsx",
+        lineNumber: 46,
+        columnNumber: 9
+    }, ("TURBOPACK compile-time value", void 0));
+};
+function GodGameBoard({ allCards = [], missions = [], onPlayerClick }) {
+    const safeCards = Array.isArray(allCards) ? allCards : [];
+    const safeMissions = Array.isArray(missions) ? missions : [];
+    const HAND_RADIUS = 600;
+    const ANGLE_STEP = 5;
+    // --- POSITIONNEMENT DES TITRES (PLUS PRÈS DU CENTRE) ---
+    const getTitleStyle = (playerIndex)=>{
+        const base = "translate(-50%, -50%)";
+        switch(playerIndex){
+            case 0:
+                return {
+                    transform: `${base} translate(25px, 120px)`
+                }; // SUD
+            case 1:
+                return {
+                    transform: `${base} translate(-200px, 15px) rotate(90deg)`
+                }; // OUEST
+            case 2:
+                return {
+                    transform: `${base} translate(35px, -90px)`
+                }; // NORD
+            case 3:
+                return {
+                    transform: `${base} translate(260px, 15px) rotate(-90deg)`
+                }; // EST
+            default:
+                return {};
+        }
+    };
+    const getInfoZoneStyle = (playerIndex)=>{
+        const pos = INFO_POSITIONS[playerIndex];
+        return {
+            transform: `translate(-50%, -50%) translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg)`
+        };
+    };
+    const getCardStyle = (card)=>{
+        // 1. CARTE GAGNÉE
+        if (card.status === 'WON') {
+            const winPositions = [
+                `translate(0px, 600px)`,
+                `translate(-800px, 0px)`,
+                `translate(0px, -600px)`,
+                `translate(800px, 0px)`
+            ];
+            return {
+                transform: `translate(-50%, -50%) ${winPositions[card.winnerIndex || 0]} scale(0.4)`,
+                opacity: 0,
+                zIndex: 500,
+                transition: 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out'
+            };
+        }
+        // 2. CARTE SUR TABLE
+        if (card.status === 'TABLE') {
+            const rX = card.tableRotation * 5 % 15 - 7;
+            const rY = card.tableRotation * 7 % 15 - 7;
+            return {
+                transform: `translate(-50%, -50%) translate(${rX}px, ${rY}px) rotate(${card.tableRotation}deg) scale(1.1)`,
+                opacity: 1,
+                zIndex: 200 + card.zIndex,
+                transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'
+            };
+        }
+        // 3. MAIN (Communication retirée ici)
+        const cardsInHand = safeCards.filter((c)=>c.owner === card.owner && c.status === 'HAND');
+        const colorPriority = {
+            'Blue': 1,
+            'Green': 2,
+            'Pink': 3,
+            'Yellow': 4,
+            'Rocket': 5
+        };
+        cardsInHand.sort((a, b)=>{
+            if (a.color !== b.color) return colorPriority[a.color] - colorPriority[b.color];
+            return a.value - b.value;
+        });
+        const myIndex = cardsInHand.findIndex((c)=>c.id === card.id);
+        const angle = (myIndex - (cardsInHand.length - 1) / 2) * ANGLE_STEP;
+        const pos = HAND_POSITIONS[card.owner] || {
+            x: 0,
+            y: 0,
+            rotation: 0
+        };
+        return {
+            transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px)) rotate(${pos.rotation}deg) translate(0px, ${HAND_RADIUS}px) rotate(${angle}deg) translate(0px, -${HAND_RADIUS}px)`,
+            opacity: 1,
+            zIndex: myIndex,
+            transition: 'transform 0.5s ease-out'
+        };
+    };
+    const playerNames = [
+        'SUD',
+        'OUEST',
+        'NORD',
+        'EST'
+    ];
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "w-full h-full relative bg-[#2c3e50] overflow-hidden shadow-inner flex items-center justify-center select-none",
+        children: [
+            onPlayerClick && [
+                0,
+                1,
+                2,
+                3
+            ].map((pid)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "absolute z-0 cursor-pointer font-black text-white/30 hover:text-white text-lg uppercase tracking-[0.2em] transition-colors",
+                    style: getTitleStyle(pid),
+                    onClick: ()=>onPlayerClick(pid),
+                    children: playerNames[pid]
+                }, `title-${pid}`, false, {
+                    fileName: "[project]/components/god/GameBoard.tsx",
+                    lineNumber: 173,
+                    columnNumber: 13
+                }, this)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative w-0 h-0 flex items-center justify-center z-10",
+                children: [
+                    safeCards.length > 0 && [
+                        0,
+                        1,
+                        2,
+                        3
+                    ].map((pid)=>{
+                        const pMissions = safeMissions.filter((m)=>m.ownerIndex === pid);
+                        if (pMissions.length === 0) return null;
+                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            // Container centré, largeur ajustée pour centrer les missions
+                            className: "absolute w-[300px] h-[80px] pointer-events-none transition-all duration-500 z-[60] flex items-center justify-center gap-2",
+                            style: getInfoZoneStyle(pid),
+                            children: pMissions.map((m, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MissionToken, {
+                                    mission: m
+                                }, i, false, {
+                                    fileName: "[project]/components/god/GameBoard.tsx",
+                                    lineNumber: 198,
+                                    columnNumber: 29
+                                }, this))
+                        }, pid, false, {
+                            fileName: "[project]/components/god/GameBoard.tsx",
+                            lineNumber: 191,
+                            columnNumber: 21
+                        }, this);
+                    }),
+                    safeCards.map((card)=>{
+                        const style = getCardStyle(card);
+                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute top-0 left-0 w-20 aspect-[2/3] pointer-events-none",
+                            style: {
+                                ...style,
+                                willChange: 'transform, opacity'
+                            },
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                color: card.color,
+                                value: card.value,
+                                className: "w-full h-full shadow-2xl border border-black/30 rounded-lg"
+                            }, void 0, false, {
+                                fileName: "[project]/components/god/GameBoard.tsx",
+                                lineNumber: 213,
+                                columnNumber: 25
+                            }, this)
+                        }, card.id, false, {
+                            fileName: "[project]/components/god/GameBoard.tsx",
+                            lineNumber: 208,
+                            columnNumber: 21
+                        }, this);
+                    })
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/god/GameBoard.tsx",
+                lineNumber: 183,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/god/GameBoard.tsx",
+        lineNumber: 169,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/components/god/CardPicker.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>CardPicker
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/Card.tsx [app-ssr] (ecmascript)");
+;
+;
+function CardPicker({ currentPlayer, allCards, onToggleCard, onClose }) {
+    const COLORS = [
+        'Blue',
+        'Green',
+        'Pink',
+        'Yellow',
+        'Rocket'
+    ];
+    const PLAYER_NAMES = [
+        'SUD',
+        'OUEST',
+        'NORD',
+        'EST'
+    ];
+    // Combien de cartes ce joueur a-t-il déjà ?
+    const myCount = allCards.filter((c)=>c.owner === currentPlayer && c.status === 'HAND').length;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "fixed inset-0 bg-black/85 z-[9999] flex items-center justify-center backdrop-blur-md animate-fade-in p-4",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "bg-gray-900 border border-gray-600 rounded-xl shadow-2xl w-full max-w-6xl max-h-[95vh] flex flex-col",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex justify-between items-center p-6 border-b border-gray-700 bg-gray-900 rounded-t-xl z-10",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-3xl font-bold text-white flex items-center gap-3",
+                                    children: [
+                                        "Main de ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-purple-400",
+                                            children: PLAYER_NAMES[currentPlayer]
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/god/CardPicker.tsx",
+                                            lineNumber: 28,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/god/CardPicker.tsx",
+                                    lineNumber: 27,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm text-gray-400 mt-1",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "font-bold text-white",
+                                            children: myCount
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/god/CardPicker.tsx",
+                                            lineNumber: 31,
+                                            columnNumber: 29
+                                        }, this),
+                                        " cartes sélectionnée(s)."
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/god/CardPicker.tsx",
+                                    lineNumber: 30,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/god/CardPicker.tsx",
+                            lineNumber: 26,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: onClose,
+                            className: "text-gray-400 hover:text-white bg-gray-800 hover:bg-gray-700 w-12 h-12 rounded-full font-bold text-xl transition",
+                            children: "✕"
+                        }, void 0, false, {
+                            fileName: "[project]/components/god/CardPicker.tsx",
+                            lineNumber: 34,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/god/CardPicker.tsx",
+                    lineNumber: 25,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "overflow-y-auto p-6 space-y-6 flex-1",
+                    children: COLORS.map((color)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-col md:flex-row gap-6 items-start bg-gray-800/40 p-4 rounded-xl border border-white/5",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: `md:w-24 pt-4 text-sm font-black tracking-widest uppercase md:text-right ${color === 'Rocket' ? 'text-gray-400' : 'text-' + color.toLowerCase() + '-400'}`,
+                                    children: color
+                                }, void 0, false, {
+                                    fileName: "[project]/components/god/CardPicker.tsx",
+                                    lineNumber: 42,
+                                    columnNumber: 29
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex flex-wrap gap-3",
+                                    children: (color === 'Rocket' ? [
+                                        1,
+                                        2,
+                                        3,
+                                        4
+                                    ] : [
+                                        1,
+                                        2,
+                                        3,
+                                        4,
+                                        5,
+                                        6,
+                                        7,
+                                        8,
+                                        9
+                                    ]).map((val)=>{
+                                        const cardId = `${color}-${val}`;
+                                        const existingCard = allCards.find((c)=>c.id === cardId);
+                                        // États de la carte
+                                        const isMine = existingCard?.owner === currentPlayer;
+                                        const isTaken = existingCard !== undefined && !isMine; // Prise par un autre
+                                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            // MODIF: On appelle toggleCard même si c'est pris (pour le vol)
+                                            onClick: ()=>onToggleCard(color, val),
+                                            // MODIF: On ne désactive plus le bouton
+                                            // disabled={isTaken} 
+                                            className: `
+                                                relative w-20 aspect-[2/3] rounded-lg transition-all duration-200 group
+                                                ${isMine ? 'ring-4 ring-green-500 scale-105 z-10 shadow-2xl' : isTaken ? 'opacity-60 grayscale hover:grayscale-0 hover:opacity-100 cursor-pointer ring-2 ring-red-500/30 hover:ring-red-500/80' : 'hover:scale-110 hover:z-20 hover:shadow-xl opacity-80 hover:opacity-100'}
+                                            `,
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "w-full h-full pointer-events-none rounded-lg overflow-hidden border border-black/20 shadow-sm",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                        color: color,
+                                                        value: val,
+                                                        className: "w-full h-full"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/god/CardPicker.tsx",
+                                                        lineNumber: 76,
+                                                        columnNumber: 49
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/god/CardPicker.tsx",
+                                                    lineNumber: 75,
+                                                    columnNumber: 45
+                                                }, this),
+                                                isMine && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "absolute -top-2 -right-2 bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg border-2 border-gray-900 font-bold text-xs",
+                                                    children: "✓"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/god/CardPicker.tsx",
+                                                    lineNumber: 81,
+                                                    columnNumber: 49
+                                                }, this),
+                                                isTaken && existingCard && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg backdrop-blur-[1px] group-hover:bg-black/30 transition-colors",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xs font-bold text-white bg-red-600 px-2 py-1 rounded shadow-lg border border-red-400 group-hover:scale-110 transition-transform",
+                                                        children: PLAYER_NAMES[existingCard.owner]
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/god/CardPicker.tsx",
+                                                        lineNumber: 89,
+                                                        columnNumber: 53
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/god/CardPicker.tsx",
+                                                    lineNumber: 88,
+                                                    columnNumber: 49
+                                                }, this)
+                                            ]
+                                        }, val, true, {
+                                            fileName: "[project]/components/god/CardPicker.tsx",
+                                            lineNumber: 58,
+                                            columnNumber: 41
+                                        }, this);
+                                    })
+                                }, void 0, false, {
+                                    fileName: "[project]/components/god/CardPicker.tsx",
+                                    lineNumber: 47,
+                                    columnNumber: 29
+                                }, this)
+                            ]
+                        }, color, true, {
+                            fileName: "[project]/components/god/CardPicker.tsx",
+                            lineNumber: 40,
+                            columnNumber: 25
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/components/god/CardPicker.tsx",
+                    lineNumber: 38,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "p-6 border-t border-gray-700 bg-gray-900 rounded-b-xl flex justify-end z-10",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: onClose,
+                        className: "bg-white text-gray-900 hover:bg-gray-200 py-3 px-10 rounded-lg font-bold shadow-lg transition active:scale-95 text-lg",
+                        children: "Terminé"
+                    }, void 0, false, {
+                        fileName: "[project]/components/god/CardPicker.tsx",
+                        lineNumber: 104,
+                        columnNumber: 21
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/god/CardPicker.tsx",
+                    lineNumber: 103,
+                    columnNumber: 17
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/god/CardPicker.tsx",
+            lineNumber: 22,
+            columnNumber: 13
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/god/CardPicker.tsx",
+        lineNumber: 20,
+        columnNumber: 9
+    }, this);
+}
+}),
+"[project]/hooks/useAIMode.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useAIMode",
+    ()=>useAIMode
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/data/real_missions.ts [app-ssr] (ecmascript)");
+const __TURBOPACK__import$2e$meta__ = {
+    get url () {
+        return `file://${__turbopack_context__.P("hooks/useAIMode.ts")}`;
+    }
+};
+;
+;
+// --- HELPERS ---
+const convertBackendToFrontend = (d)=>{
+    return [
+        'player_1',
+        'player_2',
+        'player_3',
+        'player_4'
+    ].flatMap((k, pIdx)=>d[k].map((c)=>({
+                id: `${c.color}-${c.value}`,
+                color: c.color,
+                value: c.value,
+                owner: pIdx,
+                status: 'HAND',
+                zIndex: 0,
+                tableRotation: (c.value * 100 + pIdx * 50 + c.color.length) % 40 - 20,
+                winnerIndex: undefined
+            })));
+};
+const getTrickWinner = (cards)=>{
+    if (cards.length !== 4) return 0;
+    let best = cards[0];
+    const lead = best.color;
+    for(let i = 1; i < 4; i++){
+        const curr = cards[i], isR = curr.color === 'Rocket', bestR = best.color === 'Rocket';
+        if (isR && (!bestR || curr.value > best.value) || !isR && curr.color === lead && !bestR && curr.value > best.value) best = curr;
+    }
+    return best.owner;
+};
+const generateMissionSetup = (mid, cards)=>{
+    const mDef = __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["REAL_MISSION_LOGBOOK"].find((m)=>m.id === mid);
+    if (!mDef) return null;
+    const cmdIdx = cards.find((c)=>c.color === 'Rocket' && c.value === 4)?.owner ?? 0;
+    const nMissions = [], nConstrs = [];
+    const valid = cards.filter((c)=>c.color !== 'Rocket').sort(()=>Math.random() - 0.5);
+    let tIdx = 0, tDistrib = [];
+    mDef.constraints.forEach((c)=>{
+        if (c.type === 'TARGET_CARD') for(let i = 0; i < (c.args.count || 1); i++)tDistrib.push({
+            token: 'None'
+        });
+    });
+    let absCount = 0;
+    mDef.constraints.forEach((c)=>{
+        if (c.type === 'ORDER_ABSOLUTE') {
+            for(let i = 0; i < c.args.count; i++)if (tDistrib[i]) tDistrib[i].token = (i + 1).toString();
+            absCount = c.args.count;
+        }
+        if (c.type === 'ORDER_RELATIVE') {
+            const toks = [
+                '>',
+                '>>',
+                '>>>',
+                '>>>>'
+            ], start = c.args.startIndex ?? absCount;
+            for(let i = 0; i < c.args.count; i++)if (tDistrib[start + i]) tDistrib[start + i].token = toks[i];
+        }
+        if (c.type === 'ORDER_OMEGA' && tDistrib.length) tDistrib[tDistrib.length - 1].token = 'Omega';
+    });
+    tDistrib.forEach((t, i)=>{
+        if (tIdx >= valid.length) return;
+        nMissions.push({
+            cardColor: valid[tIdx].color,
+            cardValue: valid[tIdx].value,
+            ownerIndex: (cmdIdx + i) % 4,
+            token: t.token
+        });
+        tIdx++;
+    });
+    mDef.constraints.forEach((c)=>{
+        if (c.type === 'NO_TRICKS') nConstrs.push({
+            type: 'NO_TRICKS',
+            player: (cmdIdx + 1) % 4
+        });
+        else if (c.type === 'TRICK_COUNT') nConstrs.push({
+            type: 'TRICK_COUNT',
+            player: 0,
+            count: c.args.count
+        });
+    });
+    return {
+        missions: nMissions,
+        constraints: nConstrs
+    };
+};
+const useAIMode = ()=>{
+    const [allCards, setAllCards] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [missions, setMissions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [communications, setCommunications] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({});
+    const [globalConstraints, setGlobalConstraints] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [activePlayer, setActivePlayer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [trickCards, setTrickCards] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [playedHistory, setPlayedHistory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [isThinking, setIsThinking] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [logs, setLogs] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [currentStepText, setCurrentStepText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("En attente de mission...");
+    const [probabilities, setProbabilities] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({});
+    const [suggestedCardId, setSuggestedCardId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [isTraining, setIsTraining] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [trainingStats, setTrainingStats] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [replayData, setReplayData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [isReplayMode, setIsReplayMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [replayStepIndex, setReplayStepIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(-1);
+    const [milestones, setMilestones] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [currentMilestoneId, setCurrentMilestoneId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const addLog = (msg)=>setLogs((prev)=>[
+                `> ${msg}`,
+                ...prev
+            ]);
+    const getPlayerName = (idx)=>[
+            'Sud',
+            'Ouest',
+            'Nord',
+            'Est'
+        ][idx];
+    // DÉFINITION DE L'URL API (Vercel ou Localhost)
+    const API_URL = __TURBOPACK__import$2e$meta__.env?.VITE_API_URL || 'http://localhost:8000';
+    const resetGameStates = ()=>{
+        setAllCards([]);
+        setMissions([]);
+        setLogs([]);
+        setProbabilities({});
+        setPlayedHistory([]);
+        setTrickCards([]);
+        setActivePlayer(0);
+        setSuggestedCardId(null);
+        setIsReplayMode(false);
+        setCommunications({});
+    };
+    // --- ENTRAINEMENT ---
+    const startTraining = async (episodesCount, missionId)=>{
+        setIsTraining(true);
+        resetGameStates();
+        setTrainingStats(null);
+        addLog(`🚀 Entraînement ${episodesCount} itérations (Mission ${missionId})...`);
+        try {
+            // UTILISATION DE API_URL
+            const res = await fetch(`${API_URL}/train-ai`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    episodes: episodesCount,
+                    mission_id: missionId
+                })
+            });
+            if (!res.body) return;
+            const reader = res.body.getReader();
+            const decoder = new TextDecoder();
+            let buffer = '';
+            while(true){
+                const { done, value } = await reader.read();
+                if (done) break;
+                buffer += decoder.decode(value, {
+                    stream: true
+                });
+                const lines = buffer.split('\n');
+                buffer = lines.pop() || '';
+                for (const line of lines){
+                    if (!line.trim()) continue;
+                    try {
+                        const data = JSON.parse(line);
+                        if (data.type === 'TRAINING_UPDATE') {
+                            setTrainingStats(data);
+                            if (data.milestone_replay && data.milestone_replay.length > 0) {
+                                const newMilestone = {
+                                    episode: data.total_lifetime_games,
+                                    replay: data.milestone_replay,
+                                    reward: data.avg_reward,
+                                    initial_missions: data.milestone_missions || [],
+                                    initial_hands: data.milestone_hands || []
+                                };
+                                setMilestones((prev)=>[
+                                        ...prev,
+                                        newMilestone
+                                    ]);
+                                addLog(`💾 Replay sauvegardé (Itération ${data.total_lifetime_games})`);
+                            }
+                        }
+                        if (data.type === 'TRAINING_COMPLETE') {
+                            addLog("✅ Session terminée.");
+                            setIsTraining(false);
+                        }
+                    } catch (e) {
+                        console.error(e);
+                    }
+                }
+            }
+        } catch (e) {
+            console.error(e);
+            setIsTraining(false);
+            addLog("❌ Erreur de connexion au serveur (Trainer)");
+        }
+    };
+    // --- REPLAY (Identique, pas d'appel réseau) ---
+    const loadReplay = (replaySteps, milestoneId)=>{
+        const dataToLoad = replaySteps || replayData;
+        if (!dataToLoad) return;
+        setIsReplayMode(true);
+        setReplayData(dataToLoad);
+        setReplayStepIndex(-1);
+        setTrickCards([]);
+        setCommunications({});
+        setCurrentMilestoneId(milestoneId || null);
+        let savedMilestone;
+        if (milestoneId) {
+            savedMilestone = milestones.find((m)=>m.episode === milestoneId);
+            if (savedMilestone && savedMilestone.initial_missions) {
+                const freshMissions = savedMilestone.initial_missions.map((m)=>({
+                        ...m,
+                        status: 'PENDING'
+                    }));
+                setMissions(freshMissions);
+            }
+        }
+        if (savedMilestone && savedMilestone.initial_hands && savedMilestone.initial_hands.length > 0) {
+            const loadedCards = savedMilestone.initial_hands.map((c)=>({
+                    id: `${c.color}-${c.value}`,
+                    color: c.color,
+                    value: c.value,
+                    owner: c.owner,
+                    status: 'HAND',
+                    zIndex: 0,
+                    tableRotation: (c.value * 100 + c.owner * 50 + c.color.length) % 40 - 20,
+                    winnerIndex: undefined
+                }));
+            setAllCards(loadedCards);
+        } else {
+            const uniqueCardsMap = new Map();
+            dataToLoad.forEach((step)=>{
+                if (!step.card || step.card.color === 'Unknown' || step.action_type === 'COLLECT' || step.action_type === 'INFO') return;
+                const id = `${step.card.color}-${step.card.value}`;
+                if (!uniqueCardsMap.has(id)) {
+                    uniqueCardsMap.set(id, {
+                        id: id,
+                        color: step.card.color,
+                        value: step.card.value,
+                        owner: step.player,
+                        status: 'HAND',
+                        zIndex: 0,
+                        tableRotation: 0
+                    });
+                }
+            });
+            setAllCards(Array.from(uniqueCardsMap.values()));
+        }
+        setCurrentStepText(milestoneId ? `Replay chargé (Itération ${milestoneId}). Prêt.` : "Mode Replay Prêt.");
+    };
+    const nextReplayStep = ()=>{
+        if (!replayData || replayStepIndex >= replayData.length - 1) return;
+        let nextIdx = replayStepIndex + 1;
+        let move = replayData[nextIdx];
+        if (move.action_type === 'INFO') {
+            setCurrentStepText(`ℹ️ ${move.step_info}`);
+            setReplayStepIndex(nextIdx);
+            return;
+        }
+        if (move.action_type === 'COMMUNICATE') {
+            const cardId = `${move.card.color}-${move.card.value}`;
+            let tokenType = 'MID';
+            if (move.step_info?.includes('TOP')) tokenType = 'TOP';
+            else if (move.step_info?.includes('BOT')) tokenType = 'BOT';
+            else if (move.step_info?.includes('MID')) tokenType = 'MID';
+            setCurrentStepText(`📢 J${move.player + 1} communique : ${move.card.value} ${move.card.color} (${tokenType})`);
+            setCommunications((prev)=>({
+                    ...prev,
+                    [move.player]: {
+                        cardId,
+                        type: tokenType
+                    }
+                }));
+            setAllCards((prev)=>prev.map((c)=>c.id === cardId ? {
+                        ...c,
+                        status: 'COMMUNICATED'
+                    } : c));
+            setReplayStepIndex(nextIdx);
+            return;
+        }
+        if (move.action_type === 'COLLECT') {
+            setCurrentStepText(`✋ Pli terminé. Joueur ${move.player + 1} ramasse.`);
+            setAllCards((prev)=>prev.map((c)=>c.status === 'TABLE' ? {
+                        ...c,
+                        status: 'WON',
+                        winnerIndex: move.player,
+                        zIndex: 500
+                    } : c));
+            setMissions((prev)=>prev.map((m)=>{
+                    const targetId = `${m.cardColor}-${m.cardValue}`;
+                    const isTargetOnTable = allCards.some((c)=>c.id === targetId && c.status === 'TABLE');
+                    if (isTargetOnTable) {
+                        return move.player === m.ownerIndex ? {
+                            ...m,
+                            status: 'SUCCESS'
+                        } : {
+                            ...m,
+                            status: 'FAILED'
+                        };
+                    }
+                    return m;
+                }));
+            let skipCount = 0;
+            while(nextIdx + 1 + skipCount < replayData.length && replayData[nextIdx + 1 + skipCount].action_type === 'INFO'){
+                skipCount++;
+            }
+            setReplayStepIndex(nextIdx + skipCount);
+            return;
+        }
+        const cardId = `${move.card.color}-${move.card.value}`;
+        const scoreInfo = move.reward ? `(${move.reward > 0 ? '+' : ''}${move.reward})` : '';
+        setCurrentStepText(`J${move.player + 1}: ${move.card.value} ${move.card.color} ${scoreInfo} ${move.step_info || ''}`);
+        setAllCards((prev)=>{
+            const cardsOnTableCount = prev.filter((c)=>c.status === 'TABLE').length;
+            const newZIndex = 100 + cardsOnTableCount;
+            return prev.map((c)=>c.id === cardId ? {
+                    ...c,
+                    status: 'TABLE',
+                    zIndex: newZIndex,
+                    tableRotation: Math.random() * 20 - 10,
+                    winnerIndex: undefined
+                } : c);
+        });
+        let skipCount = 0;
+        while(nextIdx + 1 + skipCount < replayData.length && replayData[nextIdx + 1 + skipCount].action_type === 'INFO'){
+            skipCount++;
+        }
+        setReplayStepIndex(nextIdx + skipCount);
+    };
+    const initializeMission = async (missionId)=>{
+        resetGameStates();
+        setIsThinking(true);
+        setCurrentStepText("Distribution...");
+        try {
+            // UTILISATION DE API_URL
+            const res = await fetch(`${API_URL}/start-game`);
+            const gData = await res.json();
+            const cards = convertBackendToFrontend(gData);
+            setAllCards(cards);
+            const setup = generateMissionSetup(missionId, cards);
+            if (setup) {
+                setMissions(setup.missions);
+                setGlobalConstraints(setup.constraints);
+                const cmd = cards.find((c)=>c.color === 'Rocket' && c.value === 4)?.owner || 0;
+                setActivePlayer(cmd);
+                setCurrentStepText(`Mission ${missionId} chargée. Au tour de ${getPlayerName(cmd)}.`);
+            }
+        } catch (e) {
+            console.error(e);
+            setCurrentStepText("Erreur serveur.");
+        } finally{
+            setIsThinking(false);
+        }
+    };
+    const askAI = async ()=>{
+        if (trickCards.length === 4) return;
+        setIsThinking(true);
+        setProbabilities({});
+        setSuggestedCardId(null);
+        try {
+            const hands = {
+                player_1: [],
+                player_2: [],
+                player_3: [],
+                player_4: []
+            };
+            allCards.forEach((c)=>{
+                if (c.status === 'HAND') hands[`player_${c.owner + 1}`].push({
+                    color: c.color,
+                    value: c.value
+                });
+            });
+            // UTILISATION DE API_URL
+            const res = await fetch(`${API_URL}/solve-game`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...hands,
+                    missions: missions.map((m)=>({
+                            card: {
+                                color: m.cardColor,
+                                value: m.cardValue
+                            },
+                            owner: m.ownerIndex,
+                            token: m.token
+                        })),
+                    constraints: globalConstraints,
+                    mode: 'AI_DL',
+                    agent_player_idx: activePlayer,
+                    played_history: playedHistory
+                })
+            });
+            const data = await res.json();
+            if (data.probabilities) setProbabilities(data.probabilities);
+            if (data.bestMove) {
+                setSuggestedCardId(data.bestMove);
+                addLog(`💡 IA: ${data.bestMove}`);
+            }
+        } catch (e) {
+            console.error(e);
+        } finally{
+            setIsThinking(false);
+        }
+    };
+    const playCard = (cid)=>{
+        if (isThinking || isReplayMode) return;
+        const idx = allCards.findIndex((c)=>c.id === cid);
+        if (idx === -1 || allCards[idx].owner !== activePlayer) return;
+        const newCards = [
+            ...allCards
+        ];
+        newCards[idx].status = 'TABLE';
+        newCards[idx].zIndex = 200 + trickCards.length;
+        newCards[idx].tableRotation = Math.random() * 30 - 15;
+        setAllCards(newCards);
+        const newTrick = [
+            ...trickCards,
+            newCards[idx]
+        ];
+        setTrickCards(newTrick);
+        setPlayedHistory((p)=>[
+                ...p,
+                {
+                    color: newCards[idx].color,
+                    value: newCards[idx].value,
+                    owner: newCards[idx].owner
+                }
+            ]);
+        setProbabilities({});
+        setSuggestedCardId(null);
+        if (newTrick.length === 4) {
+            setTimeout(()=>{
+                const winIdx = getTrickWinner(newTrick);
+                setAllCards((p)=>p.map((c)=>c.status === 'TABLE' ? {
+                            ...c,
+                            status: 'WON',
+                            winnerIndex: winIdx,
+                            zIndex: 500
+                        } : c));
+                setMissions((p)=>p.map((m)=>{
+                        const tc = newCards.find((c)=>c.id === `${m.cardColor}-${m.cardValue}`);
+                        if (!tc || tc.status !== 'TABLE') return m;
+                        return tc.id === `${m.cardColor}-${m.cardValue}` && winIdx === m.ownerIndex ? {
+                            ...m,
+                            status: 'SUCCESS'
+                        } : tc.id === `${m.cardColor}-${m.cardValue}` ? {
+                            ...m,
+                            status: 'FAILED'
+                        } : m;
+                    }));
+                setTrickCards([]);
+                setActivePlayer(winIdx);
+                setCurrentStepText(`Pli remporté par ${getPlayerName(winIdx)}`);
+            }, 1200);
+        } else {
+            setActivePlayer((activePlayer + 1) % 4);
+        }
+    };
+    return {
+        allCards,
+        missions,
+        communications,
+        isThinking,
+        logs,
+        currentStepText,
+        probabilities,
+        suggestedCardId,
+        activePlayer,
+        initializeMission,
+        askAI,
+        playCard,
+        onReset: ()=>{
+            resetGameStates();
+            setCurrentStepText("Prêt.");
+        },
+        startTraining,
+        isTraining,
+        trainingStats,
+        loadReplay,
+        nextReplayStep,
+        exitReplay: ()=>{
+            setIsReplayMode(false);
+            resetGameStates();
+        },
+        isReplayMode,
+        replayData,
+        milestones,
+        currentMilestoneId
+    };
+};
+}),
+"[project]/components/ai/Sidebar.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>AISidebar
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/data/real_missions.ts [app-ssr] (ecmascript)");
+;
+;
+;
+function AISidebar({ currentStepText, logs, isThinking, isTraining, trainingStats, replayData, isReplayMode, milestones, currentMilestoneId, onReset, onStartTraining, onLoadReplay, onNextReplayStep, onExitReplay, onLoadMission, onNextStep, onBackToMenu }) {
+    const [selectedMission, setSelectedMission] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(1);
+    const [trainCount, setTrainCount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(100);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "w-96 bg-[#0f172a] border-r border-gray-800 flex flex-col h-full shadow-2xl z-20 font-sans text-gray-300",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "p-4 border-b border-gray-800 bg-[#1e293b] flex justify-between items-center shadow-md z-30",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                className: "text-sm font-black text-white tracking-wider flex items-center gap-2",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: [
+                                        "Novia ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-purple-400",
+                                            children: "Agent"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ai/Sidebar.tsx",
+                                            lineNumber: 42,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/ai/Sidebar.tsx",
+                                    lineNumber: 42,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 41,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-[9px] text-gray-500 font-bold tracking-widest mt-0.5",
+                                children: "Q-Learning Algorithm"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 44,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 40,
+                        columnNumber: 17
+                    }, this),
+                    onBackToMenu && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: onBackToMenu,
+                        className: "text-[10px] bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white px-3 py-1.5 rounded border border-gray-700 transition-all uppercase font-bold flex items-center gap-1 group",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "Menu"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 54,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "group-hover:-translate-x-0.5 transition-transform",
+                                children: "↩"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 55,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 50,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/ai/Sidebar.tsx",
+                lineNumber: 39,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "p-5 border-b border-gray-800 bg-[#1e293b]/50 relative",
+                children: [
+                    !isTraining && !isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "animate-fade-in",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-between items-end mb-1",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-[9px] text-gray-500 font-bold uppercase",
+                                        children: "Durée (Épisodes)"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 67,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-[9px] text-gray-500 font-bold uppercase",
+                                        children: "Action"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 68,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 66,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex gap-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        type: "number",
+                                        value: trainCount,
+                                        onChange: (e)=>setTrainCount(Number(e.target.value)),
+                                        className: "w-24 bg-gray-900 border border-purple-500/30 text-white text-xs font-bold text-center rounded focus:outline-none focus:border-purple-500 h-9 transition-colors",
+                                        step: "100",
+                                        min: "100"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 71,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>onStartTraining(trainCount, selectedMission),
+                                        className: "flex-1 h-9 bg-purple-600 hover:bg-purple-500 text-white text-xs font-black tracking-wide rounded shadow-lg shadow-purple-900/20 transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-purple-400",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "LANCER L'ENTRAÎNEMENT"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 83,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-purple-200",
+                                                children: "▶"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 84,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 79,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 70,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 65,
+                        columnNumber: 21
+                    }, this),
+                    (isTraining || trainingStats) && !isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "space-y-3 animate-fade-in",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-between items-baseline text-[10px] font-mono font-bold text-gray-400",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-white",
+                                        children: "SESSION EN COURS..."
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 94,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: [
+                                            "TOTAL: ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-blue-400",
+                                                children: trainingStats?.total_lifetime_games
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 95,
+                                                columnNumber: 42
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 95,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 93,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative w-full h-2 bg-gray-900 rounded-full overflow-hidden border border-white/5",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute top-0 left-0 h-full bg-gradient-to-r from-purple-600 to-blue-500 transition-all duration-300 shadow-[0_0_10px_rgba(168,85,247,0.5)]",
+                                    style: {
+                                        width: `${(trainingStats?.episode || 0) / (trainingStats?.max_episodes || 1) * 100}%`
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/Sidebar.tsx",
+                                    lineNumber: 100,
+                                    columnNumber: 29
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 99,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-right text-[9px] text-gray-500 -mt-1 font-mono",
+                                children: [
+                                    trainingStats?.episode,
+                                    " / ",
+                                    trainingStats?.max_episodes,
+                                    " (",
+                                    Math.round((trainingStats?.episode || 0) / (trainingStats?.max_episodes || 1) * 100),
+                                    "%)"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 105,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "grid grid-cols-2 gap-2 mt-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-black/30 p-2 rounded border border-white/5 flex flex-col items-center group hover:border-green-500/30 transition-colors",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-[8px] text-gray-500 uppercase font-bold tracking-wider mb-0.5",
+                                                children: "Score Moyen"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 112,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: `text-base font-black font-mono ${(trainingStats?.avg_reward || 0) > 0 ? 'text-green-400' : 'text-red-400'}`,
+                                                children: trainingStats?.avg_reward
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 113,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 111,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-black/30 p-2 rounded border border-white/5 flex flex-col items-center group hover:border-blue-500/30 transition-colors",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-[8px] text-gray-500 uppercase font-bold tracking-wider mb-0.5",
+                                                children: "Créativité (Epsilon)"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 118,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-base font-black font-mono text-blue-400",
+                                                children: [
+                                                    ((trainingStats?.epsilon || 0) * 100).toFixed(1),
+                                                    "%"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 119,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 117,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 110,
+                                columnNumber: 26
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 92,
+                        columnNumber: 21
+                    }, this),
+                    !isReplayMode && milestones.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-4 border-t border-white/10 pt-3",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-[9px] font-black text-gray-500 mb-2 uppercase flex justify-between items-center tracking-widest",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "Archives (Best of 10)"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 131,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "bg-gray-800 text-gray-300 px-1.5 py-0.5 rounded text-[8px]",
+                                        children: milestones.length
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 132,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 130,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "grid grid-cols-3 gap-2 max-h-40 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent",
+                                children: milestones.map((m, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>onLoadReplay(m.replay, m.episode),
+                                        className: "bg-gray-800/50 hover:bg-gray-700 border border-gray-700 hover:border-blue-500 rounded p-1.5 flex flex-col items-center transition-all group relative overflow-hidden",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-[8px] text-blue-300/70 font-bold group-hover:text-blue-300 mb-0.5",
+                                                children: [
+                                                    "#",
+                                                    m.episode
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 141,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: `text-[10px] font-black font-mono ${m.reward > 0 ? "text-green-400" : "text-red-400"}`,
+                                                children: m.reward.toFixed(0)
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 142,
+                                                columnNumber: 37
+                                            }, this)
+                                        ]
+                                    }, i, true, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 136,
+                                        columnNumber: 33
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 134,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 129,
+                        columnNumber: 21
+                    }, this),
+                    isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-blue-950/30 border border-blue-500/30 p-3 rounded mt-2 animate-slide-in shadow-[0_0_20px_rgba(59,130,246,0.1)]",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-between items-center mb-3 border-b border-blue-500/20 pb-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex flex-col",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-[8px] text-blue-400 font-bold uppercase tracking-wider",
+                                                children: "Mode Replay"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 156,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-xs font-black text-white",
+                                                children: [
+                                                    "SESSION #",
+                                                    currentMilestoneId || '?'
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                                lineNumber: 157,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 155,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: onExitReplay,
+                                        className: "text-red-400 hover:text-white hover:bg-red-500/20 text-[9px] font-bold px-2 py-1 rounded transition-colors border border-transparent hover:border-red-500/30",
+                                        children: "QUITTER ✕"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 161,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 154,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: onNextReplayStep,
+                                className: "w-full py-2.5 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white text-xs font-black tracking-wide rounded shadow-lg border-t border-blue-400 active:scale-[0.98] transition-all",
+                                children: "COUP SUIVANT ▶"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 165,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 153,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/ai/Sidebar.tsx",
+                lineNumber: 61,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `p-4 border-b border-gray-800 bg-[#1e293b] ${isTraining || isReplayMode ? 'opacity-40 pointer-events-none grayscale' : ''} transition-all duration-500`,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-1 text-[9px] text-gray-500 uppercase font-black tracking-wider",
+                        children: "Cible d'entraînement"
+                    }, void 0, false, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 177,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative group",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                className: "w-full appearance-none bg-gray-900 text-white text-[10px] font-medium p-2.5 pl-3 rounded border border-gray-700 hover:border-gray-500 focus:border-blue-500 outline-none cursor-pointer transition-colors",
+                                value: selectedMission,
+                                onChange: (e)=>setSelectedMission(Number(e.target.value)),
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                        value: 0,
+                                        className: "font-bold text-yellow-400 bg-gray-800",
+                                        children: "★ MISSION 0 - Mission Aléatoire (Mix)"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/Sidebar.tsx",
+                                        lineNumber: 184,
+                                        columnNumber: 25
+                                    }, this),
+                                    __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$real_missions$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["REAL_MISSION_LOGBOOK"].map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            value: m.id,
+                                            children: [
+                                                "MISSION ",
+                                                m.id,
+                                                " - ",
+                                                m.description.substring(0, 35),
+                                                m.description.length > 35 ? '...' : ''
+                                            ]
+                                        }, m.id, true, {
+                                            fileName: "[project]/components/ai/Sidebar.tsx",
+                                            lineNumber: 186,
+                                            columnNumber: 29
+                                        }, this))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 179,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 text-[8px]",
+                                children: "▼"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/Sidebar.tsx",
+                                lineNumber: 192,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 178,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-4 flex justify-end",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: onReset,
+                            className: "text-[9px] text-red-400/70 hover:text-red-400 font-bold transition-colors flex items-center gap-1",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "🗑"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/Sidebar.tsx",
+                                    lineNumber: 197,
+                                    columnNumber: 25
+                                }, this),
+                                " Réinitialiser tout"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/ai/Sidebar.tsx",
+                            lineNumber: 196,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 195,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/ai/Sidebar.tsx",
+                lineNumber: 176,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "p-3 border-b border-gray-800 bg-[#0f172a] shadow-inner",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "text-xs font-bold text-blue-400 min-h-[1.5rem] flex items-center gap-2",
+                    children: [
+                        isThinking ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "w-3 h-3 border-2 border-blue-400 border-t-transparent rounded-full animate-spin"
+                        }, void 0, false, {
+                            fileName: "[project]/components/ai/Sidebar.tsx",
+                            lineNumber: 206,
+                            columnNumber: 24
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "text-blue-500",
+                            children: "ℹ"
+                        }, void 0, false, {
+                            fileName: "[project]/components/ai/Sidebar.tsx",
+                            lineNumber: 208,
+                            columnNumber: 24
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "truncate",
+                            children: currentStepText
+                        }, void 0, false, {
+                            fileName: "[project]/components/ai/Sidebar.tsx",
+                            lineNumber: 210,
+                            columnNumber: 20
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/ai/Sidebar.tsx",
+                    lineNumber: 204,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/ai/Sidebar.tsx",
+                lineNumber: 203,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex-1 overflow-y-auto p-3 space-y-1.5 font-mono text-[9px] text-gray-500 bg-black/20 scrollbar-thin scrollbar-thumb-gray-800",
+                children: [
+                    logs.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-center italic opacity-30 mt-10",
+                        children: "En attente d'actions..."
+                    }, void 0, false, {
+                        fileName: "[project]/components/ai/Sidebar.tsx",
+                        lineNumber: 215,
+                        columnNumber: 39
+                    }, this),
+                    logs.map((log, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "border-l-2 border-gray-800 pl-2 hover:border-gray-600 hover:text-gray-300 transition-colors break-words leading-tight",
+                            children: log
+                        }, i, false, {
+                            fileName: "[project]/components/ai/Sidebar.tsx",
+                            lineNumber: 217,
+                            columnNumber: 21
+                        }, this))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/ai/Sidebar.tsx",
+                lineNumber: 214,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "p-1 bg-black text-[8px] text-center text-gray-700 font-mono uppercase tracking-widest",
+                children: "v1.0.2 • PyTorch Backend"
+            }, void 0, false, {
+                fileName: "[project]/components/ai/Sidebar.tsx",
+                lineNumber: 224,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ai/Sidebar.tsx",
+        lineNumber: 36,
+        columnNumber: 9
+    }, this);
+}
+}),
+"[project]/components/ai/GameBoard.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>AIGameBoard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/Card.tsx [app-ssr] (ecmascript)");
+;
+;
+;
+// =================================================================================
+// 🛠️ CONFIGURATION 1 : ZONES D'INFO (Missions + Slot Indice)
+// =================================================================================
+const INFO_POSITIONS = {
+    0: {
+        x: 150,
+        y: 190,
+        rotation: 0
+    },
+    1: {
+        x: -120,
+        y: 40,
+        rotation: 90
+    },
+    2: {
+        x: 150,
+        y: -110,
+        rotation: 180
+    },
+    3: {
+        x: 420,
+        y: 40,
+        rotation: -90
+    }
+};
+// =================================================================================
+// 🛠️ CONFIGURATION 2 : CENTRE DES MAINS
+// =================================================================================
+const HAND_POSITIONS = {
+    0: {
+        x: 0,
+        y: 260,
+        rotation: 0
+    },
+    1: {
+        x: -380,
+        y: 0,
+        rotation: 90
+    },
+    2: {
+        x: 0,
+        y: -260,
+        rotation: 180
+    },
+    3: {
+        x: 380,
+        y: 0,
+        rotation: -90
+    }
+};
+// =================================================================================
+// 🛠️ CONFIGURATION 3 : OFFSET DES CARTES COMMUNIQUÉES
+// =================================================================================
+const COMM_CARD_OFFSETS = {
+    0: {
+        x: -110,
+        y: -40
+    },
+    1: {
+        x: 0,
+        y: 150
+    },
+    2: {
+        x: 190,
+        y: 40
+    },
+    3: {
+        x: 80,
+        y: -150
+    }
+};
+// =================================================================================
+// 🛠️ CONFIGURATION 4 : POSITION DU JETON SUR LA CARTE
+// =================================================================================
+const TOKEN_POSITIONS_CONFIG = {
+    0: {
+        TOP: {
+            x: 0,
+            y: -45
+        },
+        MID: {
+            x: 30,
+            y: 0
+        },
+        BOT: {
+            x: 0,
+            y: 45
+        }
+    },
+    1: {
+        TOP: {
+            x: 0,
+            y: -45
+        },
+        MID: {
+            x: 30,
+            y: 0
+        },
+        BOT: {
+            x: 0,
+            y: 45
+        }
+    },
+    2: {
+        TOP: {
+            x: 0,
+            y: -45
+        },
+        MID: {
+            x: 30,
+            y: 0
+        },
+        BOT: {
+            x: 0,
+            y: 45
+        }
+    },
+    3: {
+        TOP: {
+            x: 0,
+            y: -45
+        },
+        MID: {
+            x: 30,
+            y: 0
+        },
+        BOT: {
+            x: 0,
+            y: 45
+        }
+    }
+};
+const MissionToken = ({ mission })=>{
+    const statusClass = mission.status === 'SUCCESS' ? 'border-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)] bg-green-900/80' : mission.status === 'FAILED' ? 'border-red-500 opacity-60 bg-red-900/50' : 'border-gray-500 bg-gray-900';
+    const token = mission.token;
+    const isSpecial = mission.cardColor === 'Special' || mission.cardValue === 0;
+    const specialLabels = {
+        'NO_TRICKS': '0 PLI',
+        'NO_TRICKS_PLAYER': '0 PLI (J)',
+        'ALL_ROCKETS': '🚀 ALL',
+        'SPECIFIC_WIN_1': 'WIN 1',
+        'NO_9_WIN': 'NO 9'
+    };
+    const label = token && specialLabels[token] || token;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: `relative w-10 h-14 rounded border-2 ${statusClass} flex flex-col items-center justify-center transform transition-all z-20 shrink-0 select-none`,
+        children: [
+            !isSpecial && token !== 'None' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute -top-3 -right-3 bg-purple-600 rounded-full w-5 h-5 flex items-center justify-center text-[10px] text-white font-bold shadow border border-white/20 z-30",
+                children: token === 'Omega' ? 'Ω' : token
+            }, void 0, false, {
+                fileName: "[project]/components/ai/GameBoard.tsx",
+                lineNumber: 63,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            !isSpecial ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: `w-full h-1.5 mb-1 ${mission.cardColor === 'Pink' ? 'bg-pink-500' : mission.cardColor === 'Green' ? 'bg-green-500' : mission.cardColor === 'Blue' ? 'bg-blue-600' : mission.cardColor === 'Yellow' ? 'bg-yellow-400' : mission.cardColor === 'Rocket' ? 'bg-gray-700' : 'bg-gray-600'}`
+                    }, void 0, false, {
+                        fileName: "[project]/components/ai/GameBoard.tsx",
+                        lineNumber: 70,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-white font-bold text-lg leading-none",
+                        children: mission.cardValue
+                    }, void 0, false, {
+                        fileName: "[project]/components/ai/GameBoard.tsx",
+                        lineNumber: 71,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-col items-center justify-center h-full w-full p-0.5 text-center",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-[8px] font-black text-gray-300 leading-tight uppercase",
+                    children: label
+                }, void 0, false, {
+                    fileName: "[project]/components/ai/GameBoard.tsx",
+                    lineNumber: 75,
+                    columnNumber: 21
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/components/ai/GameBoard.tsx",
+                lineNumber: 74,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            mission.status === 'SUCCESS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute -bottom-2 -left-2 bg-white border border-green-500 rounded-full w-5 h-5 flex items-center justify-center shadow-md z-40",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-green-600 font-bold text-xs",
+                    children: "✔"
+                }, void 0, false, {
+                    fileName: "[project]/components/ai/GameBoard.tsx",
+                    lineNumber: 79,
+                    columnNumber: 192
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/components/ai/GameBoard.tsx",
+                lineNumber: 79,
+                columnNumber: 46
+            }, ("TURBOPACK compile-time value", void 0)),
+            mission.status === 'FAILED' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute -bottom-2 -right-2 bg-white border border-red-500 rounded-full w-5 h-5 flex items-center justify-center shadow-md z-40",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-red-500 font-bold text-xs",
+                    children: "✕"
+                }, void 0, false, {
+                    fileName: "[project]/components/ai/GameBoard.tsx",
+                    lineNumber: 80,
+                    columnNumber: 190
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/components/ai/GameBoard.tsx",
+                lineNumber: 80,
+                columnNumber: 45
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ai/GameBoard.tsx",
+        lineNumber: 61,
+        columnNumber: 9
+    }, ("TURBOPACK compile-time value", void 0));
+};
+const ClueSlot = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "w-12 h-16 relative shrink-0 flex items-center justify-center",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "absolute inset-0 border-2 border-dashed border-white/10 rounded flex items-center justify-center",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "text-[9px] text-white/20 font-medium tracking-widest text-center",
+                children: "INDICE"
+            }, void 0, false, {
+                fileName: "[project]/components/ai/GameBoard.tsx",
+                lineNumber: 88,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0))
+        }, void 0, false, {
+            fileName: "[project]/components/ai/GameBoard.tsx",
+            lineNumber: 87,
+            columnNumber: 9
+        }, ("TURBOPACK compile-time value", void 0))
+    }, void 0, false, {
+        fileName: "[project]/components/ai/GameBoard.tsx",
+        lineNumber: 86,
+        columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0));
+const CommunicationToken = ({ type, playerIndex })=>{
+    const [isVisible, setIsVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const timer = setTimeout(()=>setIsVisible(true), 500);
+        return ()=>clearTimeout(timer);
+    }, []);
+    const playerConfig = TOKEN_POSITIONS_CONFIG[playerIndex];
+    const pos = playerConfig[type] || {
+        x: 0,
+        y: 0
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: `absolute w-7 h-7 bg-green-500 rounded-full border-2 border-green-300 shadow-[0_0_15px_rgba(34,197,94,0.9)] z-[1000] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`,
+        style: {
+            transform: `translate(-50%, -50%) translate(${pos.x}px, ${pos.y}px)`
+        }
+    }, void 0, false, {
+        fileName: "[project]/components/ai/GameBoard.tsx",
+        lineNumber: 101,
+        columnNumber: 9
+    }, ("TURBOPACK compile-time value", void 0));
+};
+function AIGameBoard({ allCards = [], missions = [], probabilities = {}, suggestedCardId, activePlayer = 0, isTraining = false, isReplayMode = false, communications = {} }) {
+    const HAND_RADIUS = 600;
+    const ANGLE_STEP = 5;
+    const getCardStyle = (card)=>{
+        // 1. VICTOIRE
+        if (card.status === 'WON') {
+            const winPositions = [
+                `translate(0px, 600px)`,
+                `translate(-800px, 0px)`,
+                `translate(0px, -600px)`,
+                `translate(800px, 0px)`
+            ];
+            return {
+                transform: `translate(-50%, -50%) ${winPositions[card.winnerIndex || 0]} scale(0.4)`,
+                opacity: 0,
+                zIndex: 500,
+                transition: 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out'
+            };
+        }
+        // 2. TABLE (Cartes jouées)
+        if (card.status === 'TABLE') {
+            const rX = card.tableRotation * 5 % 15 - 7;
+            const rY = card.tableRotation * 7 % 15 - 7;
+            return {
+                transform: `translate(-50%, -50%) translate(${rX}px, ${rY}px) rotate(${card.tableRotation}deg) scale(1.1)`,
+                opacity: 1,
+                zIndex: card.zIndex,
+                transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'
+            };
+        }
+        // 3. COMMUNICATION
+        if (card.status === 'COMMUNICATED') {
+            const infoPos = INFO_POSITIONS[card.owner];
+            const offset = COMM_CARD_OFFSETS[card.owner] || {
+                x: 0,
+                y: 0
+            };
+            // CALCUL TRIGONOMÉTRIQUE POUR APLATIR LA TRANSFORMATION
+            // On calcule la position absolue X,Y exacte qui résulte de "Rotation puis Décalage relatif"
+            const rad = infoPos.rotation * Math.PI / 180;
+            const cos = Math.cos(rad);
+            const sin = Math.sin(rad);
+            // On fait tourner le vecteur offset
+            const rotOffsetX = offset.x * cos - offset.y * sin;
+            const rotOffsetY = offset.x * sin + offset.y * cos;
+            // On l'ajoute à la position de base
+            const finalX = infoPos.x + rotOffsetX;
+            const finalY = infoPos.y + rotOffsetY;
+            return {
+                // MAINTENANT : La structure est "Translate(Pos) Rotate(Angle)" comme pour la TABLE.
+                // Le navigateur peut donc interpoler linéairement vers le centre.
+                transform: `translate(-50%, -50%) translate(${finalX}px, ${finalY}px) rotate(${infoPos.rotation}deg) scale(0.6)`,
+                opacity: 1,
+                zIndex: 50,
+                transition: 'transform 0.5s ease-out'
+            };
+        }
+        // 4. MAIN
+        const cardsInHand = allCards.filter((c)=>c.owner === card.owner && c.status === 'HAND');
+        const colorPriority = {
+            'Blue': 1,
+            'Green': 2,
+            'Pink': 3,
+            'Yellow': 4,
+            'Rocket': 5
+        };
+        cardsInHand.sort((a, b)=>{
+            if (a.color !== b.color) return colorPriority[a.color] - colorPriority[b.color];
+            return a.value - b.value;
+        });
+        const myIndex = cardsInHand.findIndex((c)=>c.id === card.id);
+        const angle = (myIndex - (cardsInHand.length - 1) / 2) * ANGLE_STEP;
+        const pos = HAND_POSITIONS[card.owner] || {
+            x: 0,
+            y: 0,
+            rotation: 0
+        };
+        const centerHTML = `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px))`;
+        return {
+            transform: `${centerHTML} rotate(${pos.rotation}deg) translate(0px, ${HAND_RADIUS}px) rotate(${angle}deg) translate(0px, -${HAND_RADIUS}px)`,
+            opacity: 1,
+            zIndex: myIndex,
+            transition: 'transform 0.5s ease-out'
+        };
+    };
+    const getInfoZoneStyle = (playerIndex)=>{
+        const pos = INFO_POSITIONS[playerIndex];
+        return {
+            transform: `translate(-50%, -50%) translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg)`
+        };
+    };
+    const showTrainingText = isTraining;
+    const showIdleText = !isTraining && !isReplayMode && allCards.length === 0;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "w-full h-screen relative bg-[#1e293b] overflow-hidden shadow-inner flex items-center justify-center select-none font-sans",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 flex items-center justify-center pointer-events-none z-[1000]",
+                children: [
+                    showIdleText && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "animate-fade-in text-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-3xl font-bold text-blue-400 mb-2 drop-shadow-md",
+                                children: "Simulation The Crew"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/GameBoard.tsx",
+                                lineNumber: 214,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-gray-400 font-medium drop-shadow",
+                                children: "Choisissez une mission pour visualiser le résultat"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/GameBoard.tsx",
+                                lineNumber: 215,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/GameBoard.tsx",
+                        lineNumber: 213,
+                        columnNumber: 17
+                    }, this),
+                    showTrainingText && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-center animate-pulse",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-5xl mb-4",
+                                children: "🧠"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/GameBoard.tsx",
+                                lineNumber: 220,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-2xl font-bold text-purple-400 mb-2 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]",
+                                children: "L'IA est en cours de réflexion..."
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/GameBoard.tsx",
+                                lineNumber: 221,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-gray-400 text-sm font-bold",
+                                children: "Cliquez sur une partie enregistrée pour la visualiser"
+                            }, void 0, false, {
+                                fileName: "[project]/components/ai/GameBoard.tsx",
+                                lineNumber: 222,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/ai/GameBoard.tsx",
+                        lineNumber: 219,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/ai/GameBoard.tsx",
+                lineNumber: 211,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative w-0 h-0 flex items-center justify-center",
+                children: [
+                    allCards.length > 0 && [
+                        0,
+                        1,
+                        2,
+                        3
+                    ].map((pid)=>{
+                        const pMissions = missions.filter((m)=>m.ownerIndex === pid);
+                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute w-[300px] h-[80px] pointer-events-none transition-all duration-500",
+                            style: getInfoZoneStyle(pid),
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute left-1/2 top-1/2 -translate-y-1/2 w-px h-8 bg-white/20"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/GameBoard.tsx",
+                                    lineNumber: 238,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute left-1/2 top-1/2 -translate-y-1/2 ml-4",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ClueSlot, {}, void 0, false, {
+                                        fileName: "[project]/components/ai/GameBoard.tsx",
+                                        lineNumber: 239,
+                                        columnNumber: 90
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/GameBoard.tsx",
+                                    lineNumber: 239,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute right-1/2 top-1/2 -translate-y-1/2 mr-4 flex gap-2 justify-end items-center",
+                                    children: pMissions.map((m, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MissionToken, {
+                                            mission: m
+                                        }, i, false, {
+                                            fileName: "[project]/components/ai/GameBoard.tsx",
+                                            lineNumber: 241,
+                                            columnNumber: 54
+                                        }, this))
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/GameBoard.tsx",
+                                    lineNumber: 240,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, pid, true, {
+                            fileName: "[project]/components/ai/GameBoard.tsx",
+                            lineNumber: 233,
+                            columnNumber: 21
+                        }, this);
+                    }),
+                    allCards.map((card)=>{
+                        const style = getCardStyle(card);
+                        const probKey = `${card.color}-${card.value}`;
+                        const prob = probabilities[probKey];
+                        const isSuggested = suggestedCardId === probKey;
+                        const isThisCommunicated = card.status === 'COMMUNICATED';
+                        const commData = communications[card.owner];
+                        const showToken = isThisCommunicated && commData && commData.cardId === card.id;
+                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: `absolute top-0 left-0 w-20 aspect-[2/3]`,
+                            style: {
+                                ...style,
+                                willChange: 'transform, opacity',
+                                boxShadow: isSuggested ? '0 0 30px 10px rgba(59, 130, 246, 0.7)' : undefined
+                            },
+                            children: [
+                                isSuggested && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute -inset-1 bg-blue-500 rounded-lg animate-pulse blur-sm -z-10"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/GameBoard.tsx",
+                                    lineNumber: 268,
+                                    columnNumber: 41
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    color: card.color,
+                                    value: card.value,
+                                    className: "w-full h-full shadow-2xl border border-black/30 rounded-lg"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/GameBoard.tsx",
+                                    lineNumber: 270,
+                                    columnNumber: 25
+                                }, this),
+                                showToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute top-1/2 left-1/2 w-0 h-0 z-50",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(CommunicationToken, {
+                                        type: commData.type,
+                                        playerIndex: card.owner
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/GameBoard.tsx",
+                                        lineNumber: 275,
+                                        columnNumber: 33
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/GameBoard.tsx",
+                                    lineNumber: 274,
+                                    columnNumber: 29
+                                }, this),
+                                prob !== undefined && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute top-8 left-0 right-0 flex justify-center z-50",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-black/80 backdrop-blur-[2px] rounded px-1.5 py-0.5 shadow border border-white/20",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: `text-xs font-black ${prob >= 80 ? 'text-green-400' : prob <= 20 ? 'text-red-400' : 'text-yellow-400'}`,
+                                            children: [
+                                                prob,
+                                                "%"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/ai/GameBoard.tsx",
+                                            lineNumber: 283,
+                                            columnNumber: 37
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ai/GameBoard.tsx",
+                                        lineNumber: 282,
+                                        columnNumber: 33
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ai/GameBoard.tsx",
+                                    lineNumber: 281,
+                                    columnNumber: 29
+                                }, this)
+                            ]
+                        }, card.id, true, {
+                            fileName: "[project]/components/ai/GameBoard.tsx",
+                            lineNumber: 259,
+                            columnNumber: 21
+                        }, this);
+                    })
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/ai/GameBoard.tsx",
+                lineNumber: 227,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ai/GameBoard.tsx",
+        lineNumber: 208,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/components/GameModeSelector.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>GameModeSelector
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+;
+function GameModeSelector({ onSelectMode }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "min-h-screen w-full bg-[#0b1121] flex flex-col items-center justify-center p-8 font-sans relative overflow-hidden",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"
+            }, void 0, false, {
+                fileName: "[project]/components/GameModeSelector.tsx",
+                lineNumber: 13,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"
+            }, void 0, false, {
+                fileName: "[project]/components/GameModeSelector.tsx",
+                lineNumber: 14,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center mb-16 relative z-10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "inline-block mb-3 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-[10px] font-bold tracking-widest uppercase",
+                        children: "Version 2.0 • Neural Network Edition"
+                    }, void 0, false, {
+                        fileName: "[project]/components/GameModeSelector.tsx",
+                        lineNumber: 18,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-7xl font-black text-white tracking-tighter mb-2 drop-shadow-2xl",
+                        children: [
+                            "NOV",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-800",
+                                children: "IA"
+                            }, void 0, false, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 22,
+                                columnNumber: 24
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/GameModeSelector.tsx",
+                        lineNumber: 21,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-slate-400 text-lg font-light max-w-lg mx-auto",
+                        children: "Exploration des stratégies coopératives par Intelligence Artificielle et Solver Analytique."
+                    }, void 0, false, {
+                        fileName: "[project]/components/GameModeSelector.tsx",
+                        lineNumber: 24,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/GameModeSelector.tsx",
+                lineNumber: 17,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl w-full relative z-10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: ()=>onSelectMode('GOD'),
+                        className: "group relative bg-[#1e293b]/50 backdrop-blur-xl border border-white/5 p-8 rounded-3xl hover:border-purple-500/50 hover:bg-[#1e293b]/80 transition-all duration-500 text-left hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)] flex flex-col h-full",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-6xl filter drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]",
+                                    children: "👁️"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                    lineNumber: 38,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 37,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-auto",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-2xl font-bold text-white mb-1 group-hover:text-purple-400 transition-colors",
+                                        children: 'Solver "Dieu"'
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 42,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-xs font-mono text-purple-400/70 mb-6",
+                                        children: "ALGORITHME DÉTERMINISTE"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 43,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-slate-400 text-sm leading-relaxed mb-6",
+                                        children: "Utilise la force brute et une connaissance parfaite des mains cachées pour trouver la solution optimale mathématique."
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 44,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 41,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "border-t border-white/5 pt-6 mt-6",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                    className: "space-y-3 text-xs font-medium text-slate-300",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "w-1.5 h-1.5 rounded-full bg-purple-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                                    lineNumber: 52,
+                                                    columnNumber: 33
+                                                }, this),
+                                                " Vision Omnisciente (Triche)"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/GameModeSelector.tsx",
+                                            lineNumber: 51,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "w-1.5 h-1.5 rounded-full bg-purple-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                                    lineNumber: 55,
+                                                    columnNumber: 33
+                                                }, this),
+                                                " Taux de réussite 100%"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/GameModeSelector.tsx",
+                                            lineNumber: 54,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "flex items-center gap-2 text-slate-500",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "w-1.5 h-1.5 rounded-full bg-slate-600"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                                    lineNumber: 58,
+                                                    columnNumber: 33
+                                                }, this),
+                                                " Lent (Force Brute)"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/GameModeSelector.tsx",
+                                            lineNumber: 57,
+                                            columnNumber: 29
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                    lineNumber: 50,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 49,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/GameModeSelector.tsx",
+                        lineNumber: 33,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: ()=>onSelectMode('AI'),
+                        className: "group relative bg-[#1e293b]/50 backdrop-blur-xl border border-blue-500/30 p-8 rounded-3xl hover:border-blue-400 hover:bg-[#1e293b]/80 transition-all duration-500 text-left hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.4)] flex flex-col h-full ring-1 ring-blue-500/20",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg shadow-blue-600/40",
+                                children: "RECOMMANDÉ"
+                            }, void 0, false, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 69,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-6xl filter drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]",
+                                    children: "🧠"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                    lineNumber: 73,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 72,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-auto",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-2xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors",
+                                        children: "Deep Learning"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 77,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-xs font-mono text-blue-400/70 mb-6",
+                                        children: "RÉSEAU DE NEURONES (DQN)"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 78,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-slate-400 text-sm leading-relaxed mb-6",
+                                        children: 'Une IA qui apprend par elle-même en jouant des milliers de parties. Développe une "intuition" humaine sans tricher.'
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 79,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 76,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "border-t border-white/5 pt-6 mt-6",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                    className: "space-y-3 text-xs font-medium text-slate-300",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "w-1.5 h-1.5 rounded-full bg-blue-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                                    lineNumber: 87,
+                                                    columnNumber: 33
+                                                }, this),
+                                                " Entraînement Temps Réel"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/GameModeSelector.tsx",
+                                            lineNumber: 86,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "w-1.5 h-1.5 rounded-full bg-blue-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                                    lineNumber: 90,
+                                                    columnNumber: 33
+                                                }, this),
+                                                " Décision Instantanée (0.01s)"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/GameModeSelector.tsx",
+                                            lineNumber: 89,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "w-1.5 h-1.5 rounded-full bg-blue-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                                    lineNumber: 93,
+                                                    columnNumber: 33
+                                                }, this),
+                                                " Respect du brouillard de guerre"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/GameModeSelector.tsx",
+                                            lineNumber: 92,
+                                            columnNumber: 29
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                    lineNumber: 85,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 84,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/GameModeSelector.tsx",
+                        lineNumber: 65,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        disabled: true,
+                        className: "group relative bg-[#0f172a]/30 backdrop-blur-sm border border-white/5 p-8 rounded-3xl opacity-60 cursor-not-allowed text-left flex flex-col h-full grayscale hover:grayscale-0 transition-all duration-500",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute top-0 right-0 p-6 opacity-10",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-6xl",
+                                    children: "👥"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                    lineNumber: 105,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 104,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-auto",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-2xl font-bold text-slate-500 mb-1",
+                                        children: "Multijoueur"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 109,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-xs font-mono text-slate-600 mb-6",
+                                        children: "HUMAN VS AI"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 110,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-slate-500 text-sm leading-relaxed mb-6",
+                                        children: "Rejoignez une partie avec 3 agents IA entraînés pour tester votre synergie avec le réseau de neurones."
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/GameModeSelector.tsx",
+                                        lineNumber: 111,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 108,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "border-t border-white/5 pt-6 mt-6",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-2 text-xs font-bold text-slate-600 bg-slate-800/50 px-3 py-2 rounded-lg w-fit",
+                                    children: "🔒 EN DÉVELOPPEMENT"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/GameModeSelector.tsx",
+                                    lineNumber: 117,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/GameModeSelector.tsx",
+                                lineNumber: 116,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/GameModeSelector.tsx",
+                        lineNumber: 100,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/GameModeSelector.tsx",
+                lineNumber: 30,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-6 text-[10px] text-slate-600 font-mono",
+                children: "SYSTEME: ONLINE • GPU: READY • PYTORCH: ACTIVE"
+            }, void 0, false, {
+                fileName: "[project]/components/GameModeSelector.tsx",
+                lineNumber: 126,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/GameModeSelector.tsx",
+        lineNumber: 10,
+        columnNumber: 9
+    }, this);
+}
+}),
+"[project]/app/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Home
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+// --- IMPORTS MODE DIEU ---
+var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useGodMode$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/useGodMode.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$god$2f$Sidebar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/god/Sidebar.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$god$2f$GameBoard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/god/GameBoard.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$god$2f$CardPicker$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/god/CardPicker.tsx [app-ssr] (ecmascript)");
+// --- IMPORTS MODE AI ---
+var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useAIMode$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/useAIMode.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ai$2f$Sidebar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ai/Sidebar.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ai$2f$GameBoard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ai/GameBoard.tsx [app-ssr] (ecmascript)");
+// --- IMPORT COMMUN ---
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$GameModeSelector$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/GameModeSelector.tsx [app-ssr] (ecmascript)");
+'use client';
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+function Home() {
+    const [gameMode, setGameMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const godGame = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useGodMode$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useGodMode"])();
+    const aiGame = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useAIMode$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAIMode"])();
+    // --- SÉLECTEUR DE MODE ---
+    if (!gameMode) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$GameModeSelector$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+            onSelectMode: (mode)=>{
+                setGameMode(mode);
+                if (mode === 'GOD') godGame.startNewGame();
+            }
+        }, void 0, false, {
+            fileName: "[project]/app/page.tsx",
+            lineNumber: 27,
+            columnNumber: 14
+        }, this);
+    }
+    if (gameMode === 'GOD') {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "h-screen w-screen flex overflow-hidden bg-[#2c3e50] font-sans relative",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$god$2f$Sidebar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    ...godGame,
+                    removeMission: (idx)=>godGame.setMissions((p)=>p.filter((_, i)=>i !== idx)),
+                    globalConstraints: godGame.globalConstraints,
+                    clearAllHands: godGame.clearAllHands,
+                    clearStats: godGame.clearStats,
+                    communications: godGame.communications,
+                    addCommunication: godGame.addCommunication,
+                    gameMode: "GOD",
+                    onBackToMenu: ()=>setGameMode(null)
+                }, void 0, false, {
+                    fileName: "[project]/app/page.tsx",
+                    lineNumber: 36,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$god$2f$GameBoard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    allCards: godGame.allCards,
+                    missions: godGame.missions,
+                    onPlayerClick: godGame.openEditor
+                }, void 0, false, {
+                    fileName: "[project]/app/page.tsx",
+                    lineNumber: 48,
+                    columnNumber: 13
+                }, this),
+                godGame.editingPlayer !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$god$2f$CardPicker$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    currentPlayer: godGame.editingPlayer,
+                    allCards: godGame.allCards,
+                    onToggleCard: godGame.toggleCard,
+                    onClose: godGame.closeEditor
+                }, void 0, false, {
+                    fileName: "[project]/app/page.tsx",
+                    lineNumber: 55,
+                    columnNumber: 17
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/page.tsx",
+            lineNumber: 35,
+            columnNumber: 9
+        }, this);
+    }
+    if (gameMode === 'AI') {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "h-screen w-screen flex overflow-hidden bg-[#111827] font-sans relative",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ai$2f$Sidebar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    currentStepText: aiGame.currentStepText,
+                    logs: aiGame.logs,
+                    isThinking: aiGame.isThinking,
+                    isTraining: aiGame.isTraining,
+                    trainingStats: aiGame.trainingStats,
+                    replayData: aiGame.replayData,
+                    isReplayMode: aiGame.isReplayMode,
+                    onLoadReplay: aiGame.loadReplay,
+                    onNextReplayStep: aiGame.nextReplayStep,
+                    onExitReplay: aiGame.exitReplay,
+                    milestones: aiGame.milestones,
+                    currentMilestoneId: aiGame.currentMilestoneId,
+                    onNextStep: aiGame.askAI,
+                    onLoadMission: aiGame.initializeMission,
+                    onReset: aiGame.onReset,
+                    onStartTraining: aiGame.startTraining,
+                    onBackToMenu: ()=>setGameMode(null)
+                }, void 0, false, {
+                    fileName: "[project]/app/page.tsx",
+                    lineNumber: 69,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ai$2f$GameBoard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    allCards: aiGame.allCards,
+                    missions: aiGame.missions,
+                    probabilities: aiGame.probabilities,
+                    suggestedCardId: aiGame.suggestedCardId,
+                    activePlayer: aiGame.activePlayer,
+                    isTraining: aiGame.isTraining,
+                    isReplayMode: aiGame.isReplayMode,
+                    communications: aiGame.communications
+                }, void 0, false, {
+                    fileName: "[project]/app/page.tsx",
+                    lineNumber: 89,
+                    columnNumber: 17
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/page.tsx",
+            lineNumber: 68,
+            columnNumber: 13
+        }, this);
+    }
+    return null;
+}
+}),
+];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__45043e7c._.js.map
