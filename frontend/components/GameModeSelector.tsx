@@ -16,8 +16,8 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
             <div className="text-center mb-12 relative z-10 max-w-3xl">
                 <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded border border-slate-700 bg-slate-800/40 backdrop-blur-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
-                    <span className="text-slate-300 text-[10px] font-mono font-bold tracking-widest uppercase">
-                        IMPLÉMENTATION AVANCÉE • SYSTÈMES DE DÉCISION POUR THE CREW (IELLO)
+                    <span className="text-slate-300 text-[10px] font-mono font-bold tracking-widest">
+                        IMPLÉMENTATION • SYSTÈMES DE DÉCISION POUR THE CREW (IELLO)
                     </span>
                 </div>
                 
@@ -27,10 +27,10 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
                 
                 <div className="space-y-2">
                     <h2 className="text-lg font-bold text-white tracking-wide">
-                        Systèmes de décision pour jeu de plis coopératif à information imparfaite
+                        Systèmes de décision pour un jeu coopératif à information imparfaite
                     </h2>
                     <p className="text-slate-400 text-sm font-mono opacity-80">
-                        Deux paradigmes : <span className="text-purple-400">exploration exhaustive</span> vs <span className="text-blue-400">apprentissage par renforcement</span>
+                        Choix de l'approche : <span className="text-purple-400">Exploration exhaustive</span> vs <span className="text-blue-400">Apprentissage par renforcement</span>
                     </p>
                 </div>
             </div>
@@ -51,7 +51,7 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
                             Approche Déterministe
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
-                            Solver Omniscient
+                            Solver omniscient
                         </h3>
                         <p className="text-slate-400 text-xs leading-relaxed">
                             Moteur de résolution déterministe explorant l’espace des états du jeu. Accède à l’ensemble des informations cachées afin d’évaluer exhaustivement les séquences de coups et d’identifier des choix optimaux.
@@ -110,12 +110,12 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
                 </button>
 
                 {/* 3. MULTIJOUEUR (Indisponible) */}
-                <div className="relative bg-[#0f172a]/20 border border-white/5 p-8 rounded-xl flex flex-col h-full opacity-40 grayscale pointer-events-none">
+                <div className="relative bg-[#0f172a]/20 border border-white/5 p-8 rounded-xl flex flex-col h-full opacity-80 grayscale pointer-events-none">
                     <div className="mb-auto">
                         <div className="text-[10px] font-mono font-bold text-slate-500 mb-2 uppercase tracking-wider border border-slate-700 w-fit px-2 py-0.5 rounded">
                             En cours de conception
                         </div>
-                        <h3 className="text-xl font-bold text-slate-600 mb-2">Humain + agents artificiels</h3>
+                        <h3 className="text-xl font-bold text-slate-600 mb-2">Humain + Agents artificiels</h3>
                         <p className="text-slate-600 text-xs leading-relaxed">
                             Intégration d’un joueur humain au sein d’un système multi-agents. Objectif : analyser la compatibilité entre stratégies humaines et décisions générées par les modèles.
                         </p>
@@ -126,7 +126,7 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
 
             {/* FOOTER */}
             <div className="absolute bottom-6 w-full text-center">
-                <div className="text-[9px] text-slate-600 font-mono tracking-widest uppercase">
+                <div className="text-[12px] text-slate-600 font-mono tracking-widest">
                     Novia • Architecture & Simulation • v2.1
                 </div>
             </div>

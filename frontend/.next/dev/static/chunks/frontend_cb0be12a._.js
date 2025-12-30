@@ -5141,414 +5141,414 @@ function GameModeSelector({ onSelectMode }) {
         className: "min-h-screen w-full bg-[#0b1121] flex flex-col items-center justify-center p-8 font-sans relative overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"
+                className: "absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-15 pointer-events-none"
+            }, void 0, false, {
+                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                lineNumber: 12,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-indigo-900/20 rounded-full blur-[120px] pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
                 lineNumber: 13,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"
-            }, void 0, false, {
-                fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 14,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-center mb-16 relative z-10",
+                className: "text-center mb-12 relative z-10 max-w-3xl",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "inline-block mb-3 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-[10px] font-bold tracking-widest uppercase",
-                        children: "Version 2.0 • Neural Network Edition"
-                    }, void 0, false, {
+                        className: "inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded border border-slate-700 bg-slate-800/40 backdrop-blur-sm",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "w-1.5 h-1.5 rounded-full bg-orange-500"
+                            }, void 0, false, {
+                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                lineNumber: 18,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-slate-300 text-[10px] font-mono font-bold tracking-widest",
+                                children: "IMPLÉMENTATION • SYSTÈMES DE DÉCISION POUR THE CREW (IELLO)"
+                            }, void 0, false, {
+                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                lineNumber: 19,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                        lineNumber: 18,
+                        lineNumber: 17,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "text-7xl font-black text-white tracking-tighter mb-2 drop-shadow-2xl",
+                        className: "text-7xl font-black text-white tracking-tighter mb-4 drop-shadow-2xl",
                         children: [
                             "NOV",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-800",
+                                className: "text-blue-500",
                                 children: "IA"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 22,
+                                lineNumber: 25,
                                 columnNumber: 24
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                        lineNumber: 21,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-slate-400 text-lg font-light max-w-lg mx-auto",
-                        children: "Exploration des stratégies coopératives par Intelligence Artificielle et Solver Analytique."
-                    }, void 0, false, {
-                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
                         lineNumber: 24,
                         columnNumber: 17
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 17,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl w-full relative z-10",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        onClick: ()=>onSelectMode('GOD'),
-                        className: "group relative bg-[#1e293b]/50 backdrop-blur-xl border border-white/5 p-8 rounded-3xl hover:border-purple-500/50 hover:bg-[#1e293b]/80 transition-all duration-500 text-left hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)] flex flex-col h-full",
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "space-y-2",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-6xl filter drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]",
-                                    children: "👁️"
-                                }, void 0, false, {
-                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                    lineNumber: 38,
-                                    columnNumber: 25
-                                }, this)
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-lg font-bold text-white tracking-wide",
+                                children: "Systèmes de décision pour un jeu coopératif à information imparfaite"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 37,
+                                lineNumber: 29,
                                 columnNumber: 21
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mb-auto",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-slate-400 text-sm font-mono opacity-80",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-white mb-1 group-hover:text-purple-400 transition-colors",
-                                        children: 'Solver "Dieu"'
+                                    "Choix de l'approche : ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-purple-400",
+                                        children: "Exploration exhaustive"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 42,
-                                        columnNumber: 25
+                                        lineNumber: 33,
+                                        columnNumber: 47
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xs font-mono text-purple-400/70 mb-6",
-                                        children: "ALGORITHME DÉTERMINISTE"
+                                    " vs ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-blue-400",
+                                        children: "Apprentissage par renforcement"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 43,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-slate-400 text-sm leading-relaxed mb-6",
-                                        children: "Utilise la force brute et une connaissance parfaite des mains cachées pour trouver la solution optimale mathématique."
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 44,
-                                        columnNumber: 25
+                                        lineNumber: 33,
+                                        columnNumber: 114
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 41,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "border-t border-white/5 pt-6 mt-6",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                    className: "space-y-3 text-xs font-medium text-slate-300",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "flex items-center gap-2",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "w-1.5 h-1.5 rounded-full bg-purple-500"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                    lineNumber: 52,
-                                                    columnNumber: 33
-                                                }, this),
-                                                " Vision Omnisciente (Triche)"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 51,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "flex items-center gap-2",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "w-1.5 h-1.5 rounded-full bg-purple-500"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                    lineNumber: 55,
-                                                    columnNumber: 33
-                                                }, this),
-                                                " Taux de réussite 100%"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 54,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "flex items-center gap-2 text-slate-500",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "w-1.5 h-1.5 rounded-full bg-slate-600"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                    lineNumber: 58,
-                                                    columnNumber: 33
-                                                }, this),
-                                                " Lent (Force Brute)"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 57,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                    lineNumber: 50,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 49,
+                                lineNumber: 32,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                        lineNumber: 33,
+                        lineNumber: 28,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                lineNumber: 16,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full relative z-10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: ()=>onSelectMode('GOD'),
+                        className: "group relative bg-[#1e293b]/40 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:bg-[#1e293b]/80 hover:border-purple-500/50 transition-all duration-300 text-left hover:-translate-y-1 shadow-lg overflow-hidden",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute -right-10 -top-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all"
+                            }, void 0, false, {
+                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                lineNumber: 47,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-6 relative",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-[10px] font-mono font-bold text-purple-400 mb-2 uppercase tracking-wider border border-purple-500/30 w-fit px-2 py-0.5 rounded bg-purple-500/10",
+                                        children: "Approche Déterministe"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                        lineNumber: 50,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors",
+                                        children: "Solver omniscient"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                        lineNumber: 53,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-slate-400 text-xs leading-relaxed",
+                                        children: "Moteur de résolution déterministe explorant l’espace des états du jeu. Accède à l’ensemble des informations cachées afin d’évaluer exhaustivement les séquences de coups et d’identifier des choix optimaux."
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                        lineNumber: 56,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                lineNumber: 49,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "border-t border-white/5 pt-4",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                    className: "space-y-2 text-[10px] text-slate-300 font-mono",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "w-1 h-1 rounded-full bg-purple-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                                    lineNumber: 64,
+                                                    columnNumber: 33
+                                                }, this),
+                                                " Exploration complète de l’espace d’états"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                            lineNumber: 63,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "w-1 h-1 rounded-full bg-green-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                                    lineNumber: 67,
+                                                    columnNumber: 33
+                                                }, this),
+                                                " Référence algorithmique haute performance"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                            lineNumber: 66,
+                                            columnNumber: 29
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                    lineNumber: 62,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                lineNumber: 61,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                        lineNumber: 42,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onSelectMode('AI'),
-                        className: "group relative bg-[#1e293b]/50 backdrop-blur-xl border border-blue-500/30 p-8 rounded-3xl hover:border-blue-400 hover:bg-[#1e293b]/80 transition-all duration-500 text-left hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.4)] flex flex-col h-full ring-1 ring-blue-500/20",
+                        className: "group relative bg-[#1e293b]/40 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:bg-[#1e293b]/80 hover:border-blue-500/50 transition-all duration-300 text-left hover:-translate-y-1 shadow-lg ring-1 ring-white/5 hover:ring-blue-500/30 overflow-hidden",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg shadow-blue-600/40",
-                                children: "RECOMMANDÉ"
+                                className: "absolute -right-10 -top-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 69,
+                                lineNumber: 79,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-6xl filter drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]",
-                                    children: "🧠"
-                                }, void 0, false, {
-                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                    lineNumber: 73,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 72,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mb-auto",
+                                className: "mb-6 relative",
                                 children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex justify-between items-center mb-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-[10px] font-mono font-bold text-blue-400 uppercase tracking-wider border border-blue-500/30 w-fit px-2 py-0.5 rounded bg-blue-500/10",
+                                                children: "Apprentissage automatique"
+                                            }, void 0, false, {
+                                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                                lineNumber: 83,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "flex h-1.5 w-1.5 relative",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                                        lineNumber: 87,
+                                                        columnNumber: 31
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-500"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                                        lineNumber: 88,
+                                                        columnNumber: 31
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                                lineNumber: 86,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                        lineNumber: 82,
+                                        columnNumber: 25
+                                    }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors",
-                                        children: "Deep Learning"
+                                        className: "text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors",
+                                        children: "Agent neuronal distribué"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 92,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xs font-mono text-blue-400/70 mb-6",
-                                        children: "RÉSEAU DE NEURONES (DQN)"
+                                        className: "text-slate-400 text-xs leading-relaxed",
+                                        children: "Agent entraîné par apprentissage par renforcement profond (DQN). Opère sous contrainte d’information partielle et apprend une politique d’action à partir de milliers de parties simulées."
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 78,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-slate-400 text-sm leading-relaxed mb-6",
-                                        children: 'Une IA qui apprend par elle-même en jouant des milliers de parties. Développe une "intuition" humaine sans tricher.'
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 95,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 76,
+                                lineNumber: 81,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "border-t border-white/5 pt-6 mt-6",
+                                className: "border-t border-white/5 pt-4",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                    className: "space-y-3 text-xs font-medium text-slate-300",
+                                    className: "space-y-2 text-[10px] text-slate-300 font-mono",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             className: "flex items-center gap-2",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "w-1.5 h-1.5 rounded-full bg-blue-500"
+                                                    className: "w-1 h-1 rounded-full bg-blue-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                    lineNumber: 87,
+                                                    lineNumber: 103,
                                                     columnNumber: 33
                                                 }, this),
-                                                " Entraînement Temps Réel"
+                                                " Information locale et incertitude"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 102,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "flex items-center gap-2",
+                                            className: "flex items-center gap-2 text-yellow-500",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "w-1.5 h-1.5 rounded-full bg-blue-500"
+                                                    className: "w-1 h-1 rounded-full bg-yellow-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                    lineNumber: 90,
+                                                    lineNumber: 106,
                                                     columnNumber: 33
                                                 }, this),
-                                                " Décision Instantanée (0.01s)"
+                                                " Comportement émergent dépendant de l’entraînement"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 89,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "flex items-center gap-2",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "w-1.5 h-1.5 rounded-full bg-blue-500"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                    lineNumber: 93,
-                                                    columnNumber: 33
-                                                }, this),
-                                                " Respect du brouillard de guerre"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 105,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                    lineNumber: 85,
+                                    lineNumber: 101,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 84,
+                                lineNumber: 100,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                        lineNumber: 65,
+                        lineNumber: 74,
                         columnNumber: 17
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        disabled: true,
-                        className: "group relative bg-[#0f172a]/30 backdrop-blur-sm border border-white/5 p-8 rounded-3xl opacity-60 cursor-not-allowed text-left flex flex-col h-full grayscale hover:grayscale-0 transition-all duration-500",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute top-0 right-0 p-6 opacity-10",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-6xl",
-                                    children: "👥"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative bg-[#0f172a]/20 border border-white/5 p-8 rounded-xl flex flex-col h-full opacity-80 grayscale pointer-events-none",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mb-auto",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-[10px] font-mono font-bold text-slate-500 mb-2 uppercase tracking-wider border border-slate-700 w-fit px-2 py-0.5 rounded",
+                                    children: "En cours de conception"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                    lineNumber: 105,
+                                    lineNumber: 115,
                                     columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 104,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mb-auto",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-500 mb-1",
-                                        children: "Multijoueur"
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 109,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xs font-mono text-slate-600 mb-6",
-                                        children: "HUMAN VS AI"
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 110,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-slate-500 text-sm leading-relaxed mb-6",
-                                        children: "Rejoignez une partie avec 3 agents IA entraînés pour tester votre synergie avec le réseau de neurones."
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 111,
-                                        columnNumber: 25
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 108,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "border-t border-white/5 pt-6 mt-6",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center gap-2 text-xs font-bold text-slate-600 bg-slate-800/50 px-3 py-2 rounded-lg w-fit",
-                                    children: "🔒 EN DÉVELOPPEMENT"
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "text-xl font-bold text-slate-600 mb-2",
+                                    children: "Humain + Agents artificiels"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                    lineNumber: 117,
+                                    lineNumber: 118,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-slate-600 text-xs leading-relaxed",
+                                    children: "Intégration d’un joueur humain au sein d’un système multi-agents. Objectif : analyser la compatibilité entre stratégies humaines et décisions générées par les modèles."
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                                    lineNumber: 119,
                                     columnNumber: 25
                                 }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 116,
-                                columnNumber: 21
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                            lineNumber: 114,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                        lineNumber: 100,
+                        lineNumber: 113,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 30,
+                lineNumber: 39,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute bottom-6 text-[10px] text-slate-600 font-mono",
-                children: "SYSTEME: ONLINE • GPU: READY • PYTORCH: ACTIVE"
+                className: "absolute bottom-6 w-full text-center",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "text-[12px] text-slate-600 font-mono tracking-widest",
+                    children: "Novia • Architecture & Simulation • v2.1"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 129,
+                    columnNumber: 17
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 126,
+                lineNumber: 128,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-        lineNumber: 10,
+        lineNumber: 9,
         columnNumber: 9
     }, this);
 }
