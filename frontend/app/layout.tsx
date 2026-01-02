@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Novia - The Crew AI",
-  description: "Solveur et Intelligence Artificielle pour le jeu The Crew",
+  description: "Plateforme d'analyse comparative pour le jeu The Crew (IELLO). Confrontation technique entre Solver Analytique (Full Info) et Agent Deep Q-Network (Reinforcement Learning).",
+  keywords: ["AI", "Deep Learning", "Reinforcement Learning", "The Crew", "Solver", "Algorithm", "Game Theory", "DQN", "Pytorch"],
   icons: {
     icon: "/favicon.ico",
   },
