@@ -1,9 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { CardData, MissionUI, SolverStats, MoveStep, BackendConstraint, Communication, MissionStatus } from '../types';
 import { REAL_MISSION_LOGBOOK } from '../data/real_missions';
+import { TheCrewSolverJS } from '../utils/solver';
 
 const ANIMATION_SPEED = 600;
 const TRICK_WAIT = 1000;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
 const convertBackendToFrontend = (d: any): CardData[] => {
     if (d.players && Array.isArray(d.players)) {
@@ -34,11 +36,9 @@ export const useGodMode = () => {
     const timerRef = useRef<NodeJS.Timeout | null>(null);
     const abortCtrl = useRef<AbortController | null>(null);
 
-    // DÉFINITION DE L'URL API (Vercel ou Localhost)
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-
     const addLog = (m: string) => setLogs(p => [`> ${m}`, ...p]);
 
+    // --- LECTURE AUTOMATIQUE (ANIMATION) ---
     useEffect(() => {
         if (!isPlaying || !stats || !stats.solution_steps) return;
         const playNext = () => {
@@ -66,7 +66,6 @@ export const useGodMode = () => {
     const checkMissionStatus = (currentCards: CardData[]) => {
         setMissions(prevMissions => {
             let hasChanged = false;
-            
             const newMissions = prevMissions.map(m => {
                 if (m.cardValue === 0 || m.cardColor === 'Special') return m;
                 const targetCard = currentCards.find(c => c.color === m.cardColor && c.value === m.cardValue);
@@ -114,14 +113,11 @@ export const useGodMode = () => {
         if (timerRef.current) clearTimeout(timerRef.current);
         setIsPlaying(false); setStats(null); setMissions([]); setGlobalConstraints([]); 
         setCommunications([]); setBookMissionId(0); setCMI(-1); setIsThinking(false);
-        
         try {
-            // UTILISATION API_URL
             const res = await fetch(`${API_URL}/start-game`);
             if (!res.ok) throw new Error("Erreur Backend");
             const data = await res.json();
             const cards = convertBackendToFrontend(data);
-            if (cards.length === 0) throw new Error("Aucune carte");
             setAllCards(cards);
             addLog("Nouvelle donne prête.");
         } catch (e: any) { addLog(`Erreur: ${e.message}`); }
@@ -161,15 +157,8 @@ export const useGodMode = () => {
 
         let absCount = 0;
         mDef.constraints.forEach(c => {
-            if (c.type === 'ORDER_ABSOLUTE') {
-                for(let i=0; i < c.args.count; i++) if (tDistrib[i]) tDistrib[i].token = (i + 1).toString();
-                absCount = c.args.count;
-            }
-            if (c.type === 'ORDER_RELATIVE') {
-                const toks = ['>', '>>', '>>>', '>>>>', '>>>>>'];
-                const start = c.args.startIndex ?? absCount;
-                for(let i=0; i < c.args.count; i++) if (tDistrib[start + i]) tDistrib[start + i].token = toks[i];
-            }
+            if (c.type === 'ORDER_ABSOLUTE') { for(let i=0; i < c.args.count; i++) if (tDistrib[i]) tDistrib[i].token = (i + 1).toString(); absCount = c.args.count; }
+            if (c.type === 'ORDER_RELATIVE') { const toks = ['>', '>>', '>>>', '>>>>', '>>>>>']; const start = c.args.startIndex ?? absCount; for(let i=0; i < c.args.count; i++) if (tDistrib[start + i]) tDistrib[start + i].token = toks[i]; }
             if (c.type === 'ORDER_OMEGA' && tDistrib.length) tDistrib[tDistrib.length - 1].token = 'Omega';
         });
 
@@ -195,15 +184,12 @@ export const useGodMode = () => {
 
             let specialToken = null;
             let specialOwner = p ?? cmdIdx;
-
             if (c.type === 'NO_TRICKS') specialToken = c.args.who === 'RANDOM_NOT_COMMANDER' ? 'NO_TRICKS_PLAYER' : 'NO_TRICKS';
             else if (c.type === 'FORBIDDEN_WIN_CARD' && c.args.value === 9) specialToken = 'NO_9_WIN';
             else if (c.type === 'SPECIFIC_WIN' && c.args.withColor === 'Rocket' && c.args.mustWinAll) specialToken = 'ALL_ROCKETS';
             else if (c.type === 'SPECIFIC_WIN' && c.args.withCardValue === 1) specialToken = 'SPECIFIC_WIN_1';
 
-            if (specialToken) {
-                nMissions.push({ cardColor: 'Special', cardValue: 0, ownerIndex: specialOwner, token: specialToken, status: 'PENDING' });
-            }
+            if (specialToken) nMissions.push({ cardColor: 'Special', cardValue: 0, ownerIndex: specialOwner, token: specialToken, status: 'PENDING' });
         });
 
         return { missions: nMissions, constraints: nConstrs };
@@ -220,6 +206,36 @@ export const useGodMode = () => {
         }
     };
 
+    // --- 🚀 NOUVEAU SOLVER LOCAL ---
+    const runLocalSolver = () => {
+        // Préparation des mains
+        const playersHands = [[], [], [], []];
+        allCards.forEach(c => {
+            // @ts-ignore
+            playersHands[c.owner].push({ color: c.color, value: c.value });
+        });
+
+        // Préparation JSON
+        const gameStateJson = {
+            player_1: playersHands[0],
+            player_2: playersHands[1],
+            player_3: playersHands[2],
+            player_4: playersHands[3],
+        };
+
+        const solverMissions = missions.map(m => ({
+            card: { color: m.cardColor, value: m.cardValue },
+            owner: m.ownerIndex,
+            token: m.token
+        }));
+
+        // Instanciation et exécution
+        // @ts-ignore (constraints type match)
+        const solver = new TheCrewSolverJS(gameStateJson, solverMissions, globalConstraints);
+        const result = solver.solve();
+        return result;
+    };
+
     const autoFindSolution = async () => {
         if (missions.length === 0) return addLog("⚠️ Ajoutez des missions avant de chercher.");
         const fixedMissions = [...missions];
@@ -230,61 +246,78 @@ export const useGodMode = () => {
         abortCtrl.current = ctrl;
         
         setIsAutoFinding(true); 
-        addLog("🎰 Recherche d'une main compatible...");
+        addLog("🎰 Recherche (Moteur Local V8)...");
         
         let attempts = 0;
         let found = false;
         
         try {
-            while (!found && attempts < 1000) {
+            // On boucle RAPIDEMENT car le solver local est instantané
+            while (!found && attempts < 5000) {
                 if (ctrl.signal.aborted) break;
                 attempts++;
                 
-                // UTILISATION API_URL
+                // 1. Demande distribution (Backend toujours nécessaire pour random seed propre)
                 const rD = await fetch(`${API_URL}/start-game`, { signal: ctrl.signal });
                 if (!rD.ok) continue;
                 const gD = await rD.json();
                 const vC = convertBackendToFrontend(gD);
 
-                // UTILISATION API_URL
-                const rS = await fetch(`${API_URL}/solve-game`, {
-                    method: 'POST', 
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
-                        player_1: gD.players[0],
-                        player_2: gD.players[1], 
-                        player_3: gD.players[2], 
-                        player_4: gD.players[3],
-                        missions: fixedMissions.map(m => ({ 
-                            card: { color: m.cardColor, value: m.cardValue }, 
-                            owner: m.ownerIndex, 
-                            token: m.token 
-                        })),
-                        constraints: fixedConstraints, 
-                        mode: 'GOD' 
-                    }), 
-                    signal: ctrl.signal
-                });
-
-                if (!rS.ok) continue;
-                const sD = await rS.json();
+                // 2. Solve LOCAL (Instantané)
+                // On met à jour temporairement allCards pour le solver
+                const tempHands = [gD.players[0], gD.players[1], gD.players[2], gD.players[3]];
                 
-                if (sD.stats && sD.stats.solutionFound) {
+                const solverMissions = fixedMissions.map(m => ({ 
+                    card: { color: m.cardColor as any, value: m.cardValue },
+                    owner: m.ownerIndex, token: m.token 
+                }));
+
+                // @ts-ignore
+                const solver = new TheCrewSolverJS({
+                    player_1: tempHands[0], player_2: tempHands[1], 
+                    player_3: tempHands[2], player_4: tempHands[3]
+                }, solverMissions, fixedConstraints);
+                
+                const result = solver.solve();
+                
+                if (result.solutionFound) {
                     found = true; 
                     setAllCards(vC); 
                     setGlobalConstraints(fixedConstraints); 
-                    setStats(sD.stats);
+                    setStats(result); // Le format est compatible
                     setCMI(-1);
-                    addLog(`✅ Trouvé au tirage n°${attempts}`);
+                    addLog(`✅ Trouvé au tirage n°${attempts} (${result.time}ms)`);
                 }
+                
+                // Petit break pour ne pas freezer l'UI si boucle longue
+                if (attempts % 50 === 0) await new Promise(r => setTimeout(r, 0));
             }
-            if (!found) addLog(`❌ Echec après ${attempts} essais. Impossible avec ces contraintes.`);
+            if (!found) addLog(`❌ Echec après ${attempts} essais.`);
         } catch (e: any) { 
             if (e.name !== 'AbortError') console.error(e); 
         } finally { 
             setIsAutoFinding(false); 
             abortCtrl.current = null; 
         }
+    };
+
+    const launchSolver = async () => {
+        if (allCards.length !== 40) { addLog("⚠️ Distribution incomplète"); return; }
+        setIsThinking(true); setStats(null); goToStep(-1);
+        
+        // Petit timeout pour laisser React afficher "Calcul..."
+        setTimeout(() => {
+            try {
+                const result = runLocalSolver();
+                setStats(result);
+                addLog(result.solutionFound ? `✅ Solution trouvée en ${result.time}ms` : "❌ Impossible.");
+                if(result.solutionFound) setCMI(-1);
+            } catch (e: any) {
+                addLog(`Erreur JS: ${e.message}`);
+            } finally {
+                setIsThinking(false);
+            }
+        }, 50);
     };
 
     const shuffleOwners = () => setMissions(p => p.map(m => ({ ...m, ownerIndex: Math.floor(Math.random() * 4) })));
@@ -302,27 +335,6 @@ export const useGodMode = () => {
             if (idx !== -1) nc[idx] = c; else nc.push(c);
             return nc;
         });
-    };
-
-    const launchSolver = async (mode: 'GOD' | 'MCTS' | 'ML', agentIdx: number) => {
-        if (allCards.length !== 40) { addLog("⚠️ Distribution incomplète"); return; }
-        abortCtrl.current?.abort(); const ctrl = new AbortController(); abortCtrl.current = ctrl;
-        setIsThinking(true); setStats(null); goToStep(-1);
-        const hands: any = { player_1: [], player_2: [], player_3: [], player_4: [] };
-        allCards.forEach(c => hands[`player_${c.owner + 1}`].push({ color: c.color, value: c.value }));
-        try {
-            // UTILISATION API_URL
-            const res = await fetch(`${API_URL}/solve-game`, {
-                method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...hands, missions: missions.map(m => ({ card: { color: m.cardColor, value: m.cardValue }, owner: m.ownerIndex, token: m.token })), constraints: globalConstraints, mode: mode, agent_player_idx: agentIdx }),
-                signal: ctrl.signal
-            });
-            const data = await res.json();
-            if (data.error) addLog(`Erreur: ${data.error}`);
-            else if (data.stats) { setStats(data.stats); addLog(data.stats.solutionFound ? "✅ Solution !" : "❌ Pas de solution."); if(data.stats.solutionFound) setCMI(-1); }
-            else if (data.bestMove) addLog(`🤖 Agent: ${data.bestMove}`);
-        } catch(e: any) { if (e.name !== 'AbortError') addLog(`Erreur: ${e.message}`); } 
-        finally { setIsThinking(false); abortCtrl.current = null; }
     };
 
     const addCommunication = (c: Communication) => setCommunications(prev => [...prev, c]);
