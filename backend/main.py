@@ -138,12 +138,6 @@ except ImportError as e:
     print(f"❌ Erreur import game: {e}")
 
 try:
-    from solver import TheCrewSolver
-    print("✅ Module 'solver' importé.")
-except ImportError as e:
-    print(f"❌ Erreur import solver: {e}")
-
-try:
     from trainer import Trainer
     print("✅ Module 'trainer' importé.")
 except ImportError as e:
@@ -330,43 +324,3 @@ async def train_ai_endpoint(req: TrainRequest):
             training_lock = False
 
     return StreamingResponse(safe_stream(), media_type="application/x-ndjson")
-
-@app.post("/solve-game")
-async def solve_game(req: SolveRequest):
-    current_trick = []
-    if req.played_history:
-        trick_size = len(req.played_history) % 4
-        if trick_size > 0:
-            current_trick = req.played_history[-trick_size:]
-            
-    game_state = {
-        'player_1': req.player_1,
-        'player_2': req.player_2,
-        'player_3': req.player_3,
-        'player_4': req.player_4,
-        'played_history': req.played_history,
-        'current_trick': current_trick
-    }
-    
-    if req.mode == "GOD":
-        if not TheCrewSolver: return {"error": "Module Solver non chargé"}
-        loop = asyncio.get_event_loop()
-        def run_god_solver():
-            try:
-                solver = TheCrewSolver(game_state, req.missions, req.constraints)
-                return solver.solve()
-            except Exception as e:
-                return {"error": str(e)}
-        result = await loop.run_in_executor(None, run_god_solver)
-        return {"stats": result}
-
-    elif req.mode == "AI_DL":
-        if not ai_trainer: return {"error": "Trainer non chargé", "probabilities": {}, "bestMove": None}
-        try:
-            probs = ai_trainer.get_action_probabilities(game_state, req.agent_player_idx, req.missions)
-            best_move = max(probs, key=probs.get) if probs else None
-            return {"type": "PLAY", "probabilities": probs, "bestMove": best_move, "solutionFound": True}
-        except Exception as e:
-            return {"error": str(e), "probabilities": {}, "bestMove": None}
-
-    return {"error": "Mode inconnu."}

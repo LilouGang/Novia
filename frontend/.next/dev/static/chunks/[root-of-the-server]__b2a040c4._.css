@@ -605,6 +605,10 @@
     position: relative;
   }
 
+  .static {
+    position: static;
+  }
+
   .-inset-1 {
     inset: calc(var(--spacing) * -1);
   }
@@ -2639,6 +2643,10 @@
 
   .grayscale-\[0\.5\] {
     --tw-grayscale: grayscale(.5);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .filter {
     filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 

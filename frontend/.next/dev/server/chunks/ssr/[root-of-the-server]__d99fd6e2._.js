@@ -73,7 +73,18 @@ var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$g
 ;
 const metadata = {
     title: "Novia - The Crew AI",
-    description: "Solveur et Intelligence Artificielle pour le jeu The Crew",
+    description: "Plateforme d'analyse comparative pour le jeu The Crew (IELLO). Confrontation technique entre Solver Analytique (Full Info) et Agent Deep Q-Network (Reinforcement Learning).",
+    keywords: [
+        "AI",
+        "Deep Learning",
+        "Reinforcement Learning",
+        "The Crew",
+        "Solver",
+        "Algorithm",
+        "Game Theory",
+        "DQN",
+        "Pytorch"
+    ],
     icons: {
         icon: "/favicon.ico"
     }
@@ -86,12 +97,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/frontend/app/layout.tsx",
-            lineNumber: 26,
+            lineNumber: 27,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/frontend/app/layout.tsx",
-        lineNumber: 25,
+        lineNumber: 26,
         columnNumber: 5
     }, this);
 }
