@@ -130,7 +130,7 @@ export const useAiMode = () => {
         // Timer pour détecter le Cold Start (si > 2 secondes)
         const coldStartTimer = setTimeout(() => {
             setIsServerWakingUp(true);
-        }, 2000);
+        }, 1000);
 
         try {
             const res = await fetch(`${API_URL}/start-game`);
