@@ -7,29 +7,25 @@ const ANIMATION_SPEED = 600;
 const TRICK_WAIT = 1000;
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
-// --- GÉNÉRATEUR LOCAL DE DONNE (REMPLACE LE SERVEUR) ---
 const distributeLocalCards = (): CardData[] => {
     const colors = ['Blue', 'Green', 'Pink', 'Yellow'];
     const deck: { color: string, value: number }[] = [];
 
-    // 1. Création du paquet (36 couleurs + 4 fusées)
     colors.forEach(c => {
         for (let i = 1; i <= 9; i++) deck.push({ color: c, value: i });
     });
     for (let i = 1; i <= 4; i++) deck.push({ color: 'Rocket', value: i });
 
-    // 2. Mélange (Fisher-Yates Shuffle)
     for (let i = deck.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [deck[i], deck[j]] = [deck[j], deck[i]];
     }
 
-    // 3. Distribution & Formatage React
     return deck.map((c, index) => ({
         id: `${c.color}-${c.value}`,
         color: c.color as any,
         value: c.value,
-        owner: Math.floor(index / 10), // 0 à 9 = J0, 10 à 19 = J1...
+        owner: Math.floor(index / 10),
         status: 'HAND',
         zIndex: 0,
         tableRotation: ((c.value * 100 + Math.floor(index / 10) * 50 + c.color.length) % 40) - 20,
@@ -68,7 +64,6 @@ export const useGodMode = () => {
 
     const addLog = (m: string) => setLogs(p => [`> ${m}`, ...p]);
 
-    // --- LECTURE AUTOMATIQUE (ANIMATION) ---
     useEffect(() => {
         if (!isPlaying || !stats || !stats.solution_steps) return;
         const playNext = () => {
@@ -147,7 +142,6 @@ export const useGodMode = () => {
         setCommunications([]); setBookMissionId(0); setCMI(-1); setIsThinking(false);
         
         try {
-            // ⚡ 100% LOCAL : Plus d'appel API
             const cards = distributeLocalCards();
             setAllCards(cards);
             addLog("Nouvelle donne (Générée localement).");
@@ -239,16 +233,13 @@ export const useGodMode = () => {
         }
     };
 
-    // --- 🚀 NOUVEAU SOLVER LOCAL ---
     const runLocalSolver = () => {
-        // Préparation des mains
         const playersHands = [[], [], [], []];
         allCards.forEach(c => {
             // @ts-ignore
             playersHands[c.owner].push({ color: c.color, value: c.value });
         });
 
-        // Préparation JSON
         const gameStateJson = {
             player_1: playersHands[0],
             player_2: playersHands[1],
@@ -262,8 +253,7 @@ export const useGodMode = () => {
             token: m.token
         }));
 
-        // Instanciation et exécution
-        // @ts-ignore (constraints type match)
+        // @ts-ignore
         const solver = new TheCrewSolverJS(gameStateJson, solverMissions, globalConstraints);
         const result = solver.solve();
         return result;
@@ -272,7 +262,6 @@ export const useGodMode = () => {
     const autoFindSolution = async () => {
         if (missions.length === 0) return addLog("⚠️ Ajoutez des missions d'abord.");
         
-        // On copie les contraintes pour figer la recherche
         const fixedMissions = missions.map(m => ({
             card: { color: m.cardColor, value: m.cardValue },
             owner: m.ownerIndex,
@@ -293,16 +282,12 @@ export const useGodMode = () => {
         const startTime = performance.now();
 
         try {
-            // Boucle rapide
             while (!found && attempts < 10000) {
                 if (ctrl.signal.aborted) break;
                 attempts++;
 
-                // 1. GÉNÉRATION LOCALE
                 const tempAllCards = distributeLocalCards();
 
-                // 2. FORMATAGE POUR LE SOLVER
-                // On transforme le tableau plat en 4 mains distinctes
                 const playersHands: any[] = [[], [], [], []];
                 tempAllCards.forEach(c => {
                     playersHands[c.owner].push({ color: c.color, value: c.value });
@@ -313,18 +298,15 @@ export const useGodMode = () => {
                     player_3: playersHands[2], player_4: playersHands[3]
                 };
 
-                // 3. RÉSOLUTION LOCALE (TheCrewSolverJS)
                 // @ts-ignore
                 const solver = new TheCrewSolverJS(gameStateJson, fixedMissions, fixedConstraints as any);
                 
-                // Le solve() est synchrone et très rapide
                 const result = solver.solve();
 
                 if (result.solutionFound) {
                     found = true;
-                    // On met à jour l'interface avec la main gagnante
                     setAllCards(tempAllCards);
-                    setGlobalConstraints(fixedConstraints); // On garde les contraintes
+                    setGlobalConstraints(fixedConstraints);
                     setStats(result);
                     setCMI(-1);
                     
@@ -332,8 +314,6 @@ export const useGodMode = () => {
                     addLog(`✅ TROUVÉ ! (Essai n°${attempts} en ${totalTime}ms)`);
                 }
 
-                // Petit break toutes les 100 itérations pour laisser le navigateur respirer
-                // (Sinon l'interface freeze et le bouton "Stop" ne marche pas)
                 if (attempts % 100 === 0) await new Promise(r => setTimeout(r, 0));
             }
 
