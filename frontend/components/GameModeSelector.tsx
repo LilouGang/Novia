@@ -44,7 +44,7 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
       {/* --- ARRIÈRE-PLAN (z-0) --- */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
         <div 
-          className="w-[1200px] h-[1200px] bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-full blur-[130px]"
+          className="w-300 h-300 bg-linear-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-full blur-[130px]"
           style={{ animation: 'rotate-nebula 120s linear infinite' }}
         ></div>
       </div>
@@ -70,15 +70,15 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
         
         {/* HEADER */}
         <header className="text-center mb-14 animate-drift-subtle select-none">
-          <h1 className="text-6xl md:text-8xl font-thin tracking-[0.1em] uppercase mb-3 drop-shadow-2xl cursor-default">
+          <h1 className="text-6xl md:text-8xl font-thin tracking-widest uppercase mb-3 drop-shadow-2xl cursor-default">
             <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">NOV</span>
             <span className="text-blue-500 font-light drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">IA</span>
           </h1>
           
           <div className="flex items-center justify-center gap-3 text-blue-200/60 font-mono text-xs md:text-sm tracking-widest uppercase">
-            <span className="w-8 h-[1px] bg-blue-500/50"></span>
+            <span className="w-8 h-px bg-blue-500/50"></span>
             Algorithmes de résolution pour The Crew
-            <span className="w-8 h-[1px] bg-blue-500/50"></span>
+            <span className="w-8 h-px bg-blue-500/50"></span>
           </div>
         </header>
 
@@ -88,7 +88,7 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
           {/* === 1. L'OMNISCIENT (GOD MODE) === */}
           <button
             onClick={() => onSelectMode('GOD')}
-            className="group relative h-[340px] w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-purple-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.2)] flex flex-col text-left overflow-hidden"
+            className="group relative h-85 w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-purple-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.2)] flex flex-col text-left overflow-hidden"
           >
             {/* Effet lumineux hover */}
             <div className="absolute top-[-50%] right-[-50%] w-64 h-64 bg-purple-600/20 blur-[60px] rounded-full transition-opacity duration-500 opacity-0 group-hover:opacity-100"></div>
@@ -106,7 +106,7 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
             </p>
 
             <div className="pt-4 border-t border-white/5 flex items-center text-xs text-purple-300/80 font-mono group-hover:text-purple-300 transition-colors">
-              <span className="flex-grow uppercase tracking-wider">Lancer l'analyse</span>
+              <span className="grow uppercase tracking-wider">Lancer l'analyse</span>
               <ChevronRight className="w-4 h-4 ml-2 opacity-50 group-hover:translate-x-1 transition-transform" />
             </div>
           </button>
@@ -114,7 +114,7 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
           {/* === 2. L'IA (DQN MODE) === */}
           <button
             onClick={() => onSelectMode('AI')}
-            className="group relative h-[340px] w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-blue-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.2)] flex flex-col text-left overflow-hidden"
+            className="group relative h-85 w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-blue-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.2)] flex flex-col text-left overflow-hidden"
           >
              {/* Effet lumineux hover */}
              <div className="absolute top-[-50%] right-[-50%] w-64 h-64 bg-blue-600/20 blur-[60px] rounded-full transition-opacity duration-500 opacity-0 group-hover:opacity-100"></div>
@@ -132,13 +132,13 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
             </p>
 
             <div className="pt-4 border-t border-white/5 flex items-center text-xs text-blue-300/80 font-mono group-hover:text-blue-300 transition-colors">
-              <span className="flex-grow uppercase tracking-wider">Lancer la simulation</span>
+              <span className="grow uppercase tracking-wider">Lancer la simulation</span>
               <ChevronRight className="w-4 h-4 ml-2 opacity-50 group-hover:translate-x-1 transition-transform" />
             </div>
           </button>
 
            {/* === 3. HUMAN VS IA (CONSTRUCTION) === */}
-           <div className="relative h-[340px] w-full bg-[#0d1221]/40 backdrop-blur-sm border border-white/5 rounded-2xl p-7 flex flex-col text-left overflow-hidden grayscale opacity-70 cursor-not-allowed">
+           <div className="relative h-85 w-full bg-[#0d1221]/40 backdrop-blur-sm border border-white/5 rounded-2xl p-7 flex flex-col text-left overflow-hidden grayscale opacity-70 cursor-not-allowed">
             
             {/* Header avec Badge aligné */}
             <div className="flex items-center gap-4 mb-6">
@@ -158,7 +158,7 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
             </p>
 
             <div className="pt-4 border-t border-white/5 flex items-center text-xs text-slate-600 font-mono">
-              <span className="flex-grow uppercase tracking-wider">Bientôt disponible</span>
+              <span className="grow uppercase tracking-wider">Bientôt disponible</span>
             </div>
           </div>
 
