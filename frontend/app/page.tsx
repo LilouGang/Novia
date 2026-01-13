@@ -74,34 +74,33 @@ export default function Home() {
                     logs={aiGame.logs}
                     isThinking={aiGame.isThinking}
                     activePlayer={aiGame.activePlayer}
-                    
+
                     // --- MODES ---
                     isDevMode={aiGame.isDevMode}
                     isTraining={aiGame.isTraining}
                     isAutoPlaying={aiGame.isAutoPlaying}
                     isReplayMode={aiGame.isReplayMode}
-                    
+
                     // --- DATA ---
                     trainingStats={aiGame.trainingStats}
                     replayData={aiGame.replayData}
                     milestones={aiGame.milestones}
                     currentMilestoneId={aiGame.currentMilestoneId}
-                    
+
                     // --- ACTIONS REPLAY & TRAINING ---
                     onLoadReplay={aiGame.loadReplay}
                     onNextReplayStep={aiGame.nextReplayStep}
                     onExitReplay={aiGame.exitReplay}
                     onStartTraining={aiGame.startTraining}
-                    
+
                     // --- ACTIONS JEU ---
                     initializeMission={aiGame.initializeMission}
-                    playOneMove={aiGame.playOneMove}             // Remplace onNextStep
+                    playOneMove={aiGame.playOneMove} // Remplace onNextStep
                     toggleAutoPlay={aiGame.toggleAutoPlay}
                     onReset={aiGame.onReset}
-                    
+
                     // --- NAVIGATION ---
-                    onBackToMenu={() => setGameMode(null)}
-                />
+                    onBackToMenu={() => setGameMode(null)} isServerWakingUp={false}                />
                 
                 <AIGameBoard 
                     allCards={aiGame.allCards}

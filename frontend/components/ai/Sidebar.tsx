@@ -9,11 +9,14 @@ type AISidebarProps = {
     isThinking: boolean;
     activePlayer: number;
 
+    // --- NOUVEAU PROP ---
+    isServerWakingUp: boolean; // <--- Indique si le backend est en Cold Start
+
     // --- MODES ---
-    isDevMode: boolean;        // Vrai si localhost
-    isTraining: boolean;       // Vrai si entraînement en cours
-    isAutoPlaying: boolean;    // Vrai si le mode démo tourne
-    isReplayMode: boolean;     // Vrai si on regarde un replay
+    isDevMode: boolean;        
+    isTraining: boolean;       
+    isAutoPlaying: boolean;    
+    isReplayMode: boolean;     
     
     // --- DATA ---
     trainingStats: TrainingStats | null;
@@ -28,9 +31,9 @@ type AISidebarProps = {
     onExitReplay: () => void;
     
     // Actions Jeu / Démo
-    initializeMission: (id: number) => void; // Distribuer
-    playOneMove: () => void;                 // 1 coup
-    toggleAutoPlay: () => void;              // Auto
+    initializeMission: (id: number) => void; 
+    playOneMove: () => void;                 
+    toggleAutoPlay: () => void;              
     onReset: () => void;
     
     // Navigation
@@ -39,6 +42,7 @@ type AISidebarProps = {
 
 export default function AISidebar({ 
     currentStepText, logs, isThinking, activePlayer,
+    isServerWakingUp, // <--- Récupération de la prop
     isDevMode, isTraining, isAutoPlaying, isReplayMode,
     trainingStats, milestones, currentMilestoneId,
     onReset, onStartTraining, onLoadReplay, onNextReplayStep, onExitReplay, 
@@ -83,86 +87,107 @@ export default function AISidebar({
                ========================================================================= */}
             <div className="p-5 border-b border-gray-800 bg-[#1e293b]/50 relative space-y-4">
                 
-                {/* A. SÉLECTEUR DE MISSION (Visible tout le temps sauf Replay/Training) */}
-                {!isTraining && !isReplayMode && (
-                    <div className="space-y-1">
-                        <div className="text-[9px] text-gray-500 uppercase font-bold tracking-wider">Configuration Mission</div>
-                        <div className="relative group">
-                            <select 
-                                className="w-full appearance-none bg-gray-900 text-white text-[10px] font-medium p-2.5 pl-3 rounded border border-gray-700 hover:border-gray-500 focus:border-blue-500 outline-none cursor-pointer transition-colors" 
-                                value={selectedMission} 
-                                onChange={(e) => setSelectedMission(Number(e.target.value))}
-                            >
-                                <option value={0} className="font-bold text-yellow-400 bg-gray-800">★ MISSION ALÉATOIRE (Mix)</option>
-                                {REAL_MISSION_LOGBOOK.map(m => (
-                                    <option key={m.id} value={m.id}>
-                                        MISSION {m.id} - {m.description.substring(0, 35)}{m.description.length > 35 ? '...' : ''}
-                                    </option>
-                                ))}
-                            </select>
-                            <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 text-[8px]">▼</div>
+                {/* === ALERTE COLD START === */}
+                {/* Si le serveur se réveille, on affiche ceci À LA PLACE des contrôles */}
+                {isServerWakingUp ? (
+                    <div className="bg-amber-500/5 border border-amber-500/20 rounded-lg p-4 flex flex-col items-center text-center gap-3 animate-pulse">
+                        <div className="w-6 h-6 border-2 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
+                        <div>
+                            <h3 className="text-amber-500 font-bold text-xs uppercase tracking-wider mb-1">
+                                Démarrage du serveur
+                            </h3>
+                            <p className="text-[10px] text-amber-200/60 leading-relaxed">
+                                Le système sort de veille (Cold Start).<br/>
+                                Veuillez patienter, cela peut prendre<br/>
+                                <span className="text-amber-400 font-mono">30 à 50 secondes</span>.
+                            </p>
                         </div>
                     </div>
-                )}
+                ) : (
+                    /* === CONTRÔLES NORMAUX (Si serveur prêt) === */
+                    <>
+                        {/* A. SÉLECTEUR DE MISSION (Visible tout le temps sauf Replay/Training) */}
+                        {!isTraining && !isReplayMode && (
+                            <div className="space-y-1">
+                                <div className="text-[9px] text-gray-500 uppercase font-bold tracking-wider">Configuration Mission</div>
+                                <div className="relative group">
+                                    <select 
+                                        className="w-full appearance-none bg-gray-900 text-white text-[10px] font-medium p-2.5 pl-3 rounded border border-gray-700 hover:border-gray-500 focus:border-blue-500 outline-none cursor-pointer transition-colors" 
+                                        value={selectedMission} 
+                                        onChange={(e) => setSelectedMission(Number(e.target.value))}
+                                    >
+                                        <option value={0} className="font-bold text-yellow-400 bg-gray-800">★ MISSION ALÉATOIRE (Mix)</option>
+                                        {REAL_MISSION_LOGBOOK.map(m => (
+                                            <option key={m.id} value={m.id}>
+                                                MISSION {m.id} - {m.description.substring(0, 35)}{m.description.length > 35 ? '...' : ''}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 text-[8px]">▼</div>
+                                </div>
+                            </div>
+                        )}
 
-                {/* B. BOUTONS D'ACTION (JEU / PUBLIC) */}
-                {!isTraining && !isReplayMode && (
-                    <div className="grid grid-cols-2 gap-2">
-                        {/* 1. DISTRIBUER */}
-                        <button 
-                            onClick={() => initializeMission(selectedMission)}
-                            className="col-span-2 h-10 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black tracking-wide rounded shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-blue-400"
-                        >
-                            <span>NOUVELLE DONNE</span>
-                            <span>🃏</span>
-                        </button>
-                        
-                        {/* 2. JOUER 1 COUP */}
-                        <button 
-                            onClick={playOneMove}
-                            disabled={isThinking || isAutoPlaying}
-                            className={`h-9 rounded text-[10px] font-bold border transition-all flex items-center justify-center gap-1
-                                ${isThinking ? 'bg-gray-800 text-gray-600 border-gray-700' : 'bg-gray-700 hover:bg-gray-600 text-white border-gray-600'}`}
-                        >
-                            {isThinking ? '...' : '1 COUP'} ▶
-                        </button>
+                        {/* B. BOUTONS D'ACTION (JEU / PUBLIC) */}
+                        {!isTraining && !isReplayMode && (
+                            <div className="grid grid-cols-2 gap-2">
+                                {/* 1. DISTRIBUER */}
+                                <button 
+                                    onClick={() => initializeMission(selectedMission)}
+                                    className="col-span-2 h-10 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black tracking-wide rounded shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-blue-400"
+                                >
+                                    <span>NOUVELLE DONNE</span>
+                                    <span>🃏</span>
+                                </button>
+                                
+                                {/* 2. JOUER 1 COUP */}
+                                <button 
+                                    onClick={playOneMove}
+                                    disabled={isThinking || isAutoPlaying}
+                                    className={`h-9 rounded text-[10px] font-bold border transition-all flex items-center justify-center gap-1
+                                        ${isThinking ? 'bg-gray-800 text-gray-600 border-gray-700' : 'bg-gray-700 hover:bg-gray-600 text-white border-gray-600'}`}
+                                >
+                                    {isThinking ? '...' : '1 COUP'} ▶
+                                </button>
 
-                        {/* 3. AUTO PLAY */}
-                        <button 
-                            onClick={toggleAutoPlay}
-                            className={`h-9 rounded text-[10px] font-bold border transition-all flex items-center justify-center gap-1
-                                ${isAutoPlaying 
-                                    ? 'bg-red-500/20 text-red-400 border-red-500/50 animate-pulse' 
-                                    : 'bg-green-600/20 hover:bg-green-600/30 text-green-400 border-green-500/30'}`}
-                        >
-                            {isAutoPlaying ? 'STOP AUTO' : 'AUTO PLAY'} ⏩
-                        </button>
-                    </div>
-                )}
+                                {/* 3. AUTO PLAY */}
+                                <button 
+                                    onClick={toggleAutoPlay}
+                                    className={`h-9 rounded text-[10px] font-bold border transition-all flex items-center justify-center gap-1
+                                        ${isAutoPlaying 
+                                            ? 'bg-red-500/20 text-red-400 border-red-500/50 animate-pulse' 
+                                            : 'bg-green-600/20 hover:bg-green-600/30 text-green-400 border-green-500/30'}`}
+                                >
+                                    {isAutoPlaying ? 'STOP AUTO' : 'AUTO PLAY'} ⏩
+                                </button>
+                            </div>
+                        )}
 
-                {/* C. ZONE ADMIN / ENTRAINEMENT (Visible seulement en Dev Mode) */}
-                {isDevMode && !isTraining && !isReplayMode && (
-                    <div className="pt-4 mt-2 border-t border-dashed border-gray-700">
-                        <div className="flex justify-between items-end mb-2">
-                            <span className="text-[9px] text-yellow-500 font-bold uppercase">Zone Entraînement (Local)</span>
-                        </div>
-                        <div className="flex gap-2">
-                            <input 
-                                type="number" 
-                                value={trainCount}
-                                onChange={(e) => setTrainCount(Number(e.target.value))}
-                                className="w-20 bg-gray-900 border border-yellow-500/30 text-white text-xs font-bold text-center rounded focus:outline-none focus:border-yellow-500 h-9"
-                                step="100" min="100"
-                            />
-                            <button 
-                                onClick={() => onStartTraining(trainCount, selectedMission)} 
-                                className="flex-1 h-9 bg-yellow-700 hover:bg-yellow-600 text-white text-[10px] font-black tracking-wide rounded shadow transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-yellow-500/50"
-                            >
-                                <span>LANCER TRAIN</span>
-                                <span>⚡</span>
-                            </button>
-                        </div>
-                    </div>
+                        {/* C. ZONE ADMIN / ENTRAINEMENT (Visible seulement en Dev Mode) */}
+                        {isDevMode && !isTraining && !isReplayMode && (
+                            <div className="pt-4 mt-2 border-t border-dashed border-gray-700">
+                                <div className="flex justify-between items-end mb-2">
+                                    <span className="text-[9px] text-yellow-500 font-bold uppercase">Zone Entraînement (Local)</span>
+                                </div>
+                                <div className="flex gap-2">
+                                    <input 
+                                        type="number" 
+                                        value={trainCount}
+                                        onChange={(e) => setTrainCount(Number(e.target.value))}
+                                        className="w-20 bg-gray-900 border border-yellow-500/30 text-white text-xs font-bold text-center rounded focus:outline-none focus:border-yellow-500 h-9"
+                                        step="100" min="100"
+                                    />
+                                    <button 
+                                        onClick={() => onStartTraining(trainCount, selectedMission)} 
+                                        className="flex-1 h-9 bg-yellow-700 hover:bg-yellow-600 text-white text-[10px] font-black tracking-wide rounded shadow transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-yellow-500/50"
+                                    >
+                                        <span>LANCER TRAIN</span>
+                                        <span>⚡</span>
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </>
                 )}
             </div>
 
