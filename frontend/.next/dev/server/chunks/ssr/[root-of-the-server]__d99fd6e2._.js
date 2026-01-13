@@ -82,8 +82,7 @@ const metadata = {
         "Solver",
         "Algorithm",
         "Game Theory",
-        "DQN",
-        "Pytorch"
+        "DQN"
     ],
     icons: {
         icon: "/favicon.ico"

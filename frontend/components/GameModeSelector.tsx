@@ -1,135 +1,174 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Eye, Brain, Users, ChevronRight, Construction } from 'lucide-react';
 
 type GameModeSelectorProps = {
-    onSelectMode: (mode: 'GOD' | 'AI') => void;
+  onSelectMode: (mode: 'GOD' | 'AI') => void;
 };
 
 export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps) {
-    return (
-        <div className="min-h-screen w-full bg-[#0b1121] flex flex-col items-center justify-center p-8 font-sans relative overflow-hidden">
+  // Génération des étoiles
+  const [stars, setStars] = useState<{ top: string; left: string; size: string; delay: string }[]>([]);
+
+  useEffect(() => {
+    const newStars = Array.from({ length: 70 }).map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      size: `${Math.random() * 2 + 1}px`,
+      delay: `${Math.random() * 5}s`,
+    }));
+    setStars(newStars);
+  }, []);
+
+  return (
+    <div className="relative w-full min-h-screen bg-[#0B1026] overflow-hidden flex flex-col items-center justify-center font-sans text-white selection:bg-blue-500 selection:text-white">
+      
+      {/* --- CSS D'ANIMATION --- */}
+      <style>{`
+        @keyframes drift-subtle {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-5px); } 
+          100% { transform: translateY(0); }
+        }
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+        @keyframes rotate-nebula {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-drift-subtle { animation: drift-subtle 8s ease-in-out infinite; }
+        .star { animation: twinkle 4s infinite ease-in-out; }
+      `}</style>
+
+      {/* --- ARRIÈRE-PLAN (z-0) --- */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
+        <div 
+          className="w-[1200px] h-[1200px] bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-full blur-[130px]"
+          style={{ animation: 'rotate-nebula 120s linear infinite' }}
+        ></div>
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {stars.map((star, i) => (
+          <div
+            key={i}
+            className="star absolute bg-blue-100/80 rounded-full shadow-[0_0_2px_#fff]"
+            style={{
+              top: star.top,
+              left: star.left,
+              width: star.size,
+              height: star.size,
+              animationDelay: star.delay,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* --- CONTENU PRINCIPAL (z-10) --- */}
+      <div className="relative z-10 w-full max-w-7xl px-6 flex flex-col items-center py-10">
+        
+        {/* HEADER */}
+        <header className="text-center mb-14 animate-drift-subtle select-none">
+          <h1 className="text-6xl md:text-8xl font-thin tracking-[0.1em] uppercase mb-3 drop-shadow-2xl cursor-default">
+            <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">NOV</span>
+            <span className="text-blue-500 font-light drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">IA</span>
+          </h1>
+          
+          <div className="flex items-center justify-center gap-3 text-blue-200/60 font-mono text-xs md:text-sm tracking-widest uppercase">
+            <span className="w-8 h-[1px] bg-blue-500/50"></span>
+            Algorithmes de résolution pour The Crew
+            <span className="w-8 h-[1px] bg-blue-500/50"></span>
+          </div>
+        </header>
+
+        {/* GRILLE DE CARTES */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+          
+          {/* === 1. L'OMNISCIENT (GOD MODE) === */}
+          <button
+            onClick={() => onSelectMode('GOD')}
+            className="group relative h-[340px] w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-purple-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.2)] flex flex-col text-left overflow-hidden"
+          >
+            {/* Effet lumineux hover */}
+            <div className="absolute top-[-50%] right-[-50%] w-64 h-64 bg-purple-600/20 blur-[60px] rounded-full transition-opacity duration-500 opacity-0 group-hover:opacity-100"></div>
+
+            <div className="flex items-start justify-between mb-6">
+              <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center ring-1 ring-purple-500/20 group-hover:bg-purple-500/20 transition-colors">
+                <Eye className="w-6 h-6 text-purple-300" />
+              </div>
+            </div>
+
+            <h2 className="text-2xl font-medium text-white mb-3">L'Omniscient</h2>
             
-            {/* BACKGROUND (Effet "Tech") */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-15 pointer-events-none"></div>
-            <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-200 h-150 bg-indigo-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+            <p className="text-slate-300 text-sm leading-relaxed mb-auto">
+              Solveur analytique explorant l'espace complet des états du jeu. Il accède aux cartes cachées pour calculer la séquence mathématiquement optimale.
+            </p>
 
-            {/* HEADER */}
-            <div className="text-center mb-12 relative z-10 max-w-3xl">
-                <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded border border-slate-700 bg-slate-800/40 backdrop-blur-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
-                    <span className="text-slate-300 text-[10px] font-mono font-bold tracking-widest">
-                        IMPLÉMENTATION • SYSTÈMES DE DÉCISION POUR THE CREW (IELLO)
-                    </span>
-                </div>
-                
-                <h1 className="text-7xl font-black text-white tracking-tighter mb-4 drop-shadow-2xl">
-                    NOV<span className="text-blue-500">IA</span>
-                </h1>
-                
-                <div className="space-y-2">
-                    <h2 className="text-lg font-bold text-white tracking-wide">
-                        Systèmes de décision pour un jeu coopératif à information imparfaite
-                    </h2>
-                    <p className="text-slate-400 text-sm font-mono opacity-80">
-                        Choix de l'approche : <span className="text-purple-400">Exploration exhaustive</span> vs <span className="text-blue-400">Apprentissage par renforcement</span>
-                    </p>
-                </div>
+            <div className="pt-4 border-t border-white/5 flex items-center text-xs text-purple-300/80 font-mono group-hover:text-purple-300 transition-colors">
+              <span className="flex-grow uppercase tracking-wider">Lancer l'analyse</span>
+              <ChevronRight className="w-4 h-4 ml-2 opacity-50 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </button>
+
+          {/* === 2. L'IA (DQN MODE) === */}
+          <button
+            onClick={() => onSelectMode('AI')}
+            className="group relative h-[340px] w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-blue-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.2)] flex flex-col text-left overflow-hidden"
+          >
+             {/* Effet lumineux hover */}
+             <div className="absolute top-[-50%] right-[-50%] w-64 h-64 bg-blue-600/20 blur-[60px] rounded-full transition-opacity duration-500 opacity-0 group-hover:opacity-100"></div>
+
+             <div className="flex items-start justify-between mb-6">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center ring-1 ring-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
+                <Brain className="w-6 h-6 text-blue-300" />
+              </div>
             </div>
 
-            {/* GRILLE DE SÉLECTION */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full relative z-10">
-                
-                {/* 1. MODE SOLVER (Approche Analytique) */}
-                <button 
-                    onClick={() => onSelectMode('GOD')}
-                    className="group relative bg-[#1e293b]/40 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:bg-[#1e293b]/80 hover:border-purple-500/50 transition-all duration-300 text-left hover:-translate-y-1 shadow-lg overflow-hidden"
-                >
-                    {/* Effet Hover Glow */}
-                    <div className="absolute -right-10 -top-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all"></div>
+            <h2 className="text-2xl font-medium text-white mb-3">Réseau Neuronal</h2>
+            
+            <p className="text-slate-300 text-sm leading-relaxed mb-auto">
+              Agent entraîné par apprentissage. Il opère sans connaître les cartes des autres joueurs, simulant une intuition de jeu réaliste.
+            </p>
 
-                    <div className="mb-6 relative">
-                        <div className="text-[10px] font-mono font-bold text-purple-400 mb-2 uppercase tracking-wider border border-purple-500/30 w-fit px-2 py-0.5 rounded bg-purple-500/10">
-                            Approche Déterministe
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
-                            Solver omniscient
-                        </h3>
-                        <p className="text-slate-400 text-xs leading-relaxed">
-                            Moteur de résolution déterministe explorant l’espace des états du jeu. Accède à l’ensemble des informations cachées afin d’évaluer exhaustivement les séquences de coups et d’identifier des choix optimaux.
-                        </p>
-                    </div>
+            <div className="pt-4 border-t border-white/5 flex items-center text-xs text-blue-300/80 font-mono group-hover:text-blue-300 transition-colors">
+              <span className="flex-grow uppercase tracking-wider">Lancer la simulation</span>
+              <ChevronRight className="w-4 h-4 ml-2 opacity-50 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </button>
 
-                    <div className="border-t border-white/5 pt-4">
-                        <ul className="space-y-2 text-[10px] text-slate-300 font-mono">
-                            <li className="flex items-center gap-2">
-                                <span className="w-1 h-1 rounded-full bg-purple-500"></span> Exploration complète de l’espace d’états
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-1 h-1 rounded-full bg-green-500"></span> Référence algorithmique haute performance
-                            </li>
-                        </ul>
-                    </div>
-                </button>
-
-                {/* 2. MODE IA (Approche Apprentissage) */}
-                <button 
-                    onClick={() => onSelectMode('AI')}
-                    className="group relative bg-[#1e293b]/40 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:bg-[#1e293b]/80 hover:border-blue-500/50 transition-all duration-300 text-left hover:-translate-y-1 shadow-lg ring-1 ring-white/5 hover:ring-blue-500/30 overflow-hidden"
-                >
-                    {/* Effet Hover Glow */}
-                    <div className="absolute -right-10 -top-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all"></div>
-
-                    <div className="mb-6 relative">
-                        <div className="flex justify-between items-center mb-2">
-                            <div className="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-wider border border-blue-500/30 w-fit px-2 py-0.5 rounded bg-blue-500/10">
-                                Apprentissage automatique
-                            </div>
-                            <span className="flex h-1.5 w-1.5 relative">
-                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-500"></span>
-                            </span>
-                        </div>
-                        
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
-                            Agent neuronal distribué
-                        </h3>
-                        <p className="text-slate-400 text-xs leading-relaxed">
-                            Agent entraîné par apprentissage par renforcement profond (DQN). Opère sous contrainte d’information partielle et apprend une politique d’action à partir de milliers de parties simulées.
-                        </p>
-                    </div>
-
-                    <div className="border-t border-white/5 pt-4">
-                        <ul className="space-y-2 text-[10px] text-slate-300 font-mono">
-                            <li className="flex items-center gap-2">
-                                <span className="w-1 h-1 rounded-full bg-blue-500"></span> Information locale et incertitude
-                            </li>
-                            <li className="flex items-center gap-2 text-yellow-500">
-                                <span className="w-1 h-1 rounded-full bg-yellow-500"></span> Comportement émergent dépendant de l’entraînement
-                            </li>
-                        </ul>
-                    </div>
-                </button>
-
-                {/* 3. MULTIJOUEUR (Indisponible) */}
-                <div className="relative bg-[#0f172a]/20 border border-white/5 p-8 rounded-xl flex flex-col h-full opacity-80 grayscale pointer-events-none">
-                    <div className="mb-auto">
-                        <div className="text-[10px] font-mono font-bold text-slate-500 mb-2 uppercase tracking-wider border border-slate-700 w-fit px-2 py-0.5 rounded">
-                            En cours de conception
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-600 mb-2">Humain + Agents artificiels</h3>
-                        <p className="text-slate-600 text-xs leading-relaxed">
-                            Intégration d’un joueur humain au sein d’un système multi-agents. Objectif : analyser la compatibilité entre stratégies humaines et décisions générées par les modèles.
-                        </p>
-                    </div>
-                </div>
-
+           {/* === 3. HUMAN VS IA (CONSTRUCTION) === */}
+           <div className="relative h-[340px] w-full bg-[#0d1221]/40 backdrop-blur-sm border border-white/5 rounded-2xl p-7 flex flex-col text-left overflow-hidden grayscale opacity-70 cursor-not-allowed">
+            
+            {/* Header avec Badge aligné */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-slate-700/20 rounded-xl flex items-center justify-center ring-1 ring-slate-600/30">
+                <Users className="w-6 h-6 text-slate-400" />
+              </div>
+              
+              <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-amber-500/10 border border-amber-500/20 text-[9px] text-amber-500 font-bold uppercase tracking-wider">
+                <Construction className="w-3 h-3" /> En construction
+              </div>
             </div>
 
-            {/* FOOTER */}
-            <div className="absolute bottom-6 w-full text-center">
-                <div className="text-[12px] text-slate-600 font-mono tracking-widest">
-                    Novia • Architecture & Simulation • v2.1
-                </div>
+            <h2 className="text-2xl font-medium text-slate-400 mb-3">Mode Hybride</h2>
+            
+            <p className="text-slate-500 text-sm leading-relaxed mb-auto">
+              Interface d'expérimentation permettant à un joueur humain de coopérer avec les agents IA pour tester la synergie Homme-Machine.
+            </p>
+
+            <div className="pt-4 border-t border-white/5 flex items-center text-xs text-slate-600 font-mono">
+              <span className="flex-grow uppercase tracking-wider">Bientôt disponible</span>
             </div>
+          </div>
+
         </div>
-    );
+      </div>
+      
+      {/* Footer SEO clair */}
+      <div className="absolute bottom-6 text-slate-400 text-[11px] tracking-[0.2em] uppercase font-medium hover:text-white transition-colors cursor-default">
+        Projet Novia • Killian Lacaque
+      </div>
+    </div>
+  );
 }
