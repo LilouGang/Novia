@@ -191,7 +191,7 @@ export default function GodGameBoard({
                     <div 
                         key={pid} 
                         // Container centré, largeur ajustée pour centrer les missions
-                        className="absolute w-[300px] h-[80px] pointer-events-none transition-all duration-500 z-[60] flex items-center justify-center gap-2" 
+                        className="absolute w-75 h-20 pointer-events-none transition-all duration-500 z-60 flex items-center justify-center gap-2" 
                         style={getInfoZoneStyle(pid)}
                     >
                         {pMissions.map((m, i) => (
@@ -207,7 +207,7 @@ export default function GodGameBoard({
                 return (
                     <div 
                         key={card.id}
-                        className="absolute top-0 left-0 w-20 aspect-[2/3] pointer-events-none"
+                        className="absolute top-0 left-0 w-20 aspect-2/3 pointer-events-none"
                         style={{ ...style, willChange: 'transform, opacity' }}
                     >
                         <Card color={card.color} value={card.value} className="w-full h-full shadow-2xl border border-black/30 rounded-lg" />

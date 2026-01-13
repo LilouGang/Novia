@@ -17,7 +17,7 @@ export default function CardPicker({ currentPlayer, allCards, onToggleCard, onCl
     const myCount = allCards.filter(c => c.owner === currentPlayer && c.status === 'HAND').length;
 
     return (
-        <div className="fixed inset-0 bg-black/85 z-[9999] flex items-center justify-center backdrop-blur-md animate-fade-in p-4">
+        <div className="fixed inset-0 bg-black/85 z-9999 flex items-center justify-center backdrop-blur-md animate-fade-in p-4">
             
             <div className="bg-gray-900 border border-gray-600 rounded-xl shadow-2xl w-full max-w-6xl max-h-[95vh] flex flex-col">
                 
@@ -62,7 +62,7 @@ export default function CardPicker({ currentPlayer, allCards, onToggleCard, onCl
                                             // MODIF: On ne désactive plus le bouton
                                             // disabled={isTaken} 
                                             className={`
-                                                relative w-20 aspect-[2/3] rounded-lg transition-all duration-200 group
+                                                relative w-20 aspect-2/3 rounded-lg transition-all duration-200 group
                                                 ${isMine 
                                                     ? 'ring-4 ring-green-500 scale-105 z-10 shadow-2xl' 
                                                     : isTaken 

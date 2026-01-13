@@ -181,7 +181,7 @@ export default function AISidebar({
                     {/* Barre de progression */}
                     <div className="relative w-full h-2 bg-gray-900 rounded-full overflow-hidden border border-white/5">
                         <div 
-                            className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-600 to-blue-500 transition-all duration-300" 
+                            className="absolute top-0 left-0 h-full bg-linear-to-r from-purple-600 to-blue-500 transition-all duration-300" 
                             style={{ width: `${((trainingStats?.episode||0)/(trainingStats?.max_episodes||1))*100}%` }}
                         ></div>
                     </div>
@@ -260,7 +260,7 @@ export default function AISidebar({
                    ) : (
                        <span className="text-blue-500">ℹ</span>
                    )}
-                   <span className="truncate max-w-[200px]">{currentStepText}</span>
+                   <span className="truncate max-w-50">{currentStepText}</span>
                 </div>
                 <button onClick={onReset} className="text-[9px] text-red-500/50 hover:text-red-400 uppercase font-bold">
                     Reset
@@ -270,7 +270,7 @@ export default function AISidebar({
             <div className="flex-1 overflow-y-auto p-3 space-y-1.5 font-mono text-[9px] text-gray-500 bg-black/20 scrollbar-thin scrollbar-thumb-gray-800">
                 {logs.length === 0 && <div className="text-center italic opacity-30 mt-10">En attente d'actions...</div>}
                 {logs.map((log, i) => (
-                    <div key={i} className="border-l-2 border-gray-800 pl-2 hover:border-gray-600 hover:text-gray-300 transition-colors break-words leading-tight">
+                    <div key={i} className="border-l-2 border-gray-800 pl-2 hover:border-gray-600 hover:text-gray-300 transition-colors wrap-break-word leading-tight">
                         {log}
                     </div>
                 ))}

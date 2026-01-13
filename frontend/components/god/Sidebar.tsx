@@ -88,7 +88,7 @@ export default function Sidebar(props: SidebarProps) {
     const hasFailed = !!stats && !stats.solutionFound && !isThinking;
 
     return (
-        <div className="w-[30%] min-w-[300px] bg-gray-900 border-r border-gray-700 flex flex-col z-50 shadow-2xl h-full font-sans">
+        <div className="w-[30%] min-w-75 bg-gray-900 border-r border-gray-700 flex flex-col z-50 shadow-2xl h-full font-sans">
             
             {/* HEADER MODIFIÉ : Flexbox pour aligner Titre et Bouton */}
             <div className="p-4 border-b border-gray-800 shrink-0 bg-gray-900 flex justify-between items-center">
@@ -150,7 +150,7 @@ export default function Sidebar(props: SidebarProps) {
                                 <button onClick={() => { shuffleOwners(); handleResetStats(); }} className="flex-1 bg-gray-700 hover:bg-gray-600 text-[10px] text-white py-1.5 rounded border border-gray-600 transition">👤 Mix Joueurs</button>
                                 <button onClick={() => { shuffleCards(); handleResetStats(); }} className="flex-1 bg-gray-700 hover:bg-gray-600 text-[10px] text-white py-1.5 rounded border border-gray-600 transition">🃏 Mix Tâches</button>
                             </div>
-                            <button onClick={() => { autoFindSolution(); handleResetStats(); }} disabled={isAutoFinding} className={`w-full mt-2 py-2 rounded text-xs font-bold border transition flex items-center justify-center gap-2 shadow-lg ${isAutoFinding ? 'bg-purple-900/80 border-purple-500 text-purple-200 animate-pulse cursor-wait' : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white border-transparent'}`}>
+                            <button onClick={() => { autoFindSolution(); handleResetStats(); }} disabled={isAutoFinding} className={`w-full mt-2 py-2 rounded text-xs font-bold border transition flex items-center justify-center gap-2 shadow-lg ${isAutoFinding ? 'bg-purple-900/80 border-purple-500 text-purple-200 animate-pulse cursor-wait' : 'bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white border-transparent'}`}>
                                 {isAutoFinding ? '🎲 Recherche en cours...' : '🎰 Trouver une donne GAGNANTE'}
                             </button>
                         </div>
@@ -242,7 +242,7 @@ export default function Sidebar(props: SidebarProps) {
                     <button onClick={() => { setMissions(prev => [...prev, { cardColor: 'Blue', cardValue: 1, ownerIndex: 0, token: 'None' }]); handleResetStats(); }} className="w-full py-2 border border-dashed border-gray-600 text-gray-400 hover:text-white hover:border-gray-400 text-xs rounded transition-colors flex items-center justify-center gap-1"><span>+</span> Ajouter une tâche</button>
                 </div>
 
-                <div className="h-[1px] bg-gray-800 my-4"></div>
+                <div className="h-px bg-gray-800 my-4"></div>
 
                 {/* --- BOUTON DE LANCEMENT --- */}
                 <div className="mt-4">
@@ -298,7 +298,7 @@ export default function Sidebar(props: SidebarProps) {
                         <div className="p-3">
                             <div className="w-full h-1.5 bg-gray-700 rounded-full mb-4 overflow-hidden">
                                 <div 
-                                    className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-linear" 
+                                    className="h-full bg-linear-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-linear" 
                                     style={{ width: `${progressWidth}%` }}
                                 ></div>
                             </div>
@@ -312,13 +312,13 @@ export default function Sidebar(props: SidebarProps) {
                             </div>
                         </div>
 
-                        <div className="border-t border-gray-700 max-h-[200px] overflow-y-auto bg-black/20 p-2">
+                        <div className="border-t border-gray-700 max-h-50 overflow-y-auto bg-black/20 p-2">
                             <TrickHistory steps={stats.solution_steps} />
                         </div>
                     </div>
                 )}
 
-                <div className="mt-4 bg-black/40 rounded p-2 font-mono text-[10px] text-gray-500 border border-white/5 h-[120px] overflow-y-auto">
+                <div className="mt-4 bg-black/40 rounded p-2 font-mono text-[10px] text-gray-500 border border-white/5 h-30 overflow-y-auto">
                     {logs.map((l, i) => <div key={i} className="mb-0.5 border-l-2 border-transparent hover:border-purple-500 pl-1">{l}</div>)}
                 </div>
             </div>
