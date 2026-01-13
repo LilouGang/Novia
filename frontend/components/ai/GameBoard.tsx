@@ -99,7 +99,7 @@ const CommunicationToken: React.FC<{ type: string, playerIndex: number }> = ({ t
 
     return (
         <div 
-            className={`absolute w-7 h-7 bg-green-500 rounded-full border-2 border-green-300 shadow-[0_0_15px_rgba(34,197,94,0.9)] z-[1000] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
+            className={`absolute w-7 h-7 bg-green-500 rounded-full border-2 border-green-300 shadow-[0_0_15px_rgba(34,197,94,0.9)] z-1000 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
             style={{ transform: `translate(-50%, -50%) translate(${pos.x}px, ${pos.y}px)` }}
         ></div>
     );
@@ -206,7 +206,7 @@ export default function AIGameBoard({
     <div className="w-full h-screen relative bg-[#1e293b] overflow-hidden shadow-inner flex items-center justify-center select-none font-sans">
         
         {/* TEXTE D'AMBIANCE */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1000]">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-1000">
             {showIdleText && (
                 <div className="animate-fade-in text-center">
                     <h2 className="text-3xl font-bold text-blue-400 mb-2 drop-shadow-md">Novia - Mode Démo</h2>
@@ -233,7 +233,7 @@ export default function AIGameBoard({
                 return (
                     <div 
                         key={pid} 
-                        className="absolute w-[300px] h-[80px] pointer-events-none transition-all duration-500" 
+                        className="absolute w-75 h-20 pointer-events-none transition-all duration-500" 
                         style={getInfoZoneStyle(pid)}
                     >
                         <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-px h-8 bg-white/20"></div>
@@ -259,7 +259,7 @@ export default function AIGameBoard({
                 return (
                     <div 
                         key={card.id}
-                        className={`absolute top-0 left-0 w-20 aspect-[2/3]`}
+                        className={`absolute top-0 left-0 w-20 aspect-2/3`}
                         style={{ 
                             ...style, 
                             willChange: 'transform, opacity',
