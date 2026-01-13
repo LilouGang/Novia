@@ -98,6 +98,7 @@ export const useAiMode = () => {
     const [playedHistory, setPlayedHistory] = useState<any[]>([]);
 
     const [isThinking, setIsThinking] = useState(false);
+    const [isServerWakingUp, setIsServerWakingUp] = useState(false); // <--- NOUVEL ÉTAT
     const [logs, setLogs] = useState<string[]>([]);
     const [currentStepText, setCurrentStepText] = useState("En attente...");
     
@@ -122,7 +123,15 @@ export const useAiMode = () => {
 
     // --- 1. INITIALISATION ---
     const initializeMission = async (missionId: number) => {
-        resetGameStates(); setIsThinking(true); setCurrentStepText("Distribution...");
+        resetGameStates(); 
+        setIsThinking(true); 
+        setCurrentStepText("Distribution...");
+
+        // Timer pour détecter le Cold Start (si > 2 secondes)
+        const coldStartTimer = setTimeout(() => {
+            setIsServerWakingUp(true);
+        }, 2000);
+
         try {
             const res = await fetch(`${API_URL}/start-game`);
             const gData = await res.json();
@@ -135,8 +144,14 @@ export const useAiMode = () => {
             } else {
                 setMissions([]); setActivePlayer(gData.current_player || 0);
             }
-        } catch (e) { console.error(e); setCurrentStepText("Erreur serveur."); } 
-        finally { setIsThinking(false); }
+        } catch (e) { 
+            console.error(e); 
+            setCurrentStepText("Erreur serveur."); 
+        } finally { 
+            clearTimeout(coldStartTimer); // On annule le timer si c'était rapide
+            setIsServerWakingUp(false);   // On désactive l'alerte
+            setIsThinking(false); 
+        }
     };
 
     // --- 2. CONSTRUIRE L'ÉTAT ACTUEL (CLEAN) ---
@@ -144,8 +159,6 @@ export const useAiMode = () => {
         const playersHands: any[] = [[], [], [], []];
         
         allCards.forEach(c => {
-            // ✅ CORRECTION ICI : On inclut HAND *ET* COMMUNICATED
-            // Car une carte communiquée est toujours techniquement dans la main du joueur
             if (c.status === 'HAND' || c.status === 'COMMUNICATED') {
                 playersHands[c.owner].push({ color: c.color, value: Number(c.value) });
             }
@@ -155,7 +168,6 @@ export const useAiMode = () => {
             player: c.owner, card: { color: c.color, value: Number(c.value) }
         }));
         
-        // ... le reste ne change pas ...
         const missionsFormatted = missions.map(m => ({
             card: { color: m.cardColor, value: Number(m.cardValue) },
             ownerIndex: m.ownerIndex, token: m.token, status: m.status
@@ -178,16 +190,12 @@ export const useAiMode = () => {
         };
     };
 
-    // --- 3. INFÉRENCE IA (Modifiée : Arrêt silencieux en cas de pépin) ---
+    // --- 3. INFÉRENCE IA ---
     const playOneMove = async () => {
         if (trickCards.length === 4) return;
         setIsThinking(true);
         try {
             const freshState = buildFreshGameState();
-            
-            // Console log discret pour le dev (F12) uniquement
-            // console.log("📤 IA State:", freshState.players[activePlayer]);
-
             const res = await fetch(`${API_URL}/predict`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(freshState)
@@ -195,14 +203,13 @@ export const useAiMode = () => {
             const data = await res.json();
 
             if (!res.ok || data.action === undefined) {
-                // Arrêt silencieux si le serveur plante
                 setIsAutoPlaying(false); 
                 return;
             }
 
             const rawAction = data.action;
 
-            // === CAS 1 : COMMUNICATION (Index >= 40) ===
+            // CAS 1 : COMMUNICATION
             if (rawAction >= 40) {
                 const cardIdx = rawAction - 40;
                 const targetCardInfo = getCardFromIndex(cardIdx);
@@ -230,13 +237,11 @@ export const useAiMode = () => {
                             c.id === cardInHand.id ? { ...c, status: 'COMMUNICATED' } : c
                         ));
                     } else {
-                        // Carte introuvable -> On stop juste
                         setIsAutoPlaying(false);
                     }
                 }
             } 
-            
-            // === CAS 2 : JEU CLASSIQUE (Index < 40) ===
+            // CAS 2 : JEU CLASSIQUE
             else {
                 const targetCard = getCardFromIndex(rawAction);
                 if (targetCard) {
@@ -251,13 +256,11 @@ export const useAiMode = () => {
                         addLog(`🤖 IA (J${activePlayer+1}) joue : ${cardInHand.color} ${cardInHand.value}`);
                         playCard(cardInHand.id);
                     } else {
-                        // Carte introuvable -> On stop juste
                         setIsAutoPlaying(false);
                     }
                 }
             }
         } catch (e) { 
-            // En cas d'erreur réseau, on stop aussi
             setIsAutoPlaying(false);
         } finally { setIsThinking(false); }
     };
@@ -383,6 +386,7 @@ export const useAiMode = () => {
 
     return {
         allCards, missions, communications, logs, currentStepText, activePlayer, isThinking, 
+        isServerWakingUp, // <--- EXPORTÉ ICI POUR LA UI
         isTraining, trainingStats, milestones, isReplayMode, replayData, currentMilestoneId, isAutoPlaying, isDevMode: IS_DEV_MODE,
         initializeMission, playOneMove, toggleAutoPlay: () => setIsAutoPlaying(!isAutoPlaying), onReset: resetGameStates,
         startTraining, loadReplay, nextReplayStep, exitReplay: () => { setIsReplayMode(false); resetGameStates(); }

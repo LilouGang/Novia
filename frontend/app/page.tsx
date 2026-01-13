@@ -64,7 +64,7 @@ export default function Home() {
       );
   }
 
-  // --- RENDU MODE IA (C'est ici qu'on corrige) ---
+  // --- RENDU MODE IA ---
   if (gameMode === 'AI') {
         return (
             <div className="h-screen w-screen flex overflow-hidden bg-[#111827] font-sans relative">
@@ -74,6 +74,11 @@ export default function Home() {
                     logs={aiGame.logs}
                     isThinking={aiGame.isThinking}
                     activePlayer={aiGame.activePlayer}
+                    
+                    // --- CONNEXION ICI ---
+                    // On connecte la variable du hook. Si elle n'existe pas encore dans useAiMode,
+                    // cela renverra undefined (donc false), ce qui ne cassera rien.
+                    isServerWakingUp={aiGame.isServerWakingUp} 
 
                     // --- MODES ---
                     isDevMode={aiGame.isDevMode}
@@ -95,12 +100,13 @@ export default function Home() {
 
                     // --- ACTIONS JEU ---
                     initializeMission={aiGame.initializeMission}
-                    playOneMove={aiGame.playOneMove} // Remplace onNextStep
+                    playOneMove={aiGame.playOneMove}
                     toggleAutoPlay={aiGame.toggleAutoPlay}
                     onReset={aiGame.onReset}
 
                     // --- NAVIGATION ---
-                    onBackToMenu={() => setGameMode(null)} isServerWakingUp={false}                />
+                    onBackToMenu={() => setGameMode(null)} 
+                />
                 
                 <AIGameBoard 
                     allCards={aiGame.allCards}
@@ -108,9 +114,8 @@ export default function Home() {
                     activePlayer={aiGame.activePlayer}
                     isTraining={aiGame.isTraining}
                     isReplayMode={aiGame.isReplayMode}
-                    isAutoPlaying={aiGame.isAutoPlaying} // Nouveau prop
+                    isAutoPlaying={aiGame.isAutoPlaying}
                     communications={aiGame.communications}
-                    // probabilities & suggestedCardId ne sont plus prioritaires dans cette version
                 />
             </div>
         );
