@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: "Y65NE1Berxi8y4Gcny87MqE1PKChyKA9Se47RSHBp7Y",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
