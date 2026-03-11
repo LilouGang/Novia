@@ -25,14 +25,13 @@ def get_card_from_index(idx):
 class GameVectorizer:
     def __init__(self):
         self.input_size = 0
-        self.input_size += 40 # Main
-        self.input_size += 160 # Table
-        # 40 cartes * 11 features (Tokens: 1,2,3,4,5, Omega, >, >>, >>>, >>>>)
+        self.input_size += 40
+        self.input_size += 160
         self.input_size += 440 
-        self.input_size += 160 # Owners
-        self.input_size += 40 # Mémoire
-        self.input_size += 10 # Contexte
-        self.input_size += 172 # Communications
+        self.input_size += 160
+        self.input_size += 40
+        self.input_size += 10
+        self.input_size += 172
 
     def _extract_card_info(self, card_data):
         if card_data is None: return None, None
@@ -45,12 +44,9 @@ class GameVectorizer:
         vec = np.zeros(self.input_size, dtype=np.float32)
         cursor = 0
 
-        # --- 1. MAIN (CORRIGÉ) ---
-        # On essaie d'abord de récupérer via la liste 'players' (format Game)
         my_hand = []
         if 'players' in game_state and isinstance(game_state['players'], list):
             my_hand = game_state['players'][player_idx]
-        # Sinon on tente le format dictionnaire (format Solver/API)
         elif f'player_{player_idx + 1}' in game_state:
             my_hand = game_state[f'player_{player_idx + 1}']
         
@@ -60,7 +56,6 @@ class GameVectorizer:
             if idx != -1: vec[cursor + idx] = 1.0
         cursor += 40
 
-        # --- 2. TABLE ---
         current_trick = game_state.get('current_trick', [])
         for move in current_trick:
             p = move['player']
@@ -69,7 +64,6 @@ class GameVectorizer:
             if idx != -1: vec[cursor + (p * 40) + idx] = 1.0
         cursor += 160
 
-        # --- 3. MISSIONS (Avec Jeton 5) ---
         for m in missions:
             status = m.get('status')
             if status != 'SUCCESS':
@@ -94,7 +88,6 @@ class GameVectorizer:
                     if token == '>>>>':  vec[base + 10] = 1.0
         cursor += 440
 
-        # --- 4. OWNERS ---
         for m in missions:
             c_info = m.get('card')
             owner = m.get('owner')
@@ -104,7 +97,6 @@ class GameVectorizer:
                 vec[cursor + (owner * 40) + idx] = 1.0
         cursor += 160
 
-        # --- 5. MÉMOIRE ---
         played = game_state.get('played_history', [])
         for item in played:
             col, val = self._extract_card_info(item)
@@ -112,14 +104,12 @@ class GameVectorizer:
             if idx != -1: vec[cursor + idx] = 1.0
         cursor += 40
         
-        # --- 6. CONTEXTE ---
         if 0 <= player_idx < 4: vec[cursor + player_idx] = 1.0
         if current_trick:
             lead_player = current_trick[0]['player']
             vec[cursor + 4 + lead_player] = 1.0
         cursor += 10
         
-        # --- 7. COMMUNICATIONS ---
         comms = game_state.get('communications', [])
         for comm in comms:
             p = comm['player']

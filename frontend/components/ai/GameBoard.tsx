@@ -2,39 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { CardData, MissionUI } from '../../types/index';
 import Card from '../Card';
 
-// =================================================================================
-// 🛠️ CONFIGURATION 1 : ZONES D'INFO (Missions + Slot Indice)
-// =================================================================================
 const INFO_POSITIONS = {
-    0: { x: 150,    y: 190,  rotation: 0 },    // SUD
-    1: { x: -120,   y: 40,    rotation: 90 },   // OUEST
-    2: { x: 150,    y: -110, rotation: 180 },  // NORD
-    3: { x: 420,    y: 40,    rotation: -90 },  // EST
+    0: { x: 150,    y: 190,  rotation: 0 },
+    1: { x: -120,   y: 40,    rotation: 90 },
+    2: { x: 150,    y: -110, rotation: 180 },
+    3: { x: 420,    y: 40,    rotation: -90 },
 };
 
-// =================================================================================
-// 🛠️ CONFIGURATION 2 : CENTRE DES MAINS
-// =================================================================================
 const HAND_POSITIONS = {
-    0: { x: 0,    y: 260,  rotation: 0 },    // SUD
-    1: { x: -380, y: 0,    rotation: 90 },   // OUEST
-    2: { x: 0,    y: -260, rotation: 180 },  // NORD
-    3: { x: 380,  y: 0,    rotation: -90 },  // EST
+    0: { x: 0,    y: 260,  rotation: 0 },
+    1: { x: -380, y: 0,    rotation: 90 },
+    2: { x: 0,    y: -260, rotation: 180 },
+    3: { x: 380,  y: 0,    rotation: -90 },
 };
 
-// =================================================================================
-// 🛠️ CONFIGURATION 3 : OFFSET DES CARTES COMMUNIQUÉES
-// =================================================================================
 const COMM_CARD_OFFSETS = {
-    0: { x: -110,  y: -40 },   // SUD
-    1: { x: 0,     y: 150 },    // OUEST
-    2: { x: 190,   y: 40 },    // NORD
-    3: { x: 80,    y: -150 },   // EST
+    0: { x: -110,  y: -40 },
+    1: { x: 0,     y: 150 },
+    2: { x: 190,   y: 40 },
+    3: { x: 80,    y: -150 },
 };
 
-// =================================================================================
-// 🛠️ CONFIGURATION 4 : POSITION DU JETON SUR LA CARTE
-// =================================================================================
 const TOKEN_POSITIONS_CONFIG = {
     0: { TOP: { x: 0, y: -45 }, MID: { x: 30, y: 0 }, BOT: { x: 0, y: 45 } },
     1: { TOP: { x: 0, y: -45 }, MID: { x: 30, y: 0 }, BOT: { x: 0, y: 45 } },
@@ -105,18 +93,14 @@ const CommunicationToken: React.FC<{ type: string, playerIndex: number }> = ({ t
     );
 };
 
-// =================================================================================
-// 🎨 COMPOSANT PRINCIPAL (Mise à jour Props)
-// =================================================================================
-
 type AIGameBoardProps = {
     allCards?: CardData[];
     missions?: MissionUI[];
     probabilities?: Record<string, number>;
     suggestedCardId?: string | null;
     activePlayer?: number;
-    isTraining?: boolean;     // (Garde pour compatibilité, mais moins utilisé)
-    isAutoPlaying?: boolean;  // Nouveau : Indique si l'IA joue toute seule
+    isTraining?: boolean;
+    isAutoPlaying?: boolean;
     isReplayMode?: boolean;
     communications?: Record<number, { cardId: string, type: string }>;
 };
@@ -130,7 +114,6 @@ export default function AIGameBoard({
   const ANGLE_STEP = 5;
 
   const getCardStyle = (card: CardData): React.CSSProperties => {
-      // 1. VICTOIRE
       if (card.status === 'WON') {
           const winPositions = [`translate(0px, 600px)`, `translate(-800px, 0px)`, `translate(0px, -600px)`, `translate(800px, 0px)`];
           return { 
@@ -141,7 +124,6 @@ export default function AIGameBoard({
           };
       }
       
-      // 2. TABLE (Cartes jouées)
       if (card.status === 'TABLE') {
           const rX = (card.tableRotation * 5) % 15 - 7;
           const rY = (card.tableRotation * 7) % 15 - 7;
@@ -153,7 +135,6 @@ export default function AIGameBoard({
           };
       }
       
-      // 3. COMMUNICATION
       if (card.status === 'COMMUNICATED') {
           const infoPos = INFO_POSITIONS[card.owner as keyof typeof INFO_POSITIONS];
           const offset = COMM_CARD_OFFSETS[card.owner as keyof typeof COMM_CARD_OFFSETS] || { x: 0, y: 0 };
@@ -173,7 +154,6 @@ export default function AIGameBoard({
           };
       }
       
-      // 4. MAIN
       const cardsInHand = allCards.filter(c => c.owner === card.owner && c.status === 'HAND');
       const colorPriority: Record<string, number> = { 'Blue': 1, 'Green': 2, 'Pink': 3, 'Yellow': 4, 'Rocket': 5 };
       cardsInHand.sort((a, b) => { if (a.color !== b.color) return colorPriority[a.color] - colorPriority[b.color]; return a.value - b.value; });
@@ -198,14 +178,11 @@ export default function AIGameBoard({
       };
   };
 
-  // Logique d'affichage des textes d'ambiance
   const showIdleText = !isTraining && !isReplayMode && allCards.length === 0;
   const showProcessingText = isTraining || isAutoPlaying;
 
   return (
     <div className="w-full h-screen relative bg-[#1e293b] overflow-hidden shadow-inner flex items-center justify-center select-none font-sans">
-        
-        {/* TEXTE D'AMBIANCE */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-1000">
             {showIdleText && (
                 <div className="animate-fade-in text-center">
@@ -226,8 +203,6 @@ export default function AIGameBoard({
         </div>
 
         <div className="relative w-0 h-0 flex items-center justify-center">
-
-            {/* ZONES D'INFORMATION JOUEURS */}
             {allCards.length > 0 && [0, 1, 2, 3].map(pid => {
                 const pMissions = missions.filter(m => m.ownerIndex === pid);
                 return (
@@ -244,8 +219,6 @@ export default function AIGameBoard({
                     </div>
                 );
             })}
-
-            {/* CARTES DU JEU */}
             {allCards.map((card) => {
                 const style = getCardStyle(card);
                 const probKey = `${card.color}-${card.value}`;
@@ -269,15 +242,11 @@ export default function AIGameBoard({
                         {isSuggested && <div className="absolute -inset-1 bg-blue-500 rounded-lg animate-pulse blur-sm -z-10"></div>}
                         
                         <Card color={card.color} value={card.value} className="w-full h-full shadow-2xl border border-black/30 rounded-lg" />
-                        
-                        {/* Jeton Communication */}
                         {showToken && (
                             <div className="absolute top-1/2 left-1/2 w-0 h-0 z-50">
                                 <CommunicationToken type={commData.type} playerIndex={card.owner} />
                             </div>
                         )}
-
-                        {/* Pourcentage de confiance */}
                         {prob !== undefined && (
                             <div className="absolute top-8 left-0 right-0 flex justify-center z-50">
                                 <div className="bg-black/80 backdrop-blur-[2px] rounded px-1.5 py-0.5 shadow border border-white/20">

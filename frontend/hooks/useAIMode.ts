@@ -5,20 +5,17 @@ import { REAL_MISSION_LOGBOOK } from '../data/real_missions';
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 const IS_DEV_MODE = typeof window !== 'undefined' && window.location.hostname === 'localhost';
 
-// --- HELPERS STRICTS ---
-
 const computeCommunicationType = (card: CardData, hand: CardData[]): string => {
-    // Filtre les cartes de la même couleur dans la main
     const sameColor = hand.filter(c => c.color === card.color && c.color !== 'Rocket');
-    if (sameColor.length === 0) return 'MID'; // Bizarre mais sécu
+    if (sameColor.length === 0) return 'MID';
 
     const isMax = card.value === Math.max(...sameColor.map(c => c.value));
     const isMin = card.value === Math.min(...sameColor.map(c => c.value));
 
-    if (sameColor.length === 1) return 'MID'; // Seule carte -> Unique
+    if (sameColor.length === 1) return 'MID';
     if (isMax) return 'TOP';
     if (isMin) return 'BOT';
-    return 'MID'; // Par défaut (ne devrait pas arriver si règles strictes, mais ok pour démo)
+    return 'MID';
 };
 
 const getCardFromIndex = (idx: number): { color: string, value: number } | null => {
@@ -36,7 +33,7 @@ const convertBackendToFrontend = (d: any): CardData[] => {
         hand.map((c: any) => ({
             id: `${c.color}-${c.value}`, 
             color: c.color, 
-            value: Number(c.value), // ⚠️ FORCE EN NOMBRE
+            value: Number(c.value),
             owner: pIdx,
             status: 'HAND', 
             zIndex: 0, 
@@ -57,7 +54,6 @@ const getTrickWinner = (cards: CardData[]): number => {
     return best.owner;
 };
 
-// --- HELPER : MISSIONS ---
 const generateMissionSetup = (mid: number, cards: CardData[]) => {
     const mDef = REAL_MISSION_LOGBOOK.find(m => m.id === mid);
     if (!mDef) return null;
@@ -88,7 +84,6 @@ const generateMissionSetup = (mid: number, cards: CardData[]) => {
 };
 
 export const useAiMode = () => {
-    // --- ÉTATS ---
     const [allCards, setAllCards] = useState<CardData[]>([]);
     const [missions, setMissions] = useState<MissionUI[]>([]);
     const [communications, setCommunications] = useState<Record<number, { cardId: string, type: string }>>({});
@@ -98,7 +93,7 @@ export const useAiMode = () => {
     const [playedHistory, setPlayedHistory] = useState<any[]>([]);
 
     const [isThinking, setIsThinking] = useState(false);
-    const [isServerWakingUp, setIsServerWakingUp] = useState(false); // <--- NOUVEL ÉTAT
+    const [isServerWakingUp, setIsServerWakingUp] = useState(false);
     const [logs, setLogs] = useState<string[]>([]);
     const [currentStepText, setCurrentStepText] = useState("En attente...");
     
@@ -121,13 +116,11 @@ export const useAiMode = () => {
         setIsReplayMode(false); setIsAutoPlaying(false);
     };
 
-    // --- 1. INITIALISATION ---
     const initializeMission = async (missionId: number) => {
         resetGameStates(); 
         setIsThinking(true); 
         setCurrentStepText("Distribution...");
 
-        // Timer pour détecter le Cold Start (si > 2 secondes)
         const coldStartTimer = setTimeout(() => {
             setIsServerWakingUp(true);
         }, 1000);
@@ -148,13 +141,12 @@ export const useAiMode = () => {
             console.error(e); 
             setCurrentStepText("Erreur serveur."); 
         } finally { 
-            clearTimeout(coldStartTimer); // On annule le timer si c'était rapide
-            setIsServerWakingUp(false);   // On désactive l'alerte
+            clearTimeout(coldStartTimer);
+            setIsServerWakingUp(false);
             setIsThinking(false); 
         }
     };
 
-    // --- 2. CONSTRUIRE L'ÉTAT ACTUEL (CLEAN) ---
     const buildFreshGameState = () => {
         const playersHands: any[] = [[], [], [], []];
         
@@ -190,7 +182,6 @@ export const useAiMode = () => {
         };
     };
 
-    // --- 3. INFÉRENCE IA ---
     const playOneMove = async () => {
         if (trickCards.length === 4) return;
         setIsThinking(true);
@@ -209,7 +200,6 @@ export const useAiMode = () => {
 
             const rawAction = data.action;
 
-            // CAS 1 : COMMUNICATION
             if (rawAction >= 40) {
                 const cardIdx = rawAction - 40;
                 const targetCardInfo = getCardFromIndex(cardIdx);
@@ -241,7 +231,6 @@ export const useAiMode = () => {
                     }
                 }
             } 
-            // CAS 2 : JEU CLASSIQUE
             else {
                 const targetCard = getCardFromIndex(rawAction);
                 if (targetCard) {
@@ -265,7 +254,6 @@ export const useAiMode = () => {
         } finally { setIsThinking(false); }
     };
 
-    // --- 4. MOTEUR DE JEU ---
     const playCard = (cid: string) => {
         const idx = allCards.findIndex(c => c.id === cid);
         if (idx === -1) return;
@@ -299,7 +287,6 @@ export const useAiMode = () => {
         }
     };
 
-    // --- 5. ENTRAINEMENT (LOCAL) ---
     const startTraining = async (episodesCount: number, missionId: number) => {
         if (!IS_DEV_MODE) return;
         setIsTraining(true); resetGameStates(); setTrainingStats(null); 
@@ -342,7 +329,6 @@ export const useAiMode = () => {
         } catch (e) { setIsTraining(false); }
     };
 
-    // --- 6. REPLAY ---
     const loadReplay = (replaySteps?: ReplayStep[], milestoneId?: number) => {
         const dataToLoad = replaySteps || replayData;
         if (!dataToLoad) return;
@@ -386,7 +372,7 @@ export const useAiMode = () => {
 
     return {
         allCards, missions, communications, logs, currentStepText, activePlayer, isThinking, 
-        isServerWakingUp, // <--- EXPORTÉ ICI POUR LA UI
+        isServerWakingUp,
         isTraining, trainingStats, milestones, isReplayMode, replayData, currentMilestoneId, isAutoPlaying, isDevMode: IS_DEV_MODE,
         initializeMission, playOneMove, toggleAutoPlay: () => setIsAutoPlaying(!isAutoPlaying), onReset: resetGameStates,
         startTraining, loadReplay, nextReplayStep, exitReplay: () => { setIsReplayMode(false); resetGameStates(); }

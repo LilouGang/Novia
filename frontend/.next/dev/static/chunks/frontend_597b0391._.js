@@ -2029,7 +2029,7 @@ function Sidebar(props) {
     // Correction Typage : on force le boolean avec !!
     const hasFailed = !!stats && !stats.solutionFound && !isThinking;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-[30%] min-w-[300px] bg-gray-900 border-r border-gray-700 flex flex-col z-50 shadow-2xl h-full font-sans",
+        className: "w-[30%] min-w-75 bg-gray-900 border-r border-gray-700 flex flex-col z-50 shadow-2xl h-full font-sans",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "p-4 border-b border-gray-800 shrink-0 bg-gray-900 flex justify-between items-center",
@@ -2245,7 +2245,7 @@ function Sidebar(props) {
                                             handleResetStats();
                                         },
                                         disabled: isAutoFinding,
-                                        className: `w-full mt-2 py-2 rounded text-xs font-bold border transition flex items-center justify-center gap-2 shadow-lg ${isAutoFinding ? 'bg-purple-900/80 border-purple-500 text-purple-200 animate-pulse cursor-wait' : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white border-transparent'}`,
+                                        className: `w-full mt-2 py-2 rounded text-xs font-bold border transition flex items-center justify-center gap-2 shadow-lg ${isAutoFinding ? 'bg-purple-900/80 border-purple-500 text-purple-200 animate-pulse cursor-wait' : 'bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white border-transparent'}`,
                                         children: isAutoFinding ? '🎲 Recherche en cours...' : '🎰 Trouver une donne GAGNANTE'
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/god/Sidebar.tsx",
@@ -2623,7 +2623,7 @@ function Sidebar(props) {
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "h-[1px] bg-gray-800 my-4"
+                        className: "h-px bg-gray-800 my-4"
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/god/Sidebar.tsx",
                         lineNumber: 245,
@@ -2773,7 +2773,7 @@ function Sidebar(props) {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-full h-1.5 bg-gray-700 rounded-full mb-4 overflow-hidden",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-linear",
+                                            className: "h-full bg-linear-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-linear",
                                             style: {
                                                 width: `${progressWidth}%`
                                             }
@@ -2830,7 +2830,7 @@ function Sidebar(props) {
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "border-t border-gray-700 max-h-[200px] overflow-y-auto bg-black/20 p-2",
+                                className: "border-t border-gray-700 max-h-50 overflow-y-auto bg-black/20 p-2",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$god$2f$TrickHistory$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     steps: stats.solution_steps
                                 }, void 0, false, {
@@ -2850,7 +2850,7 @@ function Sidebar(props) {
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-4 bg-black/40 rounded p-2 font-mono text-[10px] text-gray-500 border border-white/5 h-[120px] overflow-y-auto",
+                        className: "mt-4 bg-black/40 rounded p-2 font-mono text-[10px] text-gray-500 border border-white/5 h-30 overflow-y-auto",
                         children: logs.map((l, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "mb-0.5 border-l-2 border-transparent hover:border-purple-500 pl-1",
                                 children: l
@@ -3496,7 +3496,7 @@ function GodGameBoard({ allCards = [], missions = [], onPlayerClick }) {
                         if (pMissions.length === 0) return null;
                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             // Container centré, largeur ajustée pour centrer les missions
-                            className: "absolute w-[300px] h-[80px] pointer-events-none transition-all duration-500 z-[60] flex items-center justify-center gap-2",
+                            className: "absolute w-75 h-20 pointer-events-none transition-all duration-500 z-60 flex items-center justify-center gap-2",
                             style: getInfoZoneStyle(pid),
                             children: pMissions.map((m, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(MissionToken, {
                                     mission: m
@@ -3514,7 +3514,7 @@ function GodGameBoard({ allCards = [], missions = [], onPlayerClick }) {
                     safeCards.map((card)=>{
                         const style = getCardStyle(card);
                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute top-0 left-0 w-20 aspect-[2/3] pointer-events-none",
+                            className: "absolute top-0 left-0 w-20 aspect-2/3 pointer-events-none",
                             style: {
                                 ...style,
                                 willChange: 'transform, opacity'
@@ -3583,7 +3583,7 @@ function CardPicker({ currentPlayer, allCards, onToggleCard, onClose }) {
     // Combien de cartes ce joueur a-t-il déjà ?
     const myCount = allCards.filter((c)=>c.owner === currentPlayer && c.status === 'HAND').length;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "fixed inset-0 bg-black/85 z-[9999] flex items-center justify-center backdrop-blur-md animate-fade-in p-4",
+        className: "fixed inset-0 bg-black/85 z-9999 flex items-center justify-center backdrop-blur-md animate-fade-in p-4",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "bg-gray-900 border border-gray-600 rounded-xl shadow-2xl w-full max-w-6xl max-h-[95vh] flex flex-col",
             children: [
@@ -3691,7 +3691,7 @@ function CardPicker({ currentPlayer, allCards, onToggleCard, onClose }) {
                                             // MODIF: On ne désactive plus le bouton
                                             // disabled={isTaken} 
                                             className: `
-                                                relative w-20 aspect-[2/3] rounded-lg transition-all duration-200 group
+                                                relative w-20 aspect-2/3 rounded-lg transition-all duration-200 group
                                                 ${isMine ? 'ring-4 ring-green-500 scale-105 z-10 shadow-2xl' : isTaken ? 'opacity-60 grayscale hover:grayscale-0 hover:opacity-100 cursor-pointer ring-2 ring-red-500/30 hover:ring-red-500/80' : 'hover:scale-110 hover:z-20 hover:shadow-xl opacity-80 hover:opacity-100'}
                                             `,
                                             children: [
@@ -3923,6 +3923,7 @@ const useAiMode = ()=>{
     const [trickCards, setTrickCards] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [playedHistory, setPlayedHistory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [isThinking, setIsThinking] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isServerWakingUp, setIsServerWakingUp] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false); // <--- NOUVEL ÉTAT
     const [logs, setLogs] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [currentStepText, setCurrentStepText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("En attente...");
     const [isTraining, setIsTraining] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -3959,6 +3960,10 @@ const useAiMode = ()=>{
         resetGameStates();
         setIsThinking(true);
         setCurrentStepText("Distribution...");
+        // Timer pour détecter le Cold Start (si > 2 secondes)
+        const coldStartTimer = setTimeout(()=>{
+            setIsServerWakingUp(true);
+        }, 1000);
         try {
             const res = await fetch(`${API_URL}/start-game`);
             const gData = await res.json();
@@ -3977,6 +3982,8 @@ const useAiMode = ()=>{
             console.error(e);
             setCurrentStepText("Erreur serveur.");
         } finally{
+            clearTimeout(coldStartTimer); // On annule le timer si c'était rapide
+            setIsServerWakingUp(false); // On désactive l'alerte
             setIsThinking(false);
         }
     };
@@ -3989,8 +3996,6 @@ const useAiMode = ()=>{
             []
         ];
         allCards.forEach((c)=>{
-            // ✅ CORRECTION ICI : On inclut HAND *ET* COMMUNICATED
-            // Car une carte communiquée est toujours techniquement dans la main du joueur
             if (c.status === 'HAND' || c.status === 'COMMUNICATED') {
                 playersHands[c.owner].push({
                     color: c.color,
@@ -4005,7 +4010,6 @@ const useAiMode = ()=>{
                     value: Number(c.value)
                 }
             }));
-        // ... le reste ne change pas ...
         const missionsFormatted = missions.map((m)=>({
                 card: {
                     color: m.cardColor,
@@ -4035,14 +4039,12 @@ const useAiMode = ()=>{
             communications: commsFormatted
         };
     };
-    // --- 3. INFÉRENCE IA (Modifiée : Arrêt silencieux en cas de pépin) ---
+    // --- 3. INFÉRENCE IA ---
     const playOneMove = async ()=>{
         if (trickCards.length === 4) return;
         setIsThinking(true);
         try {
             const freshState = buildFreshGameState();
-            // Console log discret pour le dev (F12) uniquement
-            // console.log("📤 IA State:", freshState.players[activePlayer]);
             const res = await fetch(`${API_URL}/predict`, {
                 method: 'POST',
                 headers: {
@@ -4052,12 +4054,11 @@ const useAiMode = ()=>{
             });
             const data = await res.json();
             if (!res.ok || data.action === undefined) {
-                // Arrêt silencieux si le serveur plante
                 setIsAutoPlaying(false);
                 return;
             }
             const rawAction = data.action;
-            // === CAS 1 : COMMUNICATION (Index >= 40) ===
+            // CAS 1 : COMMUNICATION
             if (rawAction >= 40) {
                 const cardIdx = rawAction - 40;
                 const targetCardInfo = getCardFromIndex(cardIdx);
@@ -4079,7 +4080,6 @@ const useAiMode = ()=>{
                                     status: 'COMMUNICATED'
                                 } : c));
                     } else {
-                        // Carte introuvable -> On stop juste
                         setIsAutoPlaying(false);
                     }
                 }
@@ -4091,13 +4091,11 @@ const useAiMode = ()=>{
                         addLog(`🤖 IA (J${activePlayer + 1}) joue : ${cardInHand.color} ${cardInHand.value}`);
                         playCard(cardInHand.id);
                     } else {
-                        // Carte introuvable -> On stop juste
                         setIsAutoPlaying(false);
                     }
                 }
             }
         } catch (e) {
-            // En cas d'erreur réseau, on stop aussi
             setIsAutoPlaying(false);
         } finally{
             setIsThinking(false);
@@ -4303,6 +4301,7 @@ const useAiMode = ()=>{
         currentStepText,
         activePlayer,
         isThinking,
+        isServerWakingUp,
         isTraining,
         trainingStats,
         milestones,
@@ -4324,7 +4323,7 @@ const useAiMode = ()=>{
         }
     };
 };
-_s(useAiMode, "vVSXfVzSAiso1/WDvlct5dXNwl8=");
+_s(useAiMode, "2Em3sLTxyiNSk4kRycImSHcH28k=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -4343,7 +4342,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$data$2f$real_mis
 var _s = __turbopack_context__.k.signature();
 ;
 ;
-function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode, isTraining, isAutoPlaying, isReplayMode, trainingStats, milestones, currentMilestoneId, onReset, onStartTraining, onLoadReplay, onNextReplayStep, onExitReplay, initializeMission, playOneMove, toggleAutoPlay, onBackToMenu }) {
+function AISidebar({ currentStepText, logs, isThinking, activePlayer, isServerWakingUp, isDevMode, isTraining, isAutoPlaying, isReplayMode, trainingStats, milestones, currentMilestoneId, onReset, onStartTraining, onLoadReplay, onNextReplayStep, onExitReplay, initializeMission, playOneMove, toggleAutoPlay, onBackToMenu }) {
     _s();
     // États locaux pour le formulaire
     const [selectedMission, setSelectedMission] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
@@ -4366,18 +4365,18 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                             children: "Agent"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                            lineNumber: 62,
+                                            lineNumber: 66,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                    lineNumber: 62,
+                                    lineNumber: 66,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 61,
+                                lineNumber: 65,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4387,7 +4386,7 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         children: "Q-LEARNING V2"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 65,
+                                        lineNumber: 69,
                                         columnNumber: 25
                                     }, this),
                                     isDevMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4395,19 +4394,19 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         children: "DEV MODE"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 70,
                                         columnNumber: 39
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 64,
+                                lineNumber: 68,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 60,
+                        lineNumber: 64,
                         columnNumber: 17
                     }, this),
                     onBackToMenu && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4418,7 +4417,7 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                 children: "Menu"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 75,
+                                lineNumber: 79,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4426,225 +4425,288 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                 children: "↩"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 76,
+                                lineNumber: 80,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 71,
+                        lineNumber: 75,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                lineNumber: 59,
+                lineNumber: 63,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "p-5 border-b border-gray-800 bg-[#1e293b]/50 relative space-y-4",
-                children: [
-                    !isTraining && !isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "space-y-1",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-[9px] text-gray-500 uppercase font-bold tracking-wider",
-                                children: "Configuration Mission"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 89,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative group",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                        className: "w-full appearance-none bg-gray-900 text-white text-[10px] font-medium p-2.5 pl-3 rounded border border-gray-700 hover:border-gray-500 focus:border-blue-500 outline-none cursor-pointer transition-colors",
-                                        value: selectedMission,
-                                        onChange: (e)=>setSelectedMission(Number(e.target.value)),
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                value: 0,
-                                                className: "font-bold text-yellow-400 bg-gray-800",
-                                                children: "★ MISSION ALÉATOIRE (Mix)"
-                                            }, void 0, false, {
-                                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                                lineNumber: 96,
-                                                columnNumber: 33
-                                            }, this),
-                                            __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$data$2f$real_missions$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["REAL_MISSION_LOGBOOK"].map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                    value: m.id,
-                                                    children: [
-                                                        "MISSION ",
-                                                        m.id,
-                                                        " - ",
-                                                        m.description.substring(0, 35),
-                                                        m.description.length > 35 ? '...' : ''
-                                                    ]
-                                                }, m.id, true, {
-                                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                                    lineNumber: 98,
-                                                    columnNumber: 37
-                                                }, this))
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 91,
-                                        columnNumber: 29
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 text-[8px]",
-                                        children: "▼"
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 103,
-                                        columnNumber: 29
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 90,
-                                columnNumber: 25
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 88,
-                        columnNumber: 21
-                    }, this),
-                    !isTraining && !isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-2 gap-2",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>initializeMission(selectedMission),
-                                className: "col-span-2 h-10 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black tracking-wide rounded shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-blue-400",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "NOUVELLE DONNE"
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 116,
-                                        columnNumber: 29
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "🃏"
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 117,
-                                        columnNumber: 29
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 112,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: playOneMove,
-                                disabled: isThinking || isAutoPlaying,
-                                className: `h-9 rounded text-[10px] font-bold border transition-all flex items-center justify-center gap-1
-                                ${isThinking ? 'bg-gray-800 text-gray-600 border-gray-700' : 'bg-gray-700 hover:bg-gray-600 text-white border-gray-600'}`,
-                                children: [
-                                    isThinking ? '...' : '1 COUP',
-                                    " ▶"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 121,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: toggleAutoPlay,
-                                className: `h-9 rounded text-[10px] font-bold border transition-all flex items-center justify-center gap-1
-                                ${isAutoPlaying ? 'bg-red-500/20 text-red-400 border-red-500/50 animate-pulse' : 'bg-green-600/20 hover:bg-green-600/30 text-green-400 border-green-500/30'}`,
-                                children: [
-                                    isAutoPlaying ? 'STOP AUTO' : 'AUTO PLAY',
-                                    " ⏩"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 131,
-                                columnNumber: 25
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 110,
-                        columnNumber: 21
-                    }, this),
-                    isDevMode && !isTraining && !isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "pt-4 mt-2 border-t border-dashed border-gray-700",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex justify-between items-end mb-2",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-[9px] text-yellow-500 font-bold uppercase",
-                                    children: "Zone Entraînement (Local)"
+                children: isServerWakingUp ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "bg-amber-500/5 border border-amber-500/20 rounded-lg p-4 flex flex-col items-center text-center gap-3 animate-pulse",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "w-6 h-6 border-2 border-amber-500 border-t-transparent rounded-full animate-spin"
+                        }, void 0, false, {
+                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                            lineNumber: 94,
+                            columnNumber: 25
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "text-amber-500 font-bold text-xs uppercase tracking-wider mb-1",
+                                    children: "Démarrage du serveur"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 96,
+                                    columnNumber: 29
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-[10px] text-amber-200/60 leading-relaxed",
+                                    children: [
+                                        "Le système sort de veille (Cold Start).",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 100,
+                                            columnNumber: 72
+                                        }, this),
+                                        "Veuillez patienter, cela peut prendre",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 101,
+                                            columnNumber: 70
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-amber-400 font-mono",
+                                            children: "30 à 50 secondes"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 102,
+                                            columnNumber: 33
+                                        }, this),
+                                        "."
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                    lineNumber: 99,
                                     columnNumber: 29
                                 }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 146,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex gap-2",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        type: "number",
-                                        value: trainCount,
-                                        onChange: (e)=>setTrainCount(Number(e.target.value)),
-                                        className: "w-20 bg-gray-900 border border-yellow-500/30 text-white text-xs font-bold text-center rounded focus:outline-none focus:border-yellow-500 h-9",
-                                        step: "100",
-                                        min: "100"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                            lineNumber: 95,
+                            columnNumber: 25
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                    lineNumber: 93,
+                    columnNumber: 21
+                }, this) : /* === CONTRÔLES NORMAUX (Si serveur prêt) === */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        !isTraining && !isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "space-y-1",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-[9px] text-gray-500 uppercase font-bold tracking-wider",
+                                    children: "Configuration Mission"
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                    lineNumber: 112,
+                                    columnNumber: 33
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative group",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                            className: "w-full appearance-none bg-gray-900 text-white text-[10px] font-medium p-2.5 pl-3 rounded border border-gray-700 hover:border-gray-500 focus:border-blue-500 outline-none cursor-pointer transition-colors",
+                                            value: selectedMission,
+                                            onChange: (e)=>setSelectedMission(Number(e.target.value)),
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                    value: 0,
+                                                    className: "font-bold text-yellow-400 bg-gray-800",
+                                                    children: "★ MISSION ALÉATOIRE (Mix)"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                                    lineNumber: 119,
+                                                    columnNumber: 41
+                                                }, this),
+                                                __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$data$2f$real_missions$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["REAL_MISSION_LOGBOOK"].map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: m.id,
+                                                        children: [
+                                                            "MISSION ",
+                                                            m.id,
+                                                            " - ",
+                                                            m.description.substring(0, 35),
+                                                            m.description.length > 35 ? '...' : ''
+                                                        ]
+                                                    }, m.id, true, {
+                                                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                                        lineNumber: 121,
+                                                        columnNumber: 45
+                                                    }, this))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 114,
+                                            columnNumber: 37
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 text-[8px]",
+                                            children: "▼"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 126,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                    lineNumber: 113,
+                                    columnNumber: 33
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                            lineNumber: 111,
+                            columnNumber: 29
+                        }, this),
+                        !isTraining && !isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid grid-cols-2 gap-2",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>initializeMission(selectedMission),
+                                    className: "col-span-2 h-10 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black tracking-wide rounded shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-blue-400",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "NOUVELLE DONNE"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 139,
+                                            columnNumber: 37
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "🃏"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 140,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                    lineNumber: 135,
+                                    columnNumber: 33
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: playOneMove,
+                                    disabled: isThinking || isAutoPlaying,
+                                    className: `h-9 rounded text-[10px] font-bold border transition-all flex items-center justify-center gap-1
+                                        ${isThinking ? 'bg-gray-800 text-gray-600 border-gray-700' : 'bg-gray-700 hover:bg-gray-600 text-white border-gray-600'}`,
+                                    children: [
+                                        isThinking ? '...' : '1 COUP',
+                                        " ▶"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                    lineNumber: 144,
+                                    columnNumber: 33
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: toggleAutoPlay,
+                                    className: `h-9 rounded text-[10px] font-bold border transition-all flex items-center justify-center gap-1
+                                        ${isAutoPlaying ? 'bg-red-500/20 text-red-400 border-red-500/50 animate-pulse' : 'bg-green-600/20 hover:bg-green-600/30 text-green-400 border-green-500/30'}`,
+                                    children: [
+                                        isAutoPlaying ? 'STOP AUTO' : 'AUTO PLAY',
+                                        " ⏩"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                    lineNumber: 154,
+                                    columnNumber: 33
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                            lineNumber: 133,
+                            columnNumber: 29
+                        }, this),
+                        isDevMode && !isTraining && !isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "pt-4 mt-2 border-t border-dashed border-gray-700",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex justify-between items-end mb-2",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-[9px] text-yellow-500 font-bold uppercase",
+                                        children: "Zone Entraînement (Local)"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 150,
-                                        columnNumber: 29
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>onStartTraining(trainCount, selectedMission),
-                                        className: "flex-1 h-9 bg-yellow-700 hover:bg-yellow-600 text-white text-[10px] font-black tracking-wide rounded shadow transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-yellow-500/50",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "LANCER TRAIN"
-                                            }, void 0, false, {
-                                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                                lineNumber: 161,
-                                                columnNumber: 33
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "⚡"
-                                            }, void 0, false, {
-                                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                                lineNumber: 162,
-                                                columnNumber: 33
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 157,
-                                        columnNumber: 29
+                                        lineNumber: 170,
+                                        columnNumber: 37
                                     }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 149,
-                                columnNumber: 25
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 145,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                    lineNumber: 169,
+                                    columnNumber: 33
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex gap-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "number",
+                                            value: trainCount,
+                                            onChange: (e)=>setTrainCount(Number(e.target.value)),
+                                            className: "w-20 bg-gray-900 border border-yellow-500/30 text-white text-xs font-bold text-center rounded focus:outline-none focus:border-yellow-500 h-9",
+                                            step: "100",
+                                            min: "100"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 173,
+                                            columnNumber: 37
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>onStartTraining(trainCount, selectedMission),
+                                            className: "flex-1 h-9 bg-yellow-700 hover:bg-yellow-600 text-white text-[10px] font-black tracking-wide rounded shadow transition-all active:scale-95 flex items-center justify-center gap-2 border-t border-yellow-500/50",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    children: "LANCER TRAIN"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                                    lineNumber: 184,
+                                                    columnNumber: 41
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    children: "⚡"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                                    lineNumber: 185,
+                                                    columnNumber: 41
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                            lineNumber: 180,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                                    lineNumber: 172,
+                                    columnNumber: 33
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/components/ai/Sidebar.tsx",
+                            lineNumber: 168,
+                            columnNumber: 29
+                        }, this)
+                    ]
+                }, void 0, true)
+            }, void 0, false, {
                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                lineNumber: 84,
+                lineNumber: 88,
                 columnNumber: 13
             }, this),
             isTraining && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4658,7 +4720,7 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                 children: "TRAINING..."
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 177,
+                                lineNumber: 202,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4669,36 +4731,36 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         children: trainingStats?.total_lifetime_games
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 203,
                                         columnNumber: 40
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 178,
+                                lineNumber: 203,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 176,
+                        lineNumber: 201,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "relative w-full h-2 bg-gray-900 rounded-full overflow-hidden border border-white/5",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute top-0 left-0 h-full bg-gradient-to-r from-purple-600 to-blue-500 transition-all duration-300",
+                            className: "absolute top-0 left-0 h-full bg-linear-to-r from-purple-600 to-blue-500 transition-all duration-300",
                             style: {
                                 width: `${(trainingStats?.episode || 0) / (trainingStats?.max_episodes || 1) * 100}%`
                             }
                         }, void 0, false, {
                             fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                            lineNumber: 183,
+                            lineNumber: 208,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 182,
+                        lineNumber: 207,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4712,7 +4774,7 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         children: "Score Moyen"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 191,
+                                        lineNumber: 216,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4720,13 +4782,13 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         children: trainingStats?.avg_reward?.toFixed(1) || '0.0'
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 192,
+                                        lineNumber: 217,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 190,
+                                lineNumber: 215,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4737,7 +4799,7 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         children: "Exploration"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 197,
+                                        lineNumber: 222,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4748,25 +4810,25 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 198,
+                                        lineNumber: 223,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 196,
+                                lineNumber: 221,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 189,
+                        lineNumber: 214,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                lineNumber: 175,
+                lineNumber: 200,
                 columnNumber: 17
             }, this),
             isReplayMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4783,7 +4845,7 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         children: "Mode Replay"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 236,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4794,13 +4856,13 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 212,
+                                        lineNumber: 237,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 210,
+                                lineNumber: 235,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4809,13 +4871,13 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                 children: "FERMER"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 214,
+                                lineNumber: 239,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 209,
+                        lineNumber: 234,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4824,13 +4886,13 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                         children: "ÉTAPE SUIVANTE ▶"
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 218,
+                        lineNumber: 243,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                lineNumber: 208,
+                lineNumber: 233,
                 columnNumber: 17
             }, this),
             !isReplayMode && milestones.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4843,7 +4905,7 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                 children: "Archives (Meilleures parties)"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 233,
+                                lineNumber: 258,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4851,13 +4913,13 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                 children: milestones.length
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 234,
+                                lineNumber: 259,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 232,
+                        lineNumber: 257,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4874,7 +4936,7 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 243,
+                                        lineNumber: 268,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4882,24 +4944,24 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                         children: m.reward.toFixed(0)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 269,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, i, true, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 238,
+                                lineNumber: 263,
                                 columnNumber: 29
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 236,
+                        lineNumber: 261,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                lineNumber: 231,
+                lineNumber: 256,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4912,28 +4974,28 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                                 className: "w-3 h-3 border-2 border-blue-400 border-t-transparent rounded-full animate-spin"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 259,
+                                lineNumber: 284,
                                 columnNumber: 24
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "text-blue-500",
                                 children: "ℹ"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 261,
+                                lineNumber: 286,
                                 columnNumber: 24
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "truncate max-w-[200px]",
+                                className: "truncate max-w-50",
                                 children: currentStepText
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                                lineNumber: 263,
+                                lineNumber: 288,
                                 columnNumber: 20
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 257,
+                        lineNumber: 282,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4942,13 +5004,13 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                         children: "Reset"
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 265,
+                        lineNumber: 290,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                lineNumber: 256,
+                lineNumber: 281,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4959,21 +5021,21 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                         children: "En attente d'actions..."
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                        lineNumber: 271,
+                        lineNumber: 296,
                         columnNumber: 39
                     }, this),
                     logs.map((log, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "border-l-2 border-gray-800 pl-2 hover:border-gray-600 hover:text-gray-300 transition-colors break-words leading-tight",
+                            className: "border-l-2 border-gray-800 pl-2 hover:border-gray-600 hover:text-gray-300 transition-colors wrap-break-word leading-tight",
                             children: log
                         }, i, false, {
                             fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                            lineNumber: 273,
+                            lineNumber: 298,
                             columnNumber: 21
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                lineNumber: 270,
+                lineNumber: 295,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4984,13 +5046,13 @@ function AISidebar({ currentStepText, logs, isThinking, activePlayer, isDevMode,
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-                lineNumber: 280,
+                lineNumber: 305,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/components/ai/Sidebar.tsx",
-        lineNumber: 54,
+        lineNumber: 58,
         columnNumber: 9
     }, this);
 }
@@ -5284,7 +5346,7 @@ const CommunicationToken = ({ type, playerIndex })=>{
         y: 0
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: `absolute w-7 h-7 bg-green-500 rounded-full border-2 border-green-300 shadow-[0_0_15px_rgba(34,197,94,0.9)] z-[1000] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`,
+        className: `absolute w-7 h-7 bg-green-500 rounded-full border-2 border-green-300 shadow-[0_0_15px_rgba(34,197,94,0.9)] z-1000 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`,
         style: {
             transform: `translate(-50%, -50%) translate(${pos.x}px, ${pos.y}px)`
         }
@@ -5388,7 +5450,7 @@ function AIGameBoard({ allCards = [], missions = [], probabilities = {}, suggest
         className: "w-full h-screen relative bg-[#1e293b] overflow-hidden shadow-inner flex items-center justify-center select-none font-sans",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 flex items-center justify-center pointer-events-none z-[1000]",
+                className: "absolute inset-0 flex items-center justify-center pointer-events-none z-1000",
                 children: [
                     showIdleText && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "animate-fade-in text-center",
@@ -5465,7 +5527,7 @@ function AIGameBoard({ allCards = [], missions = [], probabilities = {}, suggest
                     ].map((pid)=>{
                         const pMissions = missions.filter((m)=>m.ownerIndex === pid);
                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute w-[300px] h-[80px] pointer-events-none transition-all duration-500",
+                            className: "absolute w-75 h-20 pointer-events-none transition-all duration-500",
                             style: getInfoZoneStyle(pid),
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5517,7 +5579,7 @@ function AIGameBoard({ allCards = [], missions = [], probabilities = {}, suggest
                         const commData = communications[card.owner];
                         const showToken = isThisCommunicated && commData && commData.cardId === card.id;
                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: `absolute top-0 left-0 w-20 aspect-[2/3]`,
+                            className: `absolute top-0 left-0 w-20 aspect-2/3`,
                             style: {
                                 ...style,
                                 willChange: 'transform, opacity',
@@ -5619,15 +5681,226 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Eye$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/eye.js [app-client] (ecmascript) <export default as Eye>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/brain.js [app-client] (ecmascript) <export default as Brain>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-client] (ecmascript) <export default as Users>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-client] (ecmascript) <export default as ChevronRight>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$construction$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Construction$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/construction.js [app-client] (ecmascript) <export default as Construction>");
 ;
 var _s = __turbopack_context__.k.signature();
 ;
-;
+const Icons = {
+    Eye: ({ className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            width: "24",
+            height: "24",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            className: className,
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 6,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "12",
+                    cy: "12",
+                    r: "3"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 7,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0))
+            ]
+        }, void 0, true, {
+            fileName: "[project]/frontend/components/GameModeSelector.tsx",
+            lineNumber: 5,
+            columnNumber: 5
+        }, ("TURBOPACK compile-time value", void 0)),
+    Brain: ({ className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            width: "24",
+            height: "24",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            className: className,
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 12,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 13,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0))
+            ]
+        }, void 0, true, {
+            fileName: "[project]/frontend/components/GameModeSelector.tsx",
+            lineNumber: 11,
+            columnNumber: 5
+        }, ("TURBOPACK compile-time value", void 0)),
+    Users: ({ className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            width: "24",
+            height: "24",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            className: className,
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 18,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "9",
+                    cy: "7",
+                    r: "4"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 19,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M22 21v-2a4 4 0 0 0-3-3.87"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 20,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M16 3.13a4 4 0 0 1 0 7.75"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 21,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0))
+            ]
+        }, void 0, true, {
+            fileName: "[project]/frontend/components/GameModeSelector.tsx",
+            lineNumber: 17,
+            columnNumber: 5
+        }, ("TURBOPACK compile-time value", void 0)),
+    Construction: ({ className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            width: "24",
+            height: "24",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            className: className,
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "2",
+                    y: "6",
+                    width: "20",
+                    height: "8",
+                    rx: "1"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 26,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M17 14v7"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 27,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M7 14v7"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 28,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M17 3v3"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 29,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M7 3v3"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 30,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M10 14 2.3 6.3"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 31,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "m14 6 7.7 7.7"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 32,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "m8 6 8 8"
+                }, void 0, false, {
+                    fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                    lineNumber: 33,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0))
+            ]
+        }, void 0, true, {
+            fileName: "[project]/frontend/components/GameModeSelector.tsx",
+            lineNumber: 25,
+            columnNumber: 5
+        }, ("TURBOPACK compile-time value", void 0)),
+    ChevronRight: ({ className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            width: "24",
+            height: "24",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            className: className,
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "m9 18 6-6-6-6"
+            }, void 0, false, {
+                fileName: "[project]/frontend/components/GameModeSelector.tsx",
+                lineNumber: 38,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0))
+        }, void 0, false, {
+            fileName: "[project]/frontend/components/GameModeSelector.tsx",
+            lineNumber: 37,
+            columnNumber: 5
+        }, ("TURBOPACK compile-time value", void 0))
+};
 function GameModeSelector({ onSelectMode }) {
     _s();
     // Génération des étoiles
@@ -5635,7 +5908,7 @@ function GameModeSelector({ onSelectMode }) {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GameModeSelector.useEffect": ()=>{
             const newStars = Array.from({
-                length: 70
+                length: 100
             }).map({
                 "GameModeSelector.useEffect.newStars": ()=>({
                         top: `${Math.random() * 100}%`,
@@ -5670,24 +5943,24 @@ function GameModeSelector({ onSelectMode }) {
       `
             }, void 0, false, {
                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 26,
+                lineNumber: 64,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 flex items-center justify-center pointer-events-none opacity-40",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-[1200px] h-[1200px] bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-full blur-[130px]",
+                    className: "w-200 h-200 bg-linear-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-full blur-[130px]",
                     style: {
                         animation: 'rotate-nebula 120s linear infinite'
                     }
                 }, void 0, false, {
                     fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                    lineNumber: 46,
+                    lineNumber: 83,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 45,
+                lineNumber: 82,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5703,12 +5976,12 @@ function GameModeSelector({ onSelectMode }) {
                         }
                     }, i, false, {
                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                        lineNumber: 54,
+                        lineNumber: 91,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 52,
+                lineNumber: 89,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5718,14 +5991,14 @@ function GameModeSelector({ onSelectMode }) {
                         className: "text-center mb-14 animate-drift-subtle select-none",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "text-6xl md:text-8xl font-thin tracking-[0.1em] uppercase mb-3 drop-shadow-2xl cursor-default",
+                                className: "text-6xl md:text-8xl font-thin tracking-widest uppercase mb-3 drop-shadow-2xl cursor-default",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]",
                                         children: "NOV"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 109,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5733,43 +6006,43 @@ function GameModeSelector({ onSelectMode }) {
                                         children: "IA"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 110,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 73,
+                                lineNumber: 108,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-center gap-3 text-blue-200/60 font-mono text-xs md:text-sm tracking-widest uppercase",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "w-8 h-[1px] bg-blue-500/50"
+                                        className: "w-8 h-px bg-blue-500/50"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 114,
                                         columnNumber: 13
                                     }, this),
                                     "Algorithmes de résolution pour The Crew",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "w-8 h-[1px] bg-blue-500/50"
+                                        className: "w-8 h-px bg-blue-500/50"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 116,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 78,
+                                lineNumber: 113,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                        lineNumber: 72,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5777,34 +6050,34 @@ function GameModeSelector({ onSelectMode }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>onSelectMode('GOD'),
-                                className: "group relative h-[340px] w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-purple-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.2)] flex flex-col text-left overflow-hidden",
+                                className: "group relative h-85 w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-purple-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.2)] flex flex-col text-left overflow-hidden",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute top-[-50%] right-[-50%] w-64 h-64 bg-purple-600/20 blur-[60px] rounded-full transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 127,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-start justify-between mb-6",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center ring-1 ring-purple-500/20 group-hover:bg-purple-500/20 transition-colors",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Eye$3e$__["Eye"], {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icons.Eye, {
                                                 className: "w-6 h-6 text-purple-300"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                lineNumber: 98,
+                                                lineNumber: 131,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 130,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 96,
+                                        lineNumber: 129,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -5812,7 +6085,7 @@ function GameModeSelector({ onSelectMode }) {
                                         children: "L'Omniscient"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 135,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5820,69 +6093,69 @@ function GameModeSelector({ onSelectMode }) {
                                         children: "Solveur analytique explorant l'espace complet des états du jeu. Il accède aux cartes cachées pour calculer la séquence mathématiquement optimale."
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 137,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "pt-4 border-t border-white/5 flex items-center text-xs text-purple-300/80 font-mono group-hover:text-purple-300 transition-colors",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "flex-grow uppercase tracking-wider",
+                                                className: "grow uppercase tracking-wider",
                                                 children: "Lancer l'analyse"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                lineNumber: 109,
+                                                lineNumber: 142,
                                                 columnNumber: 15
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icons.ChevronRight, {
                                                 className: "w-4 h-4 ml-2 opacity-50 group-hover:translate-x-1 transition-transform"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                lineNumber: 110,
+                                                lineNumber: 143,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 108,
+                                        lineNumber: 141,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 89,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>onSelectMode('AI'),
-                                className: "group relative h-[340px] w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-blue-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.2)] flex flex-col text-left overflow-hidden",
+                                className: "group relative h-85 w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-blue-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.2)] flex flex-col text-left overflow-hidden",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute top-[-50%] right-[-50%] w-64 h-64 bg-blue-600/20 blur-[60px] rounded-full transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 151,
                                         columnNumber: 14
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-start justify-between mb-6",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center ring-1 ring-blue-500/20 group-hover:bg-blue-500/20 transition-colors",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__["Brain"], {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icons.Brain, {
                                                 className: "w-6 h-6 text-blue-300"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 155,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 154,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 153,
                                         columnNumber: 14
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -5890,7 +6163,7 @@ function GameModeSelector({ onSelectMode }) {
                                         children: "Réseau Neuronal"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 159,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5898,80 +6171,80 @@ function GameModeSelector({ onSelectMode }) {
                                         children: "Agent entraîné par apprentissage. Il opère sans connaître les cartes des autres joueurs, simulant une intuition de jeu réaliste."
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 161,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "pt-4 border-t border-white/5 flex items-center text-xs text-blue-300/80 font-mono group-hover:text-blue-300 transition-colors",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "flex-grow uppercase tracking-wider",
+                                                className: "grow uppercase tracking-wider",
                                                 children: "Lancer la simulation"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 166,
                                                 columnNumber: 15
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icons.ChevronRight, {
                                                 className: "w-4 h-4 ml-2 opacity-50 group-hover:translate-x-1 transition-transform"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                lineNumber: 136,
+                                                lineNumber: 167,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 165,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 115,
+                                lineNumber: 147,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative h-[340px] w-full bg-[#0d1221]/40 backdrop-blur-sm border border-white/5 rounded-2xl p-7 flex flex-col text-left overflow-hidden grayscale opacity-70 cursor-not-allowed",
+                                className: "relative h-85 w-full bg-[#0d1221]/40 backdrop-blur-sm border border-white/5 rounded-2xl p-7 flex flex-col text-left overflow-hidden grayscale opacity-70 cursor-not-allowed",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-center gap-4 mb-6",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "w-12 h-12 bg-slate-700/20 rounded-xl flex items-center justify-center ring-1 ring-slate-600/30",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icons.Users, {
                                                     className: "w-6 h-6 text-slate-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 175,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 174,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "inline-flex items-center gap-1.5 px-2 py-1 rounded bg-amber-500/10 border border-amber-500/20 text-[9px] text-amber-500 font-bold uppercase tracking-wider",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$construction$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Construction$3e$__["Construction"], {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icons.Construction, {
                                                         className: "w-3 h-3"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                        lineNumber: 150,
+                                                        lineNumber: 179,
                                                         columnNumber: 17
                                                     }, this),
                                                     " En construction"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                                lineNumber: 149,
+                                                lineNumber: 178,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 173,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -5979,7 +6252,7 @@ function GameModeSelector({ onSelectMode }) {
                                         children: "Mode Hybride"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 183,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5987,40 +6260,40 @@ function GameModeSelector({ onSelectMode }) {
                                         children: "Interface d'expérimentation permettant à un joueur humain de coopérer avec les agents IA pour tester la synergie Homme-Machine."
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 185,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "pt-4 border-t border-white/5 flex items-center text-xs text-slate-600 font-mono",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "flex-grow uppercase tracking-wider",
+                                            className: "grow uppercase tracking-wider",
                                             children: "Bientôt disponible"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                            lineNumber: 161,
+                                            lineNumber: 190,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                        lineNumber: 160,
+                                        lineNumber: 189,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                                lineNumber: 141,
+                                lineNumber: 171,
                                 columnNumber: 12
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                        lineNumber: 86,
+                        lineNumber: 120,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 69,
+                lineNumber: 105,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6028,13 +6301,13 @@ function GameModeSelector({ onSelectMode }) {
                 children: "Projet Novia • Killian Lacaque"
             }, void 0, false, {
                 fileName: "[project]/frontend/components/GameModeSelector.tsx",
-                lineNumber: 169,
+                lineNumber: 197,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/components/GameModeSelector.tsx",
-        lineNumber: 23,
+        lineNumber: 62,
         columnNumber: 5
     }, this);
 }
@@ -6142,7 +6415,7 @@ function Home() {
             columnNumber: 9
         }, this);
     }
-    // --- RENDU MODE IA (C'est ici qu'on corrige) ---
+    // --- RENDU MODE IA ---
     if (gameMode === 'AI') {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "h-screen w-screen flex overflow-hidden bg-[#111827] font-sans relative",
@@ -6153,6 +6426,10 @@ function Home() {
                     logs: aiGame.logs,
                     isThinking: aiGame.isThinking,
                     activePlayer: aiGame.activePlayer,
+                    // --- CONNEXION ICI ---
+                    // On connecte la variable du hook. Si elle n'existe pas encore dans useAiMode,
+                    // cela renverra undefined (donc false), ce qui ne cassera rien.
+                    isServerWakingUp: aiGame.isServerWakingUp,
                     // --- MODES ---
                     isDevMode: aiGame.isDevMode,
                     isTraining: aiGame.isTraining,
@@ -6190,7 +6467,7 @@ function Home() {
                     communications: aiGame.communications
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/page.tsx",
-                    lineNumber: 106,
+                    lineNumber: 111,
                     columnNumber: 17
                 }, this)
             ]

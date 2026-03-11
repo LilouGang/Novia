@@ -19,13 +19,11 @@ class TheCrewSolver:
         self.memo = {}
         self.randomize_search_order = False
 
-        # Map des cartes cibles pour accès rapide
         self.target_map = {}
         for idx, m in enumerate(missions):
             key = f"{m['card']['color']}-{m['card']['value']}"
             self.target_map[key] = {'owner': m['owner'], 'idx': idx}
 
-        # Contraintes pré-calculées
         self.banned_players = set()
         self.trick_counts = {}
         self.trick_specific_winner = {}
@@ -96,24 +94,15 @@ class TheCrewSolver:
         return 0
 
     def _get_state_key(self, hands, mission_ticks, trick_starter, current_trick, winners_count, seq_index, specific_win_count):
-        # On utilise une signature simplifiée des mains pour le cache
         hands_sig = tuple(tuple(sorted([(c.color, c.value) for c in h], key=lambda x: (x[0], x[1]))) for h in hands)
         trick_sig = tuple((p, c.color, c.value) for p, c in current_trick)
         return (hands_sig, mission_ticks, trick_starter, trick_sig, winners_count, seq_index, specific_win_count)
 
-    # --- NOUVEAU : OPTIMISATION DES COUPS ÉQUIVALENTS ---
     def _optimize_valid_cards(self, valid_cards, current_trick):
-        """
-        Réduit le nombre de cartes à tester en supprimant les doublons stratégiques.
-        Si on ne joue pas la couleur demandée (défausse) et que ce n'est pas un atout,
-        jouer le 3 ou le 4 d'une couleur inutile est identique.
-        """
-        # Si on a peu de choix, pas besoin d'optimiser
         if len(valid_cards) <= 2: return valid_cards
 
         optimized = []
         
-        # On sépare par couleur
         by_suit = {}
         for c in valid_cards:
             if c.color not in by_suit: by_suit[c.color] = []
@@ -122,18 +111,14 @@ class TheCrewSolver:
         lead_color = current_trick[0][1].color if current_trick else None
 
         for color, cards in by_suit.items():
-            # 1. Si c'est des Fusées : On garde tout (trop important)
             if color == ROCKET:
                 optimized.extend(cards)
                 continue
             
-            # 2. Si c'est la couleur demandée : On garde tout (bataille précise)
             if lead_color and color == lead_color:
                 optimized.extend(cards)
                 continue
 
-            # 3. Si c'est une défausse (couleur != lead_color)
-            # On vérifie si certaines cartes sont des Missions
             mission_cards = []
             non_mission_cards = []
             
@@ -142,11 +127,8 @@ class TheCrewSolver:
                 if key in self.target_map: mission_cards.append(c)
                 else: non_mission_cards.append(c)
 
-            # On garde TOUTES les cartes liées à une mission
             optimized.extend(mission_cards)
 
-            # Pour les cartes "neutres", on ne garde que la PLUS FAIBLE et la PLUS FORTE
-            # (La faible pour garder ses forces, la forte pour se débarrasser d'un pli potentiel futur)
             if non_mission_cards:
                 non_mission_cards.sort(key=lambda x: x.value)
                 optimized.append(non_mission_cards[0]) # Min
@@ -163,7 +145,6 @@ class TheCrewSolver:
             if token not in token_ticks: token_ticks[token] = []
             token_ticks[token].append(tick)
 
-        # Vérification 1, 2, 3...
         check_order = ['1', '2', '3', '4', '5']
         for k in range(len(check_order) - 1):
             t_curr, t_next = check_order[k], check_order[k+1]
@@ -172,7 +153,6 @@ class TheCrewSolver:
                 if tick_c > 0 and tick_n > 0 and tick_c > tick_n: return False
                 if tick_n > 0 and tick_c == 0: return False
 
-        # Vérification >, >>...
         arrow_order = ['>', '>>', '>>>', '>>>>']
         for k in range(len(arrow_order) - 1):
             t_curr, t_next = arrow_order[k], arrow_order[k+1]
@@ -185,29 +165,22 @@ class TheCrewSolver:
 
     def _dfs(self, hands, current_trick, trick_starter, current_player, history, mission_ticks, trick_number, winners_count, seq_index, specific_win_count, forced_first_card=None):
         self.iterations += 1
-        # Limite de sécurité (peut être augmentée grâce au pruning)
         if self.iterations > 2000000: return False
 
-        # Cache basique pour éviter de recalculer les mêmes fins de partie
         if len(current_trick) == 0:
             state_key = self._get_state_key(hands, mission_ticks, trick_starter, current_trick, winners_count, seq_index, specific_win_count)
             if state_key in self.memo: return False
 
-        # --- VICTOIRE ---
         if all(len(h) == 0 for h in hands):
-            # Tous les ticks > 0 ?
             if not all(t > 0 for t in mission_ticks): return False
-            # Ordre respecté ?
             if not self._check_mission_tokens(mission_ticks): return False
             
-            # Omega check
             omega_idx = next((i for i, m in enumerate(self.missions) if m.get('token') == 'Omega'), -1)
             if omega_idx != -1:
                 omega_tick = mission_ticks[omega_idx]
                 other_ticks = [t for i, t in enumerate(mission_ticks) if i != omega_idx]
                 if other_ticks and omega_tick < max(other_ticks): return False
 
-            # Constraints check
             if self.balance_constraint:
                 if max(winners_count) - min(winners_count) > self.balance_constraint: return False
             for c in self.min_win_value_constraints:
@@ -218,12 +191,10 @@ class TheCrewSolver:
             self.solution = history
             return True
 
-        # --- JEU ---
         my_hand = hands[current_player]
         lead_card = current_trick[0][1] if current_trick else None
         valid_cards = [c for c in my_hand if GameRules.is_move_valid(my_hand, c, lead_card)]
 
-        # --- PRUNING JOUEUR 3 (Optimisation Critique) ---
         if len(current_trick) == 3:
             optimized_trick_cards = []
             for card in valid_cards:
@@ -233,7 +204,6 @@ class TheCrewSolver:
                 winner = GameRules.get_trick_winner(cards_obj, trick_starter)
                 w_card = cards_obj[winner]
 
-                # Check rapide des contraintes "Hard" (Echec immédiat)
                 if winner in self.banned_players: continue 
                 if winner in self.trick_counts and winners_count[winner] + 1 > self.trick_counts[winner]: continue
                 if trick_number in self.trick_specific_winner and winner != self.trick_specific_winner[trick_number]: continue
@@ -248,7 +218,6 @@ class TheCrewSolver:
                     expected_val = int(self.sequence_constraint[seq_index].replace('R','').replace('ocket',''))
                     if w_card.value != expected_val: continue
 
-                # Check Mission Ownership
                 mission_fail = False
                 for p_idx, c_played in temp_trick:
                     key = f"{c_played.color}-{c_played.value}"
@@ -264,7 +233,6 @@ class TheCrewSolver:
                 if len(current_trick) == 0: self.memo[state_key] = False
                 return False
 
-        # --- LOGIQUE DE FORCE POUR MCTS ---
         if forced_first_card and len(history) == 0 and current_player == forced_first_card['player']:
             target = forced_first_card['card']
             forced_c = next((c for c in valid_cards if c.color == target['color'] and c.value == target['value']), None)
@@ -273,12 +241,9 @@ class TheCrewSolver:
             else:
                 return False 
 
-        # --- OPTIMISATION GENERALE DES COUPS (Pruning) ---
-        # Si on n'est pas le 4ème joueur (déjà traité plus haut)
         if len(current_trick) < 3:
             valid_cards = self._optimize_valid_cards(valid_cards, current_trick)
 
-        # --- TRI / SHUFFLE ---
         if self.randomize_search_order:
             random.shuffle(valid_cards)
         else:
@@ -291,29 +256,24 @@ class TheCrewSolver:
             move_info = {"player": current_player, "card": {"color": card.color, "value": card.value}}
             
             if len(new_trick) == 4:
-                # FIN DE PLI
                 cards_obj = [None]*4
                 for p, c in new_trick: cards_obj[p] = c
                 winner = GameRules.get_trick_winner(cards_obj, trick_starter)
                 w_card = cards_obj[winner]
 
-                # Update compteurs
                 new_winners_count = list(winners_count)
                 new_winners_count[winner] += 1
                 new_winners_count = tuple(new_winners_count)
 
-                # Update Specific Win
                 new_spec_count = specific_win_count
                 for c in self.min_win_value_constraints:
                     if w_card.value == c.get('withCardValue'): new_spec_count += 1
 
-                # Update Sequence
                 new_seq_index = seq_index
                 if self.sequence_constraint and w_card.color == ROCKET:
                     expected = int(self.sequence_constraint[seq_index].replace('R',''))
                     if w_card.value == expected: new_seq_index += 1 
 
-                # Update Missions
                 new_mission_ticks = list(mission_ticks)
                 for p_idx, c_played in new_trick:
                     key = f"{c_played.color}-{c_played.value}"
@@ -324,7 +284,6 @@ class TheCrewSolver:
                 
                 new_mission_ticks_tuple = tuple(new_mission_ticks)
                 
-                # Check immédiat des tokens pour couper la branche si fail
                 if not self._check_mission_tokens(new_mission_ticks_tuple):
                     continue
 
@@ -332,7 +291,6 @@ class TheCrewSolver:
                     return True
             
             else:
-                # CONTINUER LE PLI
                 if self._dfs(new_hands, new_trick, trick_starter, (current_player + 1) % 4, history + [move_info], mission_ticks, trick_number, winners_count, seq_index, specific_win_count, forced_first_card=None):
                     return True
 

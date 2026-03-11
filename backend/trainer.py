@@ -44,15 +44,15 @@ class Trainer:
     def __init__(self):
         print("🔧 [DEBUG] Initialisation du Trainer...")
         try:
-            total_cores = os.cpu_count() or 4 # Nombre de coeurs physiques
-            limit_cores = max(1, int(total_cores * 0.50)) # On en prend 50% (minimum 1)
+            total_cores = os.cpu_count() or 4
+            limit_cores = max(1, int(total_cores * 0.50))
             
             torch.set_num_threads(limit_cores)
             torch.set_num_interop_threads(limit_cores)
             
-            print(f"🛑 [CPU LIMIT] Restriction active : Utilisation de {limit_cores} cœurs sur {total_cores} (50%)")
+            print(f"Restriction active : Utilisation de {limit_cores} cœurs sur {total_cores} (50%)")
         except Exception as e:
-            print(f"⚠️ Impossible de limiter le CPU : {e}")
+            print(f"Impossible de limiter le CPU : {e}")
             
         try:
             self.vectorizer = GameVectorizer()
@@ -116,7 +116,6 @@ class Trainer:
 
     def select_action(self, state_tensor, valid_actions_indices):
         sample = random.random()
-        # La valeur d'Epsilon dépend maintenant de steps_done avec un decay de 200 000
         eps_threshold = EPS_END + (EPS_START - EPS_END) * math.exp(-1. * self.steps_done / EPS_DECAY)
         self.steps_done += 1
         if sample < eps_threshold: return random.choice(valid_actions_indices)
@@ -157,7 +156,6 @@ class Trainer:
 
         try:
             for i_episode in range(max_episodes):
-                # 1. RESET
                 state_dict, _ = self.env.reset(forced_mission_id=mission_id)
                 
                 current_initial_hands = []
@@ -175,7 +173,6 @@ class Trainer:
                 current_replay_history = []
                 episode_reward = 0
                 
-                # 2. GAME LOOP
                 while not self.env.game.is_game_over():
                     player_idx = self.env.game.active_player
                     state_dict = self.env.game.get_state()
@@ -210,7 +207,6 @@ class Trainer:
                     if done: break
                     if info.get("repeat_turn"): continue
 
-                # 3. END EPISODE
                 recent_rewards.append(episode_reward)
                 self.total_episodes_counter += 1
 
@@ -226,9 +222,6 @@ class Trainer:
                 if i_episode % 5 == 0: await asyncio.sleep(0.001)
 
                 is_last = (i_episode == max_episodes - 1)
-                
-                # --- CORRECTION 2 : Logique d'affichage (10, 20, 30...) ---
-                # On utilise (i_episode + 1) pour vérifier le modulo
                 should_send_stats = ((i_episode + 1) % 10 == 0)
                 should_send_replay = (self.total_episodes_counter % 10 == 0) or is_last
 

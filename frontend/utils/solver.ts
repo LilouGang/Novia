@@ -1,7 +1,3 @@
-// frontend/utils/theCrewSolver.ts
-
-// --- TYPES & INTERFACES ---
-
 export type CardColor = 'Blue' | 'Green' | 'Pink' | 'Yellow' | 'Rocket';
 
 export interface Card {
@@ -11,8 +7,8 @@ export interface Card {
 
 export interface Mission {
     card: Card;
-    owner: number; // Index du joueur (0-3)
-    token?: string; // "1", "2", ">", "Omega", etc.
+    owner: number;
+    token?: string;
 }
 
 export interface Constraint {
@@ -34,27 +30,22 @@ interface SolveResult {
     solution_steps: MoveInfo[];
 }
 
-// --- LOGIQUE DU JEU (RÈGLES) ---
 
 class GameRules {
     static isMoveValid(hand: Card[], card: Card, leadCard: Card | null): boolean {
-        if (!leadCard) return true; // Premier joueur du pli : tout est valide
-        if (card.color === leadCard.color) return true; // On joue la couleur demandée
+        if (!leadCard) return true;
+        if (card.color === leadCard.color) return true;
         
-        // Si on ne joue pas la couleur, on doit vérifier qu'on ne l'a pas en main
         const hasLeadColor = hand.some(c => c.color === leadCard.color);
-        return !hasLeadColor; // Valide seulement si on n'a pas la couleur
+        return !hasLeadColor;
     }
 
     static getTrickWinner(cards: Card[], starter: number): number {
-        // cards est un tableau de 4 Cartes, indexé par le joueur [J0, J1, J2, J3]
-        // Les cartes non jouées doivent être gérées, mais ici on appelle à la fin du pli.
         
         let bestPlayer = starter;
         let bestCard = cards[starter];
         const leadColor = bestCard.color;
 
-        // On parcourt les 3 autres cartes dans l'ordre de jeu
         for (let i = 1; i < 4; i++) {
             const pIdx = (starter + i) % 4;
             const currentCard = cards[pIdx];
@@ -64,18 +55,15 @@ class GameRules {
 
             if (isCurrentRocket) {
                 if (!isBestRocket) {
-                    // La fusée coupe
                     bestCard = currentCard;
                     bestPlayer = pIdx;
                 } else {
-                    // Bataille de fusées
                     if (currentCard.value > bestCard.value) {
                         bestCard = currentCard;
                         bestPlayer = pIdx;
                     }
                 }
             } else if (!isBestRocket && currentCard.color === leadColor) {
-                // Bataille de couleur demandée
                 if (currentCard.value > bestCard.value) {
                     bestCard = currentCard;
                     bestPlayer = pIdx;
@@ -86,19 +74,13 @@ class GameRules {
     }
 }
 
-// --- LE SOLVER ---
-
 export class TheCrewSolverJS {
     private originalHands: Card[][];
     private missions: Mission[];
-    
-    // Stats
     private iterations: number = 0;
     private startTime: number = 0;
     private solution: MoveInfo[] = [];
     private memo: Map<string, boolean> = new Map();
-
-    // Lookup & Contraintes
     private targetMap: Record<string, { owner: number, idx: number }> = {};
     private bannedPlayers: Set<number> = new Set();
     private trickCounts: Record<number, number> = {};
@@ -113,7 +95,6 @@ export class TheCrewSolverJS {
         missions: Mission[],
         constraints: Constraint[] = []
     ) {
-        // 1. Conversion des mains
         this.originalHands = [
             gameStateJson.player_1.map(c => ({ color: c.color, value: Number(c.value) })),
             gameStateJson.player_2.map(c => ({ color: c.color, value: Number(c.value) })),
@@ -123,13 +104,11 @@ export class TheCrewSolverJS {
 
         this.missions = missions;
 
-        // 2. Map des missions
         this.missions.forEach((m, idx) => {
             const key = `${m.card.color}-${m.card.value}`;
             this.targetMap[key] = { owner: m.owner, idx };
         });
 
-        // 3. Parse Contraintes
         constraints.forEach(c => {
             const type = c.type;
             const args = c.args || {};
@@ -154,21 +133,20 @@ export class TheCrewSolverJS {
 
         const startPlayer = this.findCommander();
         
-        // États initiaux
         const initialMissionTicks = new Array(this.missions.length).fill(0);
         const initialWinnersCount = [0, 0, 0, 0];
         
         const found = this.dfs(
-            this.originalHands, // hands
-            [], // currentTrick
-            startPlayer, // trickStarter
-            startPlayer, // currentPlayer
-            [], // history
+            this.originalHands,
+            [],
+            startPlayer,
+            startPlayer,
+            [],
             initialMissionTicks,
-            1, // trickNumber
+            1,
             initialWinnersCount,
-            0, // seqIndex
-            0  // specificWinCount
+            0,
+            0
         );
 
         return {
@@ -187,8 +165,6 @@ export class TheCrewSolverJS {
     }
 
     private getStateKey(hands: Card[][], missionTicks: number[], trickStarter: number, currentTrick: {p: number, c: Card}[], winnersCount: number[], seqIdx: number, specCount: number): string {
-        // Optimisation : On génère une clé string unique pour l'état
-        // Signature des mains (triées)
         const handsSig = hands.map(h => 
             h.map(c => c.color[0] + c.value).sort().join(',')
         ).join('|');
@@ -214,19 +190,16 @@ export class TheCrewSolverJS {
         for (const color in bySuit) {
             const cards = bySuit[color];
             
-            // 1. Fusées -> On garde tout
             if (color === 'Rocket') {
                 optimized.push(...cards);
                 continue;
             }
 
-            // 2. Couleur demandée -> On garde tout (bataille précise)
             if (leadColor && color === leadColor) {
                 optimized.push(...cards);
                 continue;
             }
 
-            // 3. Défausse (Couleurs inutiles pour le pli)
             const missionCards: Card[] = [];
             const garbageCards: Card[] = [];
 
@@ -235,10 +208,8 @@ export class TheCrewSolverJS {
                 else garbageCards.push(c);
             });
 
-            // On garde les cartes de mission
             optimized.push(...missionCards);
 
-            // Pour les déchets, on ne garde que la Min et la Max
             if (garbageCards.length > 0) {
                 garbageCards.sort((a, b) => a.value - b.value);
                 optimized.push(garbageCards[0]);
@@ -251,7 +222,6 @@ export class TheCrewSolverJS {
     }
 
     private checkMissionTokens(missionTicks: number[]): boolean {
-        // Groupement par token
         const tokenTicks: Record<string, number[]> = {};
         
         this.missions.forEach((m, i) => {
@@ -261,7 +231,6 @@ export class TheCrewSolverJS {
             tokenTicks[token].push(tick);
         });
 
-        // 1, 2, 3, 4, 5
         const checkOrder = ['1', '2', '3', '4', '5'];
         for (let k = 0; k < checkOrder.length - 1; k++) {
             const tCurr = checkOrder[k];
@@ -269,13 +238,11 @@ export class TheCrewSolverJS {
             if (tokenTicks[tCurr] && tokenTicks[tNext]) {
                 const tickC = Math.max(...tokenTicks[tCurr]);
                 const tickN = Math.max(...tokenTicks[tNext]);
-                // Si la tache 1 est faite après la 2, ou si la 2 est faite avant la 1
                 if (tickC > 0 && tickN > 0 && tickC > tickN) return false;
                 if (tickN > 0 && tickC === 0) return false;
             }
         }
 
-        // >, >>, >>>, >>>>
         const arrowOrder = ['>', '>>', '>>>', '>>>>'];
         for (let k = 0; k < arrowOrder.length - 1; k++) {
             const tCurr = arrowOrder[k];
@@ -304,25 +271,19 @@ export class TheCrewSolverJS {
         specCount: number
     ): boolean {
         this.iterations++;
-        // Limite de sécurité (Performance)
         if (this.iterations > 2500000) return false;
-        // Sécurité temps (2.5 secondes max pour ne pas freeze l'UI)
         if (this.iterations % 5000 === 0 && (performance.now() - this.startTime > 3000)) return false;
 
-        // Memoization pour les débuts de pli uniquement
         let stateKey = "";
         if (currentTrick.length === 0) {
             stateKey = this.getStateKey(hands, missionTicks, trickStarter, currentTrick, winnersCount, seqIndex, specCount);
             if (this.memo.has(stateKey)) return false;
         }
 
-        // --- VICTOIRE (Mains vides) ---
         if (hands.every(h => h.length === 0)) {
-            // Toutes les missions accomplies ?
             if (!missionTicks.every(t => t > 0)) return false;
             if (!this.checkMissionTokens(missionTicks)) return false;
 
-            // Omega
             const omegaIdx = this.missions.findIndex(m => m.token === 'Omega');
             if (omegaIdx !== -1) {
                 const omegaTick = missionTicks[omegaIdx];
@@ -330,17 +291,14 @@ export class TheCrewSolverJS {
                 if (omegaTick < maxOther) return false;
             }
 
-            // Constraints check
             if (this.balanceConstraint !== null) {
                 const min = Math.min(...winnersCount);
                 const max = Math.max(...winnersCount);
                 if (max - min > this.balanceConstraint) return false;
             }
-            // Min Count Specific Win
             for (const c of this.minWinValueConstraints) {
                 if (specCount < (c.minCount || 1)) return false;
             }
-            // Trick Counts
             for (const p in this.trickCounts) {
                 if (winnersCount[parseInt(p)] !== this.trickCounts[p]) return false;
             }
@@ -349,34 +307,25 @@ export class TheCrewSolverJS {
             return true;
         }
 
-        // --- JEU ---
         const myHand = hands[currentPlayer];
         const leadCard = currentTrick.length > 0 ? currentTrick[0].c : null;
         
         let validCards = myHand.filter(c => GameRules.isMoveValid(myHand, c, leadCard));
-
-        // --- PRUNING JOUEUR 3 (Le dernier à jouer) ---
-        // Ici on simule la fin du pli pour voir si c'est un échec critique immédiat
         if (currentTrick.length === 3) {
             const optimizedTrickCards: Card[] = [];
             
             for (const card of validCards) {
-                // Simulation virtuelle
                 const tempTrick = [...currentTrick, {p: currentPlayer, c: card}];
-                
-                // Reconstruire le tableau de cartes pour getTrickWinner
                 const cardsObj: Card[] = new Array(4);
                 tempTrick.forEach(t => cardsObj[t.p] = t.c);
                 
                 const winner = GameRules.getTrickWinner(cardsObj, trickStarter);
                 const wCard = cardsObj[winner];
 
-                // Check "Hard" Constraints
                 if (this.bannedPlayers.has(winner)) continue;
                 if (this.trickCounts[winner] !== undefined && winnersCount[winner] + 1 > this.trickCounts[winner]) continue;
                 if (this.trickSpecificWinner[trickNumber] !== undefined && winner !== this.trickSpecificWinner[trickNumber]) continue;
 
-                // Forbidden Win Card
                 let isForbidden = false;
                 for (const f of this.forbiddenWins) {
                     if (f.value && wCard.value === f.value) isForbidden = true;
@@ -384,14 +333,11 @@ export class TheCrewSolverJS {
                 }
                 if (isForbidden) continue;
 
-                // Sequence Constraint
                 if (this.sequenceConstraint && wCard.color === 'Rocket') {
-                     // ex: "Rocket1" -> 1
                      const expectedVal = parseInt(this.sequenceConstraint[seqIndex].replace(/\D/g, ''));
                      if (wCard.value !== expectedVal) continue;
                 }
 
-                // Check Mission Ownership (Le gagnant DOIT être le propriétaire si une carte mission est jouée)
                 let missionFail = false;
                 for (const played of tempTrick) {
                     const key = `${played.c.color}-${played.c.value}`;
@@ -410,42 +356,34 @@ export class TheCrewSolverJS {
             
             validCards = optimizedTrickCards;
             
-            // Si aucune carte valide ne marche, c'est une impasse
             if (validCards.length === 0) {``
                 return false;
             }
         }
 
-        // --- OPTIMISATION GENERALE ---
         if (currentTrick.length < 3) {
             validCards = this.optimizeValidCards(validCards, currentTrick);
         }
 
-        // Tri (Heuristique : Fort -> Faible, Atout en premier)
         validCards.sort((a, b) => {
             if (a.color === 'Rocket' && b.color !== 'Rocket') return -1;
             if (b.color === 'Rocket' && a.color !== 'Rocket') return 1;
             return b.value - a.value;
         });
 
-        // --- BOUCLE DE RECURSION ---
         for (const card of validCards) {
-            // Clonage main
-            const newHands = hands.map((h, i) => i === currentPlayer ? h.filter(c => c !== card) : h); // filter by ref marche car objets uniques
+            const newHands = hands.map((h, i) => i === currentPlayer ? h.filter(c => c !== card) : h);
             
-            // Info coup
             const moveInfo: MoveInfo = { player: currentPlayer, card: { color: card.color, value: card.value } };
             const newTrick = [...currentTrick, { p: currentPlayer, c: card }];
 
             if (newTrick.length === 4) {
-                // --- FIN DE PLI ---
                 const cardsObj: Card[] = new Array(4);
                 newTrick.forEach(t => cardsObj[t.p] = t.c);
                 
                 const winner = GameRules.getTrickWinner(cardsObj, trickStarter);
                 const wCard = cardsObj[winner];
 
-                // Update Stats
                 const newWinnersCount = [...winnersCount];
                 newWinnersCount[winner]++;
 
@@ -460,26 +398,23 @@ export class TheCrewSolverJS {
                     if (wCard.value === expected) newSeqIndex++;
                 }
 
-                // Update Missions Ticks
                 const newMissionTicks = [...missionTicks];
                 for (const played of newTrick) {
                     const key = `${played.c.color}-${played.c.value}`;
                     if (this.targetMap[key]) {
                         const target = this.targetMap[key];
-                        // On marque le pli si pas encore marqué
                         if (newMissionTicks[target.idx] === 0) {
                             newMissionTicks[target.idx] = trickNumber;
                         }
                     }
                 }
 
-                // Pruning Tokens immédiat
                 if (!this.checkMissionTokens(newMissionTicks)) continue;
 
                 if (this.dfs(
                     newHands, 
-                    [], // Reset trick
-                    winner, // Winner starts next
+                    [],
+                    winner,
                     winner, 
                     [...history, moveInfo], 
                     newMissionTicks, 
@@ -490,7 +425,6 @@ export class TheCrewSolverJS {
                 )) return true;
 
             } else {
-                // --- CONTINUER LE PLI ---
                 if (this.dfs(
                     newHands, 
                     newTrick, 
@@ -506,7 +440,6 @@ export class TheCrewSolverJS {
             }
         }
 
-        // Si on a tout essayé sans succès
         if (currentTrick.length === 0) {
             this.memo.set(stateKey, false);
         }

@@ -9,24 +9,21 @@ from pydantic import BaseModel
 import numpy as np
 import torch
 
-# --- 1. FONCTIONS UTILITAIRES POUR LES CARTES ---
 COLORS = ['Blue', 'Green', 'Pink', 'Yellow', 'Rocket']
 COLOR_OFFSET = {'Blue': 0, 'Green': 9, 'Pink': 18, 'Yellow': 27, 'Rocket': 36}
 
 def get_card_index(color, value):
-    """Convertit une couleur/valeur en index 0-39"""
     if color not in COLOR_OFFSET: return -1
     if value is None: return -1
     return COLOR_OFFSET[color] + (value - 1)
 
-# --- 2. CLASSE GAMESTATE (Ce que le Frontend envoie) ---
 class GameState(BaseModel):
     current_player: int
-    players: List[List[Dict[str, Any]]]  # Les mains des joueurs
-    current_trick: List[Dict[str, Any]]  # Le pli en cours
-    missions: List[Dict[str, Any]]       # Les missions
-    played_history: List[Dict[str, Any]] # Cartes déjà jouées
-    communications: List[Dict[str, Any]] # Indices donnés
+    players: List[List[Dict[str, Any]]]
+    current_trick: List[Dict[str, Any]]
+    missions: List[Dict[str, Any]]
+    played_history: List[Dict[str, Any]]
+    communications: List[Dict[str, Any]]
 
     def _extract_card_info(self, card_data):
         if card_data is None: return None, None
@@ -38,12 +35,10 @@ class GameState(BaseModel):
         return None, None
 
     def to_vector(self):
-        """Transforme l'état du jeu en vecteur pour l'IA (Taille 1022)"""
         input_size = 1022
         vec = np.zeros(input_size, dtype=np.float32)
         cursor = 0
 
-        # A. MAIN DU JOUEUR ACTUEL
         try:
             my_hand = self.players[self.current_player]
             for c in my_hand:
@@ -53,7 +48,6 @@ class GameState(BaseModel):
         except: pass
         cursor += 40
 
-        # B. TABLE
         for move in self.current_trick:
             p = move['player']
             col, val = self._extract_card_info(move.get('card'))
@@ -61,7 +55,6 @@ class GameState(BaseModel):
             if idx != -1: vec[cursor + (p * 40) + idx] = 1.0
         cursor += 160
 
-        # C. MISSIONS
         for m in self.missions:
             status = m.get('status', 'PENDING')
             if status != 'SUCCESS':
@@ -84,7 +77,6 @@ class GameState(BaseModel):
                     if token == '>>>>':  vec[base + 10] = 1.0
         cursor += 440
 
-        # D. PROPRIÉTAIRES MISSIONS
         for m in self.missions:
             c_info = m.get('card')
             owner = m.get('owner', m.get('ownerIndex'))
@@ -94,14 +86,12 @@ class GameState(BaseModel):
                 vec[cursor + (int(owner) * 40) + idx] = 1.0
         cursor += 160
 
-        # E. MÉMOIRE
         for item in self.played_history:
             col, val = self._extract_card_info(item)
             idx = get_card_index(col, val)
             if idx != -1: vec[cursor + idx] = 1.0
         cursor += 40
         
-        # F. CONTEXTE
         if 0 <= self.current_player < 4: vec[cursor + self.current_player] = 1.0
         if self.current_trick:
             lead_player = self.current_trick[0]['player']
@@ -110,7 +100,6 @@ class GameState(BaseModel):
              vec[cursor + 4 + self.current_player] = 1.0
         cursor += 10
         
-        # G. COMMUNICATIONS
         for comm in self.communications:
             p = comm['player']
             col, val = self._extract_card_info(comm.get('card'))
@@ -125,23 +114,19 @@ class GameState(BaseModel):
         
         return vec
 
-
-# --- 3. INITIALISATION DES MODULES ---
 Game = None
 TheCrewSolver = None
 Trainer = None
 
 try:
     from game import Game
-    print("✅ Module 'game' importé.")
 except ImportError as e:
-    print(f"❌ Erreur import game: {e}")
+    print(f"❌ CRASH Importation Jeu: {e}")
 
 try:
     from trainer import Trainer
-    print("✅ Module 'trainer' importé.")
 except ImportError as e:
-    print(f"❌ Erreur import trainer: {e}")
+    print(f"❌ CRASH Importation Trainer: {e}")
 
 
 app = FastAPI()
@@ -159,14 +144,12 @@ ai_trainer = None
 trainer_error = None
 training_lock = False
 
-# INIT GAME
 if Game:
     try:
         game_instance = Game(allow_communication=False)
     except Exception as e:
         print(f"❌ CRASH Initialisation Jeu: {e}")
 
-# INIT TRAINER (CHARGE LE CERVEAU)
 if Trainer:
     try:
         print("⏳ Initialisation du Trainer (Chargement Cerveau)...")
@@ -177,8 +160,6 @@ if Trainer:
         print(f"❌ CRASH Initialisation Trainer: {e}")
         traceback.print_exc()
 
-
-# --- MODÈLES DE DONNÉES RESTANTS ---
 class TrainRequest(BaseModel):
     episodes: int
     mission_id: int = 0
@@ -194,8 +175,6 @@ class SolveRequest(BaseModel):
     agent_player_idx: int = 0
     phase: str = "PLAY"
     played_history: List[dict] = []
-
-# --- ROUTES ---
 
 @app.get("/start-game")
 def start_game():
@@ -213,7 +192,6 @@ async def predict_move(state: GameState):
         raise HTTPException(status_code=503, detail="L'IA n'est pas chargée")
 
     try:
-        # 1. Récupération Modèle
         model = getattr(ai_trainer, 'model', None)
         if not model: model = getattr(ai_trainer, 'policy_net', None)
         if not model:
@@ -225,16 +203,12 @@ async def predict_move(state: GameState):
         if hasattr(model, 'model'): model = model.model
         model.eval() 
         
-        # 2. Vectorisation
         vec = state.to_vector()
         state_tensor = torch.FloatTensor(vec).unsqueeze(0)
         
         with torch.no_grad():
             q_values = model(state_tensor)
             
-            # --- MASQUE DE LÉGALITÉ (JEU + COMMUNICATION) ---
-            
-            # A. Analyse de la main
             current_hand = []
             try:
                 for c_data in state.players[state.current_player]:
@@ -242,13 +216,11 @@ async def predict_move(state: GameState):
                     if col and val: current_hand.append({'color': col, 'value': val})
             except: pass
 
-            # B. Analyse du pli (Couleur demandée)
             lead_color = None
             if state.current_trick and len(state.current_trick) > 0:
                 first_card_data = state.current_trick[0].get('card')
                 lead_color, _ = state._extract_card_info(first_card_data)
 
-            # C. Vérif si on a la couleur demandée
             has_lead_color = False
             if lead_color:
                 for card in current_hand:
@@ -256,33 +228,25 @@ async def predict_move(state: GameState):
                         has_lead_color = True
                         break
             
-            # D. Vérif si on a déjà communiqué (Pour autoriser/interdire la comm)
             has_communicated = False
             for comm in state.communications:
                 if comm['player'] == state.current_player:
                     has_communicated = True
                     break
 
-            # E. Construction des indices valides
             valid_indices = []
             for card in current_hand:
                 play_idx = get_card_index(card['color'], card['value'])
                 if play_idx == -1: continue
 
-                # 1. INDICES DE JEU (0-39)
                 if has_lead_color and lead_color:
                     if card['color'] == lead_color:
                         valid_indices.append(play_idx)
                 else:
                     valid_indices.append(play_idx)
-                
-                # 2. INDICES DE COMMUNICATION (40-79)
-                # Si pas encore communiqué ET pas de carte "Rocket" (interdit de communiquer Rocket)
                 if not has_communicated and card['color'] != 'Rocket':
-                     # On décale de 40 (ex: Blue 1 est index 0 pour jouer, et 40 pour communiquer)
                      valid_indices.append(play_idx + 40)
 
-            # F. Application du Masque
             if valid_indices:
                 mask = torch.full_like(q_values, -float('inf'))
                 output_size = q_values.shape[1]

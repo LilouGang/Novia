@@ -45,11 +45,10 @@ type GameModeSelectorProps = {
 };
 
 export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps) {
-  // Génération des étoiles
   const [stars, setStars] = useState<{ top: string; left: string; size: string; delay: string }[]>([]);
 
   useEffect(() => {
-    const newStars = Array.from({ length: 70 }).map(() => ({
+    const newStars = Array.from({ length: 100 }).map(() => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       size: `${Math.random() * 2 + 1}px`,
@@ -123,7 +122,6 @@ export default function GameModeSelector({ onSelectMode }: GameModeSelectorProps
             onClick={() => onSelectMode('GOD')}
             className="group relative h-85 w-full bg-[#131b36]/60 backdrop-blur-md hover:bg-[#1a2545]/80 border border-white/5 hover:border-purple-400/30 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(168,85,247,0.2)] flex flex-col text-left overflow-hidden"
           >
-            {/* Effet lumineux hover */}
             <div className="absolute top-[-50%] right-[-50%] w-64 h-64 bg-purple-600/20 blur-[60px] rounded-full transition-opacity duration-500 opacity-0 group-hover:opacity-100"></div>
 
             <div className="flex items-start justify-between mb-6">

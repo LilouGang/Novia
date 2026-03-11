@@ -86,6 +86,9 @@ const metadata = {
     ],
     icons: {
         icon: "/favicon.ico"
+    },
+    verification: {
+        google: "Y65NE1Berxi8y4Gcny87MqE1PKChyKA9Se47RSHBp7Y"
     }
 };
 function RootLayout({ children }) {
@@ -96,12 +99,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/frontend/app/layout.tsx",
-            lineNumber: 27,
+            lineNumber: 30,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/frontend/app/layout.tsx",
-        lineNumber: 26,
+        lineNumber: 29,
         columnNumber: 5
     }, this);
 }

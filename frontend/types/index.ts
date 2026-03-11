@@ -3,7 +3,6 @@ export type CardData = {
   color: 'Blue' | 'Green' | 'Pink' | 'Yellow' | 'Rocket';
   value: number;
   owner: number;
-  // AJOUT DE 'COMMUNICATED' ICI
   status: 'HAND' | 'TABLE' | 'WON' | 'COMMUNICATED';
   zIndex: number;
   tableRotation: number;
@@ -75,7 +74,6 @@ export type ReplayStep = {
     card: { color: string, value: number };
     reward?: number;
     step_info?: string;
-    // AJOUT DE 'COMMUNICATE' ICI
     action_type?: 'PLAY' | 'COLLECT' | 'INFO' | 'COMMUNICATE'; 
 };
 

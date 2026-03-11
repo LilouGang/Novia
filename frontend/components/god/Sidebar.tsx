@@ -30,11 +30,9 @@ type SidebarProps = {
     addCommunication: (c: Communication) => void;
     gameMode: 'GOD' | 'MCTS' | 'ML';
     clearStats?: () => void;
-    // AJOUT : Nouvelle prop pour revenir au menu
     onBackToMenu?: () => void;
 };
 
-// --- COMPOSANTS UTILITAIRES ---
 const TokenBadge = ({ token }: { token: string }) => {
     if (token === 'None') return null;
     let styleClass = "";
@@ -63,7 +61,7 @@ export default function Sidebar(props: SidebarProps) {
         shuffleOwners, shuffleCards, autoFindSolution, isAutoFinding, 
         launchSolver, isThinking, stats, currentMoveIndex, isPlaying, togglePlay, handlePrev, handleNext, logs, allCards, 
         globalConstraints, clearAllHands, communications, addCommunication, gameMode,
-        clearStats, onBackToMenu // On récupère la prop
+        clearStats, onBackToMenu
     } = props;
 
     const handleResetStats = () => {
@@ -84,13 +82,11 @@ export default function Sidebar(props: SidebarProps) {
     const totalSteps = stats?.solution_steps?.length || 0;
     const progressWidth = totalSteps > 0 ? ((currentMoveIndex + 1) / totalSteps) * 100 : 0;
     
-    // Correction Typage : on force le boolean avec !!
     const hasFailed = !!stats && !stats.solutionFound && !isThinking;
 
     return (
         <div className="w-[30%] min-w-75 bg-gray-900 border-r border-gray-700 flex flex-col z-50 shadow-2xl h-full font-sans">
             
-            {/* HEADER MODIFIÉ : Flexbox pour aligner Titre et Bouton */}
             <div className="p-4 border-b border-gray-800 shrink-0 bg-gray-900 flex justify-between items-center">
                 <div>
                     <h1 className="text-xl font-black text-white tracking-tight leading-none">
@@ -113,7 +109,6 @@ export default function Sidebar(props: SidebarProps) {
 
             <div className="flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent space-y-6">
 
-                {/* --- COMMANDES GLOBALES --- */}
                 <div className="grid grid-cols-2 gap-2">
                     <button onClick={() => { startNewGame(); handleResetStats(); }} className="bg-gray-800 hover:bg-gray-700 text-gray-200 py-2 rounded text-xs font-bold border border-gray-600 transition-colors">
                         🔄 Nouvelle Donne
@@ -123,7 +118,6 @@ export default function Sidebar(props: SidebarProps) {
                     </button>
                 </div>
 
-                {/* --- LIVRE DE BORD --- */}
                 <div className="bg-gray-800/50 p-3 rounded-lg border border-gray-700">
                     <div className="flex justify-between items-center mb-2">
                         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
@@ -157,7 +151,6 @@ export default function Sidebar(props: SidebarProps) {
                     )}
                 </div>
 
-                {/* --- LISTE DES MISSIONS --- */}
                 <div className="space-y-3">
                     <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider border-b border-gray-700 pb-1">Objectifs</h3>
                     
@@ -244,7 +237,6 @@ export default function Sidebar(props: SidebarProps) {
 
                 <div className="h-px bg-gray-800 my-4"></div>
 
-                {/* --- BOUTON DE LANCEMENT --- */}
                 <div className="mt-4">
                     {gameMode === 'MCTS' && (
                          <div className="flex justify-between items-center mb-1 px-1">
@@ -285,7 +277,6 @@ export default function Sidebar(props: SidebarProps) {
                     </button>
                 </div>
 
-                {/* --- LECTEUR DE SOLUTION --- */}
                 {stats && stats.solutionFound && (
                     <div className="mt-6 bg-gray-800 rounded-lg border border-gray-700 overflow-hidden animate-slide-up">
                         <div className="bg-gray-900 px-3 py-2 border-b border-gray-700 flex justify-between items-center">

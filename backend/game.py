@@ -20,7 +20,6 @@ class Card:
     def __hash__(self):
         return hash((self.color, self.value))
 
-# --- RÈGLES DU JEU ---
 class GameRules:
     @staticmethod
     def is_move_valid(hand, card, lead_card=None):
@@ -54,7 +53,6 @@ class GameRules:
                     best_player = p_idx
         return best_player
 
-# --- MOTEUR DE JEU ---
 class Game:
     def __init__(self, allow_communication=True):
         self.players = [[], [], [], []] 
@@ -136,12 +134,10 @@ class Game:
     def is_game_over(self):
         return all(len(h) == 0 for h in self.players)
 
-    # --- CORRECTION ICI : ON RENVOIE MAINTENANT (BOOL, STRING) ---
     def is_move_valid(self, player_idx, card):
         valid = GameRules.is_move_valid(self.players[player_idx], card, self.current_trick[0]['card'] if self.current_trick else None)
         return valid, "OK" if valid else "Invalid Move"
 
-    # --- COMMUNICATION ---
     def check_communication_validity(self, player_idx, card):
         if not self.allow_communication: return False, "Disabled", None
         if player_idx in self.communications: return False, "Déjà communiqué", None
@@ -166,7 +162,6 @@ class Game:
         return True, "OK", token
 
     def play_card(self, player_idx, card):
-        # Cette ligne plantait avant car is_move_valid ne renvoyait qu'une valeur
         valid, reason = self.is_move_valid(player_idx, card)
         if not valid: return False, reason, None
 
@@ -184,7 +179,6 @@ class Game:
         if len(self.current_trick) == 4:
             cards_obj = [None]*4
             for m in self.current_trick: cards_obj[m['player']] = m['card']
-            # On utilise GameRules pour la résolution
             start_p = self.current_trick[0]['player']
             winner_idx = GameRules.get_trick_winner(cards_obj, start_p)
             

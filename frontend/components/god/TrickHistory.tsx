@@ -7,13 +7,11 @@ type TrickHistoryProps = {
 
 export default function TrickHistory({ steps }: TrickHistoryProps) {
     
-    // On découpe les coups (40 cartes) en plis (10 paquets de 4)
     const tricks = [];
     for (let i = 0; i < steps.length; i += 4) {
         tricks.push(steps.slice(i, i + 4));
     }
 
-    // Helpers d'affichage
     const getPlayerName = (idx: number) => ['Sud', 'Ouest', 'Nord', 'Est'][idx];
     
     const getColorClass = (color: string) => {
@@ -55,8 +53,6 @@ export default function TrickHistory({ steps }: TrickHistoryProps) {
                     </div>
                 </div>
             ))}
-            
-            {/* Petit footer pour indiquer la fin */}
             <div className="text-center pt-2">
                 <span className="text-[9px] text-gray-600 italic">Fin de la partie</span>
             </div>
